@@ -70,14 +70,14 @@ const FeaturedTemplateSection = () => {
                         Coming Soon
                       </button>
                     ) : (
-                      <button 
-                        className="gumroad-button w-full gradient-bg text-white px-4 py-2 rounded-full hover:opacity-90 transition-opacity text-center text-sm font-semibold"
-                        data-gumroad-single-product="true"
-                        data-gumroad-overlay="true"
-                        data-gumroad-link={template.link}
+                      <a 
+                        href={template.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block w-full gradient-bg text-white px-4 py-2 rounded-full hover:opacity-90 transition-opacity text-center text-sm font-semibold"
                       >
                         Get Template
-                      </button>
+                      </a>
                     )}
                   </div>
                 </div>
