@@ -1,0 +1,213 @@
+# Haleo Website Content Configuration
+
+# Company Info
+company:
+  name: "Haleo"
+  tagline: "Automation that works while you don't"
+  description: "Haleo builds simple, scalable systems for solopreneurs — so you can ditch the chaos and get back to what you do best."
+  email: "hello@onehaleo.com"
+  website: "https://onehaleo.com"
+
+# Brand Colors
+colors:
+  cloud: "#F9F9F9"
+  ink: "#1f1f1f" 
+  gray: "#333333"
+  violet: "#b850ff"
+  core: "#521ca6"
+
+# Hero Section
+hero:
+  headline: "Automation that works while you don't."
+  subhead: "Haleo builds simple, scalable systems for solopreneurs — so you can ditch the chaos and get back to what you do best."
+  cta_primary: 
+    text: "Browse Templates"
+    url: "https://onehaleo.gumroad.com"
+  cta_secondary:
+    text: "Book Free Consult"
+    url: "#"
+  stats:
+    - number: "50+"
+      label: "Templates Created"
+    - number: "100%"
+      label: "Solopreneur Focused"
+    - number: "24/7"
+      label: "Automation Running"
+
+# Services
+services:
+  title: "What We Offer"
+  description: "From automation to AI agents, we build systems that work while you focus on what matters."
+  items:
+    - title: "Automation Systems"
+      subtitle: "Ditch the daily busywork."
+      description: "Your time is too valuable to waste on repetitive tasks. I design custom automation systems that take work off your plate and make your business run smoother while you sleep."
+      features:
+        - "Lead capture to CRM (yep, even without you touching a form)"
+        - "Proposal, contract, and invoice workflows"
+        - "Client onboarding flows"
+        - "Payment + follow-up automations"
+        - "Internal ops (task creation, file sorting, reminders)"
+      platforms: "Make, Zapier, Notion, Wave, Airtable, and more."
+      testimonial: "I didn't realize how much time I was losing until Haleo automated my entire intake system."
+      cta: "Book a Free Audit"
+    
+    - title: "AI-Powered Systems"
+      subtitle: "AI is your assistant now — not your enemy."
+      description: "Whether you're ready to clone your brain or delegate that client Q&A, I'll build AI agents that actually understand your workflows."
+      features:
+        - "AI project manager"
+        - "Personalized client assistant"
+        - "Content researcher & rewriter"
+        - "Internal ops buddy (trackers, reports, replies)"
+      note: "Ethical. Private. Built to protect your brand voice and client data."
+      testimonial: "I thought AI would be too complex. Haleo made it feel like magic — but it's built just for me."
+      cta: "Book Your AI Build"
+    
+    - title: "Templates (But Make Them Smart)"
+      subtitle: "Plug-and-play systems that feel custom."
+      description: "Not ready to invest in done-for-you? My Notion-based templates are designed for solopreneurs who want clarity, systems, and strategy in one beautiful dashboard."
+      features:
+        - "Solopreneur CRM (client, task & content tracking)"
+        - "HQ Notion Command Center"
+        - "Mini systems (content planner, engagement tracker)"
+      note: "One-time buy. Lifetime use."
+      testimonial: "This CRM gave me back 5+ hours a week. Seriously."
+      cta: "Get the Templates"
+    
+    - title: "Custom Systems"
+      subtitle: "Your business doesn't fit a template. Good."
+      description: "That's where I come in. I'll help you design a lightweight operations stack that works exactly how you work — no extra apps, fluff, or overwhelm."
+      features:
+        - "A fully mapped client journey"
+        - "Tools + tech to support your workflow"
+        - "Custom dashboards or automations"
+        - "Training videos (so you're never guessing)"
+      testimonial: "I finally stopped duct-taping apps together. Haleo gave me a system I actually want to use."
+      cta: "Book Your Call"
+    
+    - title: "Done-With-You Intensives"
+      subtitle: "Build it. Fix it. Upgrade it — together."
+      description: "Whether you need a systems refresh or a Notion co-build session, you'll get my brain on your business (without the full custom price tag)."
+      formats:
+        - "90-minute power sessions"
+        - "1-day intensives"
+        - "Audit + fix mini projects"
+      testimonial: "It felt like I had a cofounder for a day. Game changer."
+      cta: "Book a Working Session"
+
+# Why Haleo
+why_haleo:
+  title: "You don't need more apps. You need a system that thinks like you do."
+  intro: "Most solopreneurs are running their businesses on a patchwork of tools, reminders, and vibes. You're not disorganized — your systems just haven't caught up with your growth."
+  subtitle: "That's where I come in."
+  features:
+    - title: "Strategy-first builds"
+      icon: "🧠"
+      description: "I don't just automate tasks. I design systems around your unique workflows, goals, and capacity. Whether you're a visual thinker, a list lover, or somewhere in between — your system will match the way you work."
+    
+    - title: "Data-secure by design"
+      icon: "🔐"
+      description: "No shady scraping. No mystery automations. I use trusted tools like Make, Notion, and Wave — and build everything with ethical AI principles and private data handling in mind. Your systems stay yours."
+    
+    - title: "Built for solopreneurs"
+      icon: "🤝"
+      description: "I don't speak corporate. I speak \"one-person business doing big things.\" That means every automation, dashboard, or AI agent I build is lightweight, scalable, and totally manageable without a team."
+    
+    - title: "No jargon. No fluff."
+      icon: "💬"
+      description: "I believe in clear systems, clean builds, and explanations you don't need to Google. Whether we're building together or you're buying a plug-and-play template, you'll always know exactly how it works."
+  
+  testimonial: "Working with Haleo gave me structure without the stress. I finally have systems that feel like they were built for me — because they were."
+  conclusion: "Solopreneurs deserve powerful systems, too. Let's build the backend your business actually needs."
+
+# About
+about:
+  title: "Hey, I'm Alexis — the brains behind Haleo."
+  intro: "I started Haleo because I was tired of seeing smart, capable solopreneurs stuck in messy ops, half-baked templates, or spending hours on things that should take seconds."
+  background: "My background is in automation and cloud architecture — building secure systems for big-name federal clients. But I kept thinking: Why don't solo business owners have access to the same tools? Turns out, we do. They just need to be simplified, stripped down, and tailored to you."
+  founding: "So I left the red tape and built Haleo — an automation studio designed for solopreneurs who want to scale without burning out."
+  services:
+    - "Build custom automations for things like lead gen, onboarding, invoicing, and internal ops"
+    - "Design AI agents that actually understand your workflows"
+    - "Create clean, powerful Notion templates (like CRMs and central dashboards)"
+    - "Offer intensives for strategy, co-builds, or systems cleanup"
+  beliefs:
+    - "Simpler is better"
+    - "You don't need a team to feel organized"
+    - "Systems should save you time, not create more work"
+    - "Automation should feel like magic — even if it's boring under the hood"
+  mission: "Whether you're buying a plug-and-play template or booking a full custom build, my goal is the same: Help you get more done with less effort — and finally feel in control of your business backend."
+  conclusion: "Let's build a business that runs beautifully behind the scenes."
+
+# Templates
+templates:
+  title: "Plug-and-play systems for solopreneurs who want clarity without the chaos."
+  intro: "You've got clients to serve, content to post, and a business to grow — you don't have time to start from scratch every time you need a process."
+  description: "That's why I built these Notion templates: Clean, powerful systems that help you stay organized, deliver faster, and actually enjoy your backend."
+  tagline: "One-time buy. Instant delivery. Lifetime use."
+  
+  featured:
+    - title: "Solopreneur CRM"
+      description: "Your entire client experience in one intuitive dashboard."
+      price: "$47"
+      price_note: "(launch price)"
+      features:
+        - "Client database"
+        - "Engagement pipeline"
+        - "Task tracking with priority filters"
+        - "Tag-based content view (emails, meetings, calls)"
+        - "Built-in dashboard navigation"
+        - "Fully customizable and mobile-ready"
+      perfect_for: "service providers, coaches, freelancers, and consultants"
+      testimonial: "This saved me 5+ hours a week. I finally feel like I'm running a business, not chasing one."
+      url: "https://onehaleo.gumroad.com/l/solopreneur-crm"
+      featured: true
+    
+    - title: "Notion HQ Dashboard"
+      description: "Your business brain, all in one place."
+      price: "$29"
+      features:
+        - "Daily dashboard"
+        - "Habit & energy tracker"
+        - "Business ops + metrics tracker"
+        - "Notes, docs, and planning tools"
+        - "Clean, calming layout for solopreneur sanity"
+      perfect_for: "founders who need structure without overwhelm"
+      url: "https://onehaleo.gumroad.com"
+    
+    - title: "Content Planner Mini-System"
+      description: "Stop losing your best ideas. Start showing up consistently."
+      price: "$17"
+      features:
+        - "Monthly content calendar"
+        - "Platform tracker (IG, TikTok, Email, etc.)"
+        - "Idea bank with tags + visibility status"
+        - "Hashtag library"
+        - "Optional Make.com scheduling flow (instructions included)"
+      perfect_for: "personal brands, creators, and small teams"
+      url: "https://onehaleo.gumroad.com"
+
+  includes:
+    - "Lifetime access"
+    - "One-click Notion duplication"
+    - "Instructions + onboarding notes"
+    - "Clean, minimalist design"
+    - "Built with real business strategy"
+
+  coming_soon:
+    - "AI Client Q&A Assistant Template"
+    - "Ops & Inventory Tracker"
+    - "Revenue + Expense Mini-Dashboard"
+
+# Footer
+footer:
+  copyright: "© Haleo LLC. All rights reserved."
+  social:
+    instagram: "#"
+    tiktok: "#"
+    youtube: "#"
+    linkedin: "#"
+  email_signup:
+    placeholder: "Enter your email"
+    button: "Join List"

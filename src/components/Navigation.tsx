@@ -3,6 +3,11 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
+// Utility function to scroll to top when navigating
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -33,16 +38,32 @@ const Navigation = () => {
           </div>
           
           <div className="hidden md:flex space-x-8">
-            <Link to="/services" className="text-haleo-gray hover:text-haleo-core transition-colors">
+            <Link 
+              to="/services" 
+              className="text-haleo-gray hover:text-haleo-core transition-colors"
+              onClick={scrollToTop}
+            >
               Services
             </Link>
-            <Link to="/why-haleo" className="text-haleo-gray hover:text-haleo-core transition-colors">
+            <Link 
+              to="/why-haleo" 
+              className="text-haleo-gray hover:text-haleo-core transition-colors"
+              onClick={scrollToTop}
+            >
               Why Haleo
             </Link>
-            <Link to="/templates" className="text-haleo-gray hover:text-haleo-core transition-colors">
+            <Link 
+              to="/templates" 
+              className="text-haleo-gray hover:text-haleo-core transition-colors"
+              onClick={scrollToTop}
+            >
               Templates
             </Link>
-            <Link to="/about" className="text-haleo-gray hover:text-haleo-core transition-colors">
+            <Link 
+              to="/about" 
+              className="text-haleo-gray hover:text-haleo-core transition-colors"
+              onClick={scrollToTop}
+            >
               About
             </Link>
           </div>
@@ -63,16 +84,32 @@ const Navigation = () => {
         {isOpen && (
           <div className="md:hidden bg-white shadow-lg rounded-lg mt-2 p-4">
             <div className="flex flex-col space-y-4">
-              <Link to="/services" className="text-left text-haleo-gray hover:text-haleo-core" onClick={() => setIsOpen(false)}>
+              <Link 
+                to="/services" 
+                className="text-left text-haleo-gray hover:text-haleo-core" 
+                onClick={() => { setIsOpen(false); scrollToTop(); }}
+              >
                 Services
               </Link>
-              <Link to="/why-haleo" className="text-left text-haleo-gray hover:text-haleo-core" onClick={() => setIsOpen(false)}>
+              <Link 
+                to="/why-haleo" 
+                className="text-left text-haleo-gray hover:text-haleo-core" 
+                onClick={() => { setIsOpen(false); scrollToTop(); }}
+              >
                 Why Haleo
               </Link>
-              <Link to="/templates" className="text-left text-haleo-gray hover:text-haleo-core" onClick={() => setIsOpen(false)}>
+              <Link 
+                to="/templates" 
+                className="text-left text-haleo-gray hover:text-haleo-core" 
+                onClick={() => { setIsOpen(false); scrollToTop(); }}
+              >
                 Templates
               </Link>
-              <Link to="/about" className="text-left text-haleo-gray hover:text-haleo-core" onClick={() => setIsOpen(false)}>
+              <Link 
+                to="/about" 
+                className="text-left text-haleo-gray hover:text-haleo-core" 
+                onClick={() => { setIsOpen(false); scrollToTop(); }}
+              >
                 About
               </Link>
               <button className="gradient-bg text-white px-6 py-2 rounded-full hover:opacity-90 transition-opacity">

@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
-import { ArrowRight, Database, BarChart3, Calendar, CheckCircle, Mail } from 'lucide-react';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
+import { ArrowRight, Mail, CheckCircle } from 'lucide-react';
 
 const Templates = () => {
-  const featuredTemplates = [
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  const templates = [
     {
-      icon: <Database className="h-12 w-12 text-haleo-violet" />,
       title: "Solopreneur CRM",
       description: "Your entire client experience in one intuitive dashboard.",
       price: "$47",
@@ -21,14 +25,13 @@ const Templates = () => {
       ],
       perfectFor: "service providers, coaches, freelancers, and consultants",
       testimonial: "This saved me 5+ hours a week. I finally feel like I'm running a business, not chasing one.",
+      link: "https://onehaleo.gumroad.com/l/solopreneur-crm",
       featured: true
     },
     {
-      icon: <BarChart3 className="h-12 w-12 text-haleo-violet" />,
       title: "Notion HQ Dashboard", 
       description: "Your business brain, all in one place.",
       price: "$29",
-      priceNote: "",
       features: [
         "Daily dashboard",
         "Habit & energy tracker",
@@ -37,15 +40,12 @@ const Templates = () => {
         "Clean, calming layout for solopreneur sanity"
       ],
       perfectFor: "founders who need structure without overwhelm",
-      testimonial: "",
-      featured: false
+      link: "https://onehaleo.gumroad.com"
     },
     {
-      icon: <Calendar className="h-12 w-12 text-haleo-violet" />,
       title: "Content Planner Mini-System",
       description: "Stop losing your best ideas. Start showing up consistently.",
       price: "$17", 
-      priceNote: "",
       features: [
         "Monthly content calendar",
         "Platform tracker (IG, TikTok, Email, etc.)",
@@ -54,8 +54,21 @@ const Templates = () => {
         "Optional Make.com scheduling flow (instructions included)"
       ],
       perfectFor: "personal brands, creators, and small teams",
-      testimonial: "",
-      featured: false
+      link: "https://onehaleo.gumroad.com"
+    },
+    {
+      title: "AI Client Q&A Assistant",
+      description: "Smart client support that understands your business.",
+      price: "Coming Soon",
+      features: [
+        "Custom training on your business",
+        "Brand voice preservation",
+        "Auto responses to common questions",
+        "Private & secure data handling"
+      ],
+      perfectFor: "service providers with frequent client questions",
+      link: "#",
+      comingSoon: true
     }
   ];
 
@@ -68,7 +81,6 @@ const Templates = () => {
   ];
 
   const comingSoon = [
-    "AI Client Q&A Assistant Template",
     "Ops & Inventory Tracker",
     "Revenue + Expense Mini-Dashboard"
   ];
@@ -99,68 +111,66 @@ const Templates = () => {
             </div>
           </div>
 
-          <div className="mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-haleo-ink text-center mb-12">
-              Featured <span className="gradient-text">Templates</span>
-            </h2>
-
-            <div className="space-y-12">
-              {featuredTemplates.map((template, index) => (
-                <div key={index} className={`${template.featured ? 'bg-gradient-to-br from-haleo-core/5 to-haleo-violet/5 border-2 border-haleo-violet/20' : 'bg-white'} rounded-3xl p-8 md:p-12 shadow-xl`}>
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-                    <div>
-                      <div className="flex items-center gap-6 mb-6">
-                        {template.icon}
-                        <div>
-                          <h3 className="text-3xl font-bold text-haleo-ink mb-2">{template.title}</h3>
-                          <p className="text-xl text-haleo-gray">{template.description}</p>
-                        </div>
-                      </div>
-
-                      <div className="mb-6">
-                        <h4 className="font-semibold text-haleo-ink mb-4">What's inside:</h4>
-                        <ul className="space-y-2">
-                          {template.features.map((feature, idx) => (
-                            <li key={idx} className="flex items-center text-haleo-gray">
-                              <CheckCircle className="h-5 w-5 text-haleo-violet mr-3 flex-shrink-0" />
-                              {feature}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      <p className="text-haleo-gray mb-6">
-                        <span className="font-semibold">Perfect for:</span> {template.perfectFor}
-                      </p>
-
-                      <div className="flex items-center gap-4 mb-6">
-                        <span className="text-3xl font-bold text-haleo-core">{template.price}</span>
+          {/* Template Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            {templates.map((template, index) => (
+              <Card key={index} className={`shadow-lg hover:shadow-xl transition-all duration-300 ${template.featured ? 'ring-2 ring-haleo-violet' : ''} ${template.comingSoon ? 'opacity-75' : 'hover:scale-105'}`}>
+                <CardHeader className="pb-4">
+                  <CardTitle className="text-lg text-haleo-ink">{template.title}</CardTitle>
+                  <CardDescription className="text-haleo-gray text-sm">
+                    {template.description}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="pt-0">
+                  <div className="space-y-4">
+                    <ul className="text-sm text-haleo-gray space-y-1">
+                      {template.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-start">
+                          <CheckCircle className="h-4 w-4 text-haleo-violet mr-2 flex-shrink-0 mt-0.5" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                    
+                    <div className="text-xs text-haleo-gray">
+                      <span className="font-semibold">Perfect for:</span> {template.perfectFor}
+                    </div>
+                    
+                    {template.testimonial && (
+                      <blockquote className="text-xs text-haleo-ink italic border-l-2 border-haleo-violet pl-3">
+                        "{template.testimonial}"
+                      </blockquote>
+                    )}
+                    
+                    <div className="pt-4 border-t border-gray-200">
+                      <div className="text-2xl font-bold text-haleo-core mb-3">
+                        {template.price}
                         {template.priceNote && (
-                          <span className="text-haleo-gray">{template.priceNote}</span>
+                          <span className="text-xs text-haleo-gray ml-2">{template.priceNote}</span>
                         )}
                       </div>
-                    </div>
-
-                    <div className="bg-white rounded-2xl p-8 shadow-lg">
-                      {template.testimonial && (
-                        <blockquote className="text-lg text-haleo-ink italic mb-6 leading-relaxed">
-                          "{template.testimonial}"
-                        </blockquote>
-                      )}
-                      
-                      <div className="text-center">
-                        <button className="gradient-bg text-white px-8 py-4 rounded-full text-lg font-semibold hover:opacity-90 transition-all duration-300 hover:scale-105 flex items-center gap-2 mx-auto shadow-lg w-full justify-center">
-                          Preview & Purchase
-                          <ArrowRight className="h-5 w-5" />
+                      {template.comingSoon ? (
+                        <button disabled className="w-full bg-gray-300 text-gray-500 px-4 py-2 rounded-full text-sm">
+                          Coming Soon
                         </button>
-                      </div>
+                      ) : (
+                        <a 
+                          href={template.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="block w-full gradient-bg text-white px-4 py-2 rounded-full hover:opacity-90 transition-opacity text-center text-sm font-semibold"
+                        >
+                          Get Template
+                        </a>
+                      )}
                     </div>
                   </div>
-                </div>
-              ))}
-            </div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
 
+          {/* Template Includes */}
           <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl mb-16">
             <h3 className="text-2xl font-bold text-haleo-ink text-center mb-8">Every Template Includes:</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -181,6 +191,7 @@ const Templates = () => {
             </div>
           </div>
 
+          {/* Bottom CTA Section */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
             <div className="bg-white rounded-2xl p-8 shadow-lg">
               <h3 className="text-2xl font-bold text-haleo-ink mb-6">Coming Soon</h3>

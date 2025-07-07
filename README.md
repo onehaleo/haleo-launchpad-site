@@ -1,34 +1,155 @@
 
-# Haleo - Automation that works while you don't
+# Haleo Website
 
-A modern, responsive website for Haleo, a systems studio for solopreneurs. Built with React, TypeScript, and Tailwind CSS.
+A modern, responsive React website built for Haleo - automation systems for solopreneurs.
 
-## Features
+## 🚀 Tech Stack
 
-- **Responsive Design**: Optimized for all devices from mobile to desktop
-- **Smooth Scrolling Navigation**: Single-page application with smooth section transitions
-- **Modern UI**: Clean design with purple gradient branding and Inter typography
-- **Performance Optimized**: Built with Vite for fast loading and development
-- **Accessible**: Semantic HTML and proper ARIA labels
+- **React 18** with TypeScript
+- **Vite** for fast development and building
+- **Tailwind CSS** for styling with custom design tokens
+- **React Router** for navigation
+- **Shadcn/ui** components
+- **Lucide React** icons
 
-## Sections
+## 📁 Project Structure
 
-1. **Hero Section**: Main value proposition with call-to-action buttons
-2. **Services**: Automation services, AI agents, and Notion templates
-3. **Why Haleo**: Three key differentiators for solopreneurs
-4. **Featured Template**: Showcase of the Solopreneur CRM template
-5. **About**: Personal story and company mission
-6. **Footer**: Social links, newsletter signup, and legal information
+```
+src/
+├── components/          # Reusable UI components
+│   ├── ui/             # Shadcn/ui components
+│   ├── Navigation.tsx  # Main navigation
+│   ├── HeroSection.tsx # Landing page hero
+│   └── ...
+├── pages/              # Page components
+│   ├── Index.tsx       # Home page
+│   ├── Services.tsx    # Services page
+│   ├── Templates.tsx   # Templates page
+│   └── ...
+├── content/            # Content management
+│   └── site.yaml       # Site content configuration
+├── hooks/              # Custom React hooks
+│   └── useContent.ts   # Content management hook
+└── index.css          # Global styles & design tokens
+```
 
-## Brand Colors
+## 🎨 Design System
 
-- **Cloud White**: `#F9F9F9`
-- **Haleo Ink**: `#1f1f1f`
-- **Haleo Gray**: `#333333`
-- **Haleo Violet**: `#b850ff`
-- **Haleo Core**: `#521ca6`
+The site uses a custom design system with semantic color tokens:
 
-## Development
+- `--haleo-cloud`: #F9F9F9 (Light backgrounds)
+- `--haleo-ink`: #1f1f1f (Dark text)
+- `--haleo-gray`: #333333 (Secondary text)
+- `--haleo-violet`: #b850ff (Accent color)
+- `--haleo-core`: #521ca6 (Primary brand color)
+
+## 📝 Content Management
+
+### Current Setup
+Content is structured in YAML files for easy editing:
+- `src/content/site.yaml` - Main site content
+- `src/hooks/useContent.ts` - Content loading hook
+
+### CMS Integration Options
+
+#### Option 1: Netlify CMS
+1. Add Netlify CMS to your project:
+   ```bash
+   npm install netlify-cms-app
+   ```
+
+2. Create `public/admin/index.html`:
+   ```html
+   <!doctype html>
+   <html>
+   <head>
+     <meta charset="utf-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <title>Content Manager</title>
+   </head>
+   <body>
+     <div id="nc-root"></div>
+     <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+   </body>
+   </html>
+   ```
+
+3. Create `public/admin/config.yml` with your content structure
+4. Access at `yoursite.com/admin/`
+
+#### Option 2: Tina CMS
+1. Install Tina:
+   ```bash
+   npm install @tinacms/cli @tinacms/datalayer tinacms
+   ```
+
+2. Run setup:
+   ```bash
+   npx @tinacms/cli@latest init
+   ```
+
+3. Configure `tina/config.ts` with your schema
+4. Access visual editor at `yoursite.com/admin/`
+
+#### Option 3: Sanity CMS
+1. Create Sanity project:
+   ```bash
+   npm install @sanity/client
+   ```
+
+2. Set up schemas for your content types
+3. Use Sanity Studio for content editing
+4. Fetch content via API in `useContent.ts`
+
+#### Option 4: Contentful
+1. Install Contentful SDK:
+   ```bash
+   npm install contentful
+   ```
+
+2. Set up content models in Contentful dashboard
+3. Update `useContent.ts` to fetch from Contentful API
+
+### Recommended Approach: Tina CMS
+For this project, **Tina CMS** is recommended because:
+- ✅ Git-based (content stored in your repo)
+- ✅ Visual editing experience
+- ✅ TypeScript support
+- ✅ Works great with React
+- ✅ Free for small teams
+
+## 🚀 Deployment
+
+### GitHub Pages Setup
+
+1. **Connect to GitHub:**
+   - Click the GitHub button in Lovable
+   - Authorize and create repository
+
+2. **Configure GitHub Pages:**
+   - Go to repository Settings > Pages
+   - Source: GitHub Actions
+   - The included workflow will handle deployment
+
+3. **Environment Variables:**
+   Add any needed variables in repository Settings > Secrets
+
+### Custom Domain Setup
+1. Add `CNAME` file to `public/` folder with your domain
+2. Configure DNS to point to GitHub Pages
+3. Enable HTTPS in repository settings
+
+## 📱 Features
+
+- ✅ Fully responsive design
+- ✅ Multi-page navigation with React Router
+- ✅ Semantic design system with CSS custom properties
+- ✅ Template showcase with purchase links
+- ✅ Contact forms (ready for backend integration)
+- ✅ SEO-friendly structure
+- ✅ Fast loading with Vite optimization
+
+## 🔧 Development
 
 ```bash
 # Install dependencies
@@ -44,95 +165,16 @@ npm run build
 npm run preview
 ```
 
-## Deployment to GitHub Pages
+## 🎯 Next Steps
 
-1. **Enable GitHub Pages**:
-   - Go to your repository settings
-   - Navigate to "Pages" section
-   - Set source to "GitHub Actions"
+1. **Connect CMS** (Tina recommended)
+2. **Add backend** for contact forms (Netlify Forms or Supabase)
+3. **Set up analytics** (Google Analytics, Plausible)
+4. **Add SEO meta tags** and Open Graph images
+5. **Connect payment processing** (replace Gumroad links)
 
-2. **Create deployment workflow**:
-   Create `.github/workflows/deploy.yml`:
+## 📞 Support
 
-```yaml
-name: Deploy to GitHub Pages
-
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-      
-    - name: Setup Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18'
-        cache: 'npm'
-        
-    - name: Install dependencies
-      run: npm ci
-      
-    - name: Build
-      run: npm run build
-      
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      if: github.ref == 'refs/heads/main'
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist
-```
-
-3. **Update base path** (if repository name is not the domain):
-   In `vite.config.ts`, add:
-```typescript
-export default defineConfig({
-  base: '/your-repo-name/',
-  // ... rest of config
-});
-```
-
-4. **Push to GitHub**:
-```bash
-git add .
-git commit -m "Initial commit"
-git push origin main
-```
-
-The site will automatically deploy to `https://yourusername.github.io/your-repo-name/`
-
-## Custom Domain Setup
-
-To use a custom domain like `onehaleo.com`:
-
-1. Add a `CNAME` file to the `public` directory with your domain:
-```
-onehaleo.com
-```
-
-2. Configure your domain's DNS:
-   - Add a CNAME record pointing to `yourusername.github.io`
-   - Or add A records pointing to GitHub's IP addresses
-
-3. Enable custom domain in repository settings under Pages section
-
-## Technologies Used
-
-- **React 18**: Modern React with hooks and concurrent features
-- **TypeScript**: Type-safe development
-- **Tailwind CSS**: Utility-first CSS framework
-- **Vite**: Fast build tool and development server
-- **Lucide React**: Beautiful icon library
-- **React Router**: Client-side routing
-
-## License
-
-© Haleo LLC. All rights reserved.
+For questions about this codebase or Haleo services:
+- Email: hello@onehaleo.com
+- Website: https://onehaleo.com
