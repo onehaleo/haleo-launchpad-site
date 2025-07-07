@@ -1,73 +1,138 @@
-# Welcome to your Lovable project
 
-## Project info
+# Haleo - Automation that works while you don't
 
-**URL**: https://lovable.dev/projects/13080465-adeb-493c-923d-bd420c25d512
+A modern, responsive website for Haleo, a systems studio for solopreneurs. Built with React, TypeScript, and Tailwind CSS.
 
-## How can I edit this code?
+## Features
 
-There are several ways of editing your application.
+- **Responsive Design**: Optimized for all devices from mobile to desktop
+- **Smooth Scrolling Navigation**: Single-page application with smooth section transitions
+- **Modern UI**: Clean design with purple gradient branding and Inter typography
+- **Performance Optimized**: Built with Vite for fast loading and development
+- **Accessible**: Semantic HTML and proper ARIA labels
 
-**Use Lovable**
+## Sections
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/13080465-adeb-493c-923d-bd420c25d512) and start prompting.
+1. **Hero Section**: Main value proposition with call-to-action buttons
+2. **Services**: Automation services, AI agents, and Notion templates
+3. **Why Haleo**: Three key differentiators for solopreneurs
+4. **Featured Template**: Showcase of the Solopreneur CRM template
+5. **About**: Personal story and company mission
+6. **Footer**: Social links, newsletter signup, and legal information
 
-Changes made via Lovable will be committed automatically to this repo.
+## Brand Colors
 
-**Use your preferred IDE**
+- **Cloud White**: `#F9F9F9`
+- **Haleo Ink**: `#1f1f1f`
+- **Haleo Gray**: `#333333`
+- **Haleo Violet**: `#b850ff`
+- **Haleo Core**: `#521ca6`
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Development
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+```bash
+# Install dependencies
+npm install
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start development server
 npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
 ```
 
-**Edit a file directly in GitHub**
+## Deployment to GitHub Pages
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+1. **Enable GitHub Pages**:
+   - Go to your repository settings
+   - Navigate to "Pages" section
+   - Set source to "GitHub Actions"
 
-**Use GitHub Codespaces**
+2. **Create deployment workflow**:
+   Create `.github/workflows/deploy.yml`:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```yaml
+name: Deploy to GitHub Pages
 
-## What technologies are used for this project?
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
-This project is built with:
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Build
+      run: npm run build
+      
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      if: github.ref == 'refs/heads/main'
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./dist
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+3. **Update base path** (if repository name is not the domain):
+   In `vite.config.ts`, add:
+```typescript
+export default defineConfig({
+  base: '/your-repo-name/',
+  // ... rest of config
+});
+```
 
-## How can I deploy this project?
+4. **Push to GitHub**:
+```bash
+git add .
+git commit -m "Initial commit"
+git push origin main
+```
 
-Simply open [Lovable](https://lovable.dev/projects/13080465-adeb-493c-923d-bd420c25d512) and click on Share -> Publish.
+The site will automatically deploy to `https://yourusername.github.io/your-repo-name/`
 
-## Can I connect a custom domain to my Lovable project?
+## Custom Domain Setup
 
-Yes, you can!
+To use a custom domain like `onehaleo.com`:
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+1. Add a `CNAME` file to the `public` directory with your domain:
+```
+onehaleo.com
+```
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+2. Configure your domain's DNS:
+   - Add a CNAME record pointing to `yourusername.github.io`
+   - Or add A records pointing to GitHub's IP addresses
+
+3. Enable custom domain in repository settings under Pages section
+
+## Technologies Used
+
+- **React 18**: Modern React with hooks and concurrent features
+- **TypeScript**: Type-safe development
+- **Tailwind CSS**: Utility-first CSS framework
+- **Vite**: Fast build tool and development server
+- **Lucide React**: Beautiful icon library
+- **React Router**: Client-side routing
+
+## License
+
+© Haleo LLC. All rights reserved.
