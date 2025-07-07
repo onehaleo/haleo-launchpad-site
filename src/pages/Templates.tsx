@@ -116,14 +116,14 @@ const Templates = () => {
             {/* Template Cards Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
               {templates.map((template, index) => (
-                <Card key={index} className={`relative bg-white border border-gray-100 hover:border-haleo-violet hover:ring-2 hover:ring-haleo-violet/20 transition-all duration-300 group flex flex-col ${template.comingSoon ? 'opacity-75' : 'hover:scale-[1.02] hover:shadow-xl'}`}>
+                <Card key={index} className={`relative bg-white border border-gray-100 hover:border-haleo-violet hover:ring-2 hover:ring-haleo-violet/20 transition-all duration-300 group flex flex-col h-full ${template.comingSoon ? 'opacity-75' : 'hover:scale-[1.02] hover:shadow-xl'}`}>
                   {template.featured && (
                     <div className="absolute -top-3 left-4 bg-gradient-to-r from-haleo-core to-haleo-violet text-white px-3 py-1 rounded-full text-xs font-semibold">
                       Most Popular
                     </div>
                   )}
                   
-                  <CardHeader className="p-4 pb-2">
+                  <CardHeader className="p-4 pb-2 flex-shrink-0">
                     <CardTitle className="text-lg font-bold text-haleo-ink mb-1">{template.title}</CardTitle>
                     <div className="text-2xl font-bold text-haleo-core mb-2">
                       {template.price}
@@ -159,7 +159,7 @@ const Templates = () => {
                       )}
                     </div>
                     
-                    <div className="mt-4 pt-2">
+                    <div className="mt-auto pt-4 flex-shrink-0">
                       {template.comingSoon ? (
                         <button disabled className="w-full bg-gray-200 text-gray-500 px-4 py-2.5 rounded-lg text-sm font-medium">
                           Coming Soon
