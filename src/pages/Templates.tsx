@@ -116,56 +116,64 @@ const Templates = () => {
             {/* Template Cards Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
               {templates.map((template, index) => (
-                <Card key={index} className={`shadow-lg hover:shadow-xl transition-all duration-300 animate-scale-in ${template.featured ? 'ring-2 ring-haleo-violet' : ''} ${template.comingSoon ? 'opacity-75' : 'hover:scale-105'}`}>
-                  <CardHeader className="pb-4">
-                    <CardTitle className="text-lg text-haleo-ink">{template.title}</CardTitle>
-                    <CardDescription className="text-haleo-gray text-sm">
+                <Card key={index} className={`relative bg-white border border-gray-100 hover:border-haleo-violet hover:ring-2 hover:ring-haleo-violet/20 transition-all duration-300 group ${template.comingSoon ? 'opacity-75' : 'hover:scale-[1.02] hover:shadow-xl'}`}>
+                  {template.featured && (
+                    <div className="absolute -top-3 left-4 bg-gradient-to-r from-haleo-core to-haleo-violet text-white px-3 py-1 rounded-full text-xs font-semibold">
+                      Most Popular
+                    </div>
+                  )}
+                  
+                  <CardHeader className="pb-3">
+                    <CardTitle className="text-xl font-bold text-haleo-ink mb-2">{template.title}</CardTitle>
+                    <div className="text-3xl font-bold text-haleo-core mb-2">
+                      {template.price}
+                      {template.priceNote && (
+                        <span className="text-sm text-haleo-gray ml-2 font-normal">{template.priceNote}</span>
+                      )}
+                    </div>
+                    <CardDescription className="text-haleo-gray leading-relaxed">
                       {template.description}
                     </CardDescription>
                   </CardHeader>
-                  <CardContent className="pt-0">
-                    <div className="space-y-4">
-                      <ul className="text-sm text-haleo-gray space-y-1">
+                  
+                  <CardContent className="pt-0 flex flex-col h-full">
+                    <div className="flex-1 space-y-4">
+                      <ul className="space-y-2">
                         {template.features.map((feature, idx) => (
-                          <li key={idx} className="flex items-start">
-                            <CheckCircle className="h-4 w-4 text-haleo-violet mr-2 flex-shrink-0 mt-0.5" />
-                            {feature}
+                          <li key={idx} className="flex items-start text-sm text-haleo-gray">
+                            <CheckCircle className="h-4 w-4 text-haleo-violet mr-3 flex-shrink-0 mt-0.5" />
+                            <span>{feature}</span>
                           </li>
                         ))}
                       </ul>
                       
-                      <div className="text-xs text-haleo-gray">
-                        <span className="font-semibold">Perfect for:</span> {template.perfectFor}
+                      <div className="bg-haleo-cloud/50 rounded-lg p-3">
+                        <span className="text-xs font-semibold text-haleo-ink">Perfect for: </span>
+                        <span className="text-xs text-haleo-gray">{template.perfectFor}</span>
                       </div>
                       
                       {template.testimonial && (
-                        <blockquote className="text-xs text-haleo-ink italic border-l-2 border-haleo-violet pl-3">
+                        <blockquote className="text-sm text-haleo-ink italic bg-gradient-to-r from-haleo-violet/5 to-transparent border-l-3 border-haleo-violet pl-4 py-2 rounded-r-lg">
                           "{template.testimonial}"
                         </blockquote>
                       )}
-                      
-                      <div className="pt-4 border-t border-gray-200">
-                        <div className="text-2xl font-bold text-haleo-core mb-3">
-                          {template.price}
-                          {template.priceNote && (
-                            <span className="text-xs text-haleo-gray ml-2">{template.priceNote}</span>
-                          )}
-                        </div>
-                        {template.comingSoon ? (
-                          <button disabled className="w-full bg-gray-300 text-gray-500 px-4 py-2 rounded-full text-sm">
-                            Coming Soon
-                          </button>
-                        ) : (
-                          <a 
-                            href={template.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="block w-full gradient-bg text-white px-4 py-2 rounded-full hover:opacity-90 transition-all duration-300 text-center text-sm font-semibold"
-                          >
-                            Get Template
-                          </a>
-                        )}
-                      </div>
+                    </div>
+                    
+                    <div className="mt-6 pt-4">
+                      {template.comingSoon ? (
+                        <button disabled className="w-full bg-gray-200 text-gray-500 px-6 py-3 rounded-lg text-sm font-medium">
+                          Coming Soon
+                        </button>
+                      ) : (
+                        <a 
+                          href={template.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="block w-full gradient-bg text-white px-6 py-3 rounded-lg hover:opacity-90 transition-all duration-300 text-center font-semibold group-hover:shadow-lg"
+                        >
+                          Get Template
+                        </a>
+                      )}
                     </div>
                   </CardContent>
                 </Card>
