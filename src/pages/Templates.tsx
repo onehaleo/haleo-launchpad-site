@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import PageTransition from '../components/PageTransition';
+import SEOHead from '../components/SEOHead';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
 import { ArrowRight, Mail, CheckCircle } from 'lucide-react';
 
@@ -88,6 +89,11 @@ const Templates = () => {
 
   return (
     <PageTransition>
+      <SEOHead 
+        title="Business Automation Templates | Notion CRM & Workflow Systems | Haleo"
+        description="Ready-to-use Notion templates for solopreneurs. Get our CRM system, content planner, AI assistants, and business dashboards. One-time purchase, lifetime access."
+        keywords="notion templates, business templates, solopreneur CRM, automation templates, notion systems, business dashboards, content planning templates"
+      />
       <div className="min-h-screen">
         <Navigation />
         

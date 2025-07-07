@@ -13,7 +13,7 @@ const HeroSection = () => {
           </h1>
           
           <p className="text-lg sm:text-xl md:text-2xl text-haleo-gray mb-12 max-w-4xl mx-auto leading-relaxed px-4">
-            Haleo builds simple, scalable systems for solopreneurs — so you can ditch the chaos and get back to what you do best.
+            Haleo builds simple, scalable automation systems for solopreneurs — so you can ditch the chaos and get back to what you do best. Custom templates, AI agents, and business workflows that scale with your growth.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center px-4">
