@@ -116,7 +116,7 @@ const Templates = () => {
             {/* Template Cards Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
               {templates.map((template, index) => (
-                <Card key={index} className={`relative bg-white border border-gray-100 hover:border-haleo-violet hover:ring-2 hover:ring-haleo-violet/20 transition-all duration-300 group ${template.comingSoon ? 'opacity-75' : 'hover:scale-[1.02] hover:shadow-xl'}`}>
+                <Card key={index} className={`relative bg-white border border-gray-100 hover:border-haleo-violet hover:ring-2 hover:ring-haleo-violet/20 transition-all duration-300 group flex flex-col ${template.comingSoon ? 'opacity-75' : 'hover:scale-[1.02] hover:shadow-xl'}`}>
                   {template.featured && (
                     <div className="absolute -top-3 left-4 bg-gradient-to-r from-haleo-core to-haleo-violet text-white px-3 py-1 rounded-full text-xs font-semibold">
                       Most Popular
@@ -136,8 +136,8 @@ const Templates = () => {
                     </CardDescription>
                   </CardHeader>
                   
-                  <CardContent className="p-4 pt-0 flex flex-col justify-between h-full">
-                    <div className="space-y-3">
+                  <CardContent className="p-4 pt-0 flex flex-col flex-1">
+                    <div className="flex-1 space-y-3">
                       <ul className="space-y-1.5">
                         {template.features.map((feature, idx) => (
                           <li key={idx} className="flex items-start text-xs text-haleo-gray">
@@ -159,7 +159,7 @@ const Templates = () => {
                       )}
                     </div>
                     
-                    <div className="mt-4">
+                    <div className="mt-4 pt-2">
                       {template.comingSoon ? (
                         <button disabled className="w-full bg-gray-200 text-gray-500 px-4 py-2.5 rounded-lg text-sm font-medium">
                           Coming Soon
@@ -169,7 +169,7 @@ const Templates = () => {
                           href={template.link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="block w-full gradient-bg text-white px-4 py-2.5 rounded-lg hover:opacity-90 transition-all duration-300 text-center text-sm font-semibold group-hover:shadow-lg"
+                          className="block w-full gradient-bg text-white px-4 py-2.5 rounded-lg hover:opacity-90 transition-all duration-300 text-center text-sm font-semibold"
                         >
                           Get Template
                         </a>
