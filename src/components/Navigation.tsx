@@ -1,10 +1,12 @@
 
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,14 +16,6 @@ const Navigation = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsOpen(false);
-    }
-  };
-
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
       scrolled ? 'bg-white/95 backdrop-blur-sm shadow-sm' : 'bg-transparent'
@@ -29,26 +23,28 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center">
-            <img 
-              src="/lovable-uploads/8bf9a199-52de-4152-9751-1a25c3bd7e0d.png" 
-              alt="Haleo"
-              className="h-8 w-auto"
-            />
+            <Link to="/">
+              <img 
+                src="/lovable-uploads/8bf9a199-52de-4152-9751-1a25c3bd7e0d.png" 
+                alt="Haleo"
+                className="h-8 w-auto"
+              />
+            </Link>
           </div>
           
           <div className="hidden md:flex space-x-8">
-            <button onClick={() => scrollToSection('services')} className="text-haleo-gray hover:text-haleo-core transition-colors">
+            <Link to="/services" className="text-haleo-gray hover:text-haleo-core transition-colors">
               Services
-            </button>
-            <button onClick={() => scrollToSection('why-haleo')} className="text-haleo-gray hover:text-haleo-core transition-colors">
+            </Link>
+            <Link to="/why-haleo" className="text-haleo-gray hover:text-haleo-core transition-colors">
               Why Haleo
-            </button>
-            <button onClick={() => scrollToSection('templates')} className="text-haleo-gray hover:text-haleo-core transition-colors">
+            </Link>
+            <Link to="/templates" className="text-haleo-gray hover:text-haleo-core transition-colors">
               Templates
-            </button>
-            <button onClick={() => scrollToSection('about')} className="text-haleo-gray hover:text-haleo-core transition-colors">
+            </Link>
+            <Link to="/about" className="text-haleo-gray hover:text-haleo-core transition-colors">
               About
-            </button>
+            </Link>
           </div>
 
           <div className="hidden md:block">
@@ -67,18 +63,18 @@ const Navigation = () => {
         {isOpen && (
           <div className="md:hidden bg-white shadow-lg rounded-lg mt-2 p-4">
             <div className="flex flex-col space-y-4">
-              <button onClick={() => scrollToSection('services')} className="text-left text-haleo-gray hover:text-haleo-core">
+              <Link to="/services" className="text-left text-haleo-gray hover:text-haleo-core" onClick={() => setIsOpen(false)}>
                 Services
-              </button>
-              <button onClick={() => scrollToSection('why-haleo')} className="text-left text-haleo-gray hover:text-haleo-core">
+              </Link>
+              <Link to="/why-haleo" className="text-left text-haleo-gray hover:text-haleo-core" onClick={() => setIsOpen(false)}>
                 Why Haleo
-              </button>
-              <button onClick={() => scrollToSection('templates')} className="text-left text-haleo-gray hover:text-haleo-core">
+              </Link>
+              <Link to="/templates" className="text-left text-haleo-gray hover:text-haleo-core" onClick={() => setIsOpen(false)}>
                 Templates
-              </button>
-              <button onClick={() => scrollToSection('about')} className="text-left text-haleo-gray hover:text-haleo-core">
+              </Link>
+              <Link to="/about" className="text-left text-haleo-gray hover:text-haleo-core" onClick={() => setIsOpen(false)}>
                 About
-              </button>
+              </Link>
               <button className="gradient-bg text-white px-6 py-2 rounded-full hover:opacity-90 transition-opacity">
                 Book Consult
               </button>
