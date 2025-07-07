@@ -23,7 +23,7 @@ const Navigation = () => {
 
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      scrolled ? 'bg-haleo-ink/60 backdrop-blur-sm shadow-sm' : 'bg-haleo-ink backdrop-blur-sm shadow-lg'
+      scrolled ? 'bg-haleo-ink/85 backdrop-blur-sm shadow-sm' : 'bg-haleo-ink backdrop-blur-sm shadow-lg'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
