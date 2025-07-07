@@ -40,35 +40,35 @@ const Navigation = () => {
           <div className="hidden md:flex space-x-8">
             <Link 
               to="/" 
-              className="text-haleo-gray hover:text-haleo-core transition-colors"
+              className="text-haleo-gray hover:text-haleo-core transition-all duration-300"
               onClick={scrollToTop}
             >
               Home
             </Link>
             <Link 
               to="/services" 
-              className="text-haleo-gray hover:text-haleo-core transition-colors"
+              className="text-haleo-gray hover:text-haleo-core transition-all duration-300"
               onClick={scrollToTop}
             >
               Services
             </Link>
             <Link 
               to="/why-haleo" 
-              className="text-haleo-gray hover:text-haleo-core transition-colors"
+              className="text-haleo-gray hover:text-haleo-core transition-all duration-300"
               onClick={scrollToTop}
             >
               Why Haleo
             </Link>
             <Link 
               to="/templates" 
-              className="text-haleo-gray hover:text-haleo-core transition-colors"
+              className="text-haleo-gray hover:text-haleo-core transition-all duration-300"
               onClick={scrollToTop}
             >
               Templates
             </Link>
             <Link 
               to="/about" 
-              className="text-haleo-gray hover:text-haleo-core transition-colors"
+              className="text-haleo-gray hover:text-haleo-core transition-all duration-300"
               onClick={scrollToTop}
             >
               About
@@ -76,7 +76,7 @@ const Navigation = () => {
           </div>
 
           <div className="hidden md:block">
-            <button className="gradient-bg text-white px-4 py-2 rounded-full hover:opacity-90 transition-opacity text-sm">
+            <button className="gradient-bg text-white px-4 py-2 rounded-full hover:opacity-90 transition-all duration-300 text-sm">
               Book Consult
             </button>
           </div>
@@ -93,40 +93,40 @@ const Navigation = () => {
             <div className="flex flex-col space-y-4">
               <Link 
                 to="/" 
-                className="text-left text-haleo-gray hover:text-haleo-core" 
+                className="text-left text-haleo-gray hover:text-haleo-core transition-all duration-300" 
                 onClick={() => { setIsOpen(false); scrollToTop(); }}
               >
                 Home
               </Link>
               <Link 
                 to="/services" 
-                className="text-left text-haleo-gray hover:text-haleo-core" 
+                className="text-left text-haleo-gray hover:text-haleo-core transition-all duration-300" 
                 onClick={() => { setIsOpen(false); scrollToTop(); }}
               >
                 Services
               </Link>
               <Link 
                 to="/why-haleo" 
-                className="text-left text-haleo-gray hover:text-haleo-core" 
+                className="text-left text-haleo-gray hover:text-haleo-core transition-all duration-300" 
                 onClick={() => { setIsOpen(false); scrollToTop(); }}
               >
                 Why Haleo
               </Link>
               <Link 
                 to="/templates" 
-                className="text-left text-haleo-gray hover:text-haleo-core" 
+                className="text-left text-haleo-gray hover:text-haleo-core transition-all duration-300" 
                 onClick={() => { setIsOpen(false); scrollToTop(); }}
               >
                 Templates
               </Link>
               <Link 
                 to="/about" 
-                className="text-left text-haleo-gray hover:text-haleo-core" 
+                className="text-left text-haleo-gray hover:text-haleo-core transition-all duration-300" 
                 onClick={() => { setIsOpen(false); scrollToTop(); }}
               >
                 About
               </Link>
-              <button className="gradient-bg text-white px-6 py-2 rounded-full hover:opacity-90 transition-opacity text-sm">
+              <button className="gradient-bg text-white px-6 py-2 rounded-full hover:opacity-90 transition-all duration-300 text-sm">
                 Book Consult
               </button>
             </div>

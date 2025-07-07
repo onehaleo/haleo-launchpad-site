@@ -1,6 +1,7 @@
 import React from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
+import PageTransition from '../components/PageTransition';
 import { ArrowRight, Settings, Brain, Database, Wrench, Calendar } from 'lucide-react';
 
 const Services = () => {
@@ -76,7 +77,7 @@ const Services = () => {
       description: "Whether you need a systems refresh or a Notion co-build session, you'll get my brain on your business (without the full custom price tag).",
       features: [
         "90-minute power sessions",
-        "1-day intensives", 
+        "1-day intensives",
         "Audit + fix mini projects"
       ],
       platforms: "",
@@ -87,93 +88,100 @@ const Services = () => {
   ];
 
   return (
-    <div className="min-h-screen">
-      <Navigation />
-      
-      <section className="pt-32 pb-20 bg-gradient-to-br from-haleo-cloud via-white to-purple-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-7xl font-bold text-haleo-ink mb-6 leading-tight">
-              What We <span className="gradient-text">Offer</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-haleo-gray max-w-4xl mx-auto leading-relaxed">
-              Everything you need to automate your business and reclaim your time
-            </p>
-          </div>
+    <PageTransition>
+      <div className="min-h-screen bg-haleo-cloud">
+        <Navigation />
+        
+        <div className="pt-20 sm:pt-24 pb-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12 sm:mb-16 px-4">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-7xl font-bold text-haleo-ink mb-6 leading-tight">
+                What We <span className="gradient-text">Offer</span>
+              </h1>
+              <p className="text-lg sm:text-xl lg:text-2xl text-haleo-gray max-w-4xl mx-auto leading-relaxed">
+                Everything you need to automate your business and reclaim your time
+              </p>
+            </div>
 
-          <div className="space-y-16 sm:space-y-20">
-            {services.map((service, index) => (
-              <div key={index} className="bg-white rounded-3xl p-6 sm:p-8 lg:p-12 shadow-xl">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-                  <div>
-                    <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6 mb-6 text-center sm:text-left">
-                      {service.icon}
-                      <div>
-                        <h2 className="text-2xl sm:text-3xl font-bold text-haleo-ink mb-2">{service.title}</h2>
-                        <p className="text-lg sm:text-xl font-semibold text-haleo-violet">{service.subtitle}</p>
+            <div className="space-y-16 sm:space-y-20">
+              {services.map((service, index) => (
+                <div key={index} className="bg-white rounded-3xl p-6 sm:p-8 lg:p-12 shadow-xl animate-fade-in">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+                    <div>
+                      <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6 mb-6 text-center sm:text-left">
+                        {service.icon}
+                        <div>
+                          <h2 className="text-2xl sm:text-3xl font-bold text-haleo-ink mb-2">{service.title}</h2>
+                          <p className="text-lg sm:text-xl font-semibold text-haleo-violet">{service.subtitle}</p>
+                        </div>
                       </div>
-                    </div>
-                    
-                    <p className="text-base sm:text-lg text-haleo-gray mb-8 leading-relaxed text-center sm:text-left">
-                      {service.description}
-                    </p>
-
-                    {service.features.length > 0 && (
-                      <div className="mb-6">
-                        <h4 className="font-semibold text-haleo-ink mb-4 text-center sm:text-left">What I automate for you:</h4>
-                        <ul className="space-y-3">
-                          {service.features.map((feature, idx) => (
-                            <li key={idx} className="flex items-start text-haleo-gray text-sm sm:text-base">
-                              <div className="w-2 h-2 bg-haleo-violet rounded-full mt-2 mr-4 flex-shrink-0"></div>
-                              {feature}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-
-                    {service.platforms && (
-                      <p className="text-haleo-gray mb-6">
-                        <span className="font-semibold">Platforms I work with:</span> {service.platforms}
+                      
+                      <p className="text-base sm:text-lg text-haleo-gray mb-8 leading-relaxed text-center sm:text-left">
+                        {service.description}
                       </p>
-                    )}
-                  </div>
 
-                  <div className="bg-gradient-to-br from-haleo-cloud to-purple-50 rounded-2xl p-8">
-                    <blockquote className="text-lg text-haleo-ink italic mb-6 leading-relaxed">
-                      "{service.testimonial}"
-                    </blockquote>
-                    
-                    <div className="text-center">
-                      <p className="text-haleo-gray mb-4">{service.ctaSubtext}</p>
-                      <button className="gradient-bg text-white px-8 py-4 rounded-full text-lg font-semibold hover:opacity-90 transition-all duration-300 hover:scale-105 flex items-center gap-2 mx-auto shadow-lg">
-                        {service.ctaText}
-                        <ArrowRight className="h-5 w-5" />
-                      </button>
+                      {service.features.length > 0 && (
+                        <div className="mb-6">
+                          <h4 className="font-semibold text-haleo-ink mb-4 text-center sm:text-left">What I automate for you:</h4>
+                          <ul className="space-y-3">
+                            {service.features.map((feature, idx) => (
+                              <li key={idx} className="flex items-start text-haleo-gray text-sm sm:text-base">
+                                <div className="w-2 h-2 bg-haleo-violet rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                                {feature}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+
+                      {service.platforms && (
+                        <div className="mb-6">
+                          <p className="text-sm text-haleo-gray text-center sm:text-left">
+                            <strong>Platforms I work with:</strong> {service.platforms}
+                          </p>
+                        </div>
+                      )}
+                    </div>
+
+                    <div className="bg-haleo-cloud rounded-2xl p-6 lg:p-8">
+                      <blockquote className="text-lg italic text-haleo-ink mb-6 text-center">
+                        "{service.testimonial}"
+                      </blockquote>
+                      
+                      <div className="text-center">
+                        <p className="text-haleo-gray mb-4">👉 {service.ctaSubtext}</p>
+                        <button className="gradient-bg text-white px-8 py-4 rounded-full text-lg font-semibold hover:opacity-90 transition-all duration-300 hover:scale-105 flex items-center gap-2 mx-auto shadow-lg">
+                          {service.ctaText}
+                          <ArrowRight className="h-5 w-5" />
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
 
-          <div className="text-center mt-20">
-            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-12 shadow-xl max-w-4xl mx-auto">
-              <h3 className="text-3xl font-bold text-haleo-ink mb-4">Ready to stop DIYing your backend?</h3>
-              <p className="text-xl text-haleo-gray mb-8 leading-relaxed">
-                I'll help you clear the clutter and build operations that scale with you — not against you.<br/>
-                Book a free consult or shop the templates to get started today.
-              </p>
-              <button className="gradient-bg text-white px-12 py-6 rounded-full text-xl font-semibold hover:opacity-90 transition-all duration-300 hover:scale-105 shadow-lg">
-                Let's Build Your System
-              </button>
+            <div className="mt-20 text-center">
+              <div className="bg-gradient-to-br from-haleo-core to-haleo-violet rounded-3xl p-8 lg:p-12 text-white">
+                <h3 className="text-3xl lg:text-4xl font-bold mb-6">Ready to stop DIYing your backend?</h3>
+                <p className="text-lg lg:text-xl mb-8 max-w-4xl mx-auto leading-relaxed">
+                  I'll help you clear the clutter and build operations that scale with you — not against you.
+                </p>
+                <p className="text-base lg:text-lg mb-8">
+                  Book a free consult or shop the templates to get started today.
+                </p>
+                <button className="bg-white text-haleo-core px-12 py-6 rounded-full text-xl font-bold hover:bg-gray-100 transition-all duration-300 hover:scale-105 flex items-center gap-2 mx-auto shadow-lg">
+                  Let's Build Your System
+                  <ArrowRight className="h-6 w-6" />
+                </button>
+              </div>
             </div>
           </div>
         </div>
-      </section>
-
-      <Footer />
-    </div>
+        
+        <Footer />
+      </div>
+    </PageTransition>
   );
 };
 
