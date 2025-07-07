@@ -123,45 +123,45 @@ const Templates = () => {
                     </div>
                   )}
                   
-                  <CardHeader className="pb-3">
-                    <CardTitle className="text-xl font-bold text-haleo-ink mb-2">{template.title}</CardTitle>
-                    <div className="text-3xl font-bold text-haleo-core mb-2">
+                  <CardHeader className="p-4 pb-2">
+                    <CardTitle className="text-lg font-bold text-haleo-ink mb-1">{template.title}</CardTitle>
+                    <div className="text-2xl font-bold text-haleo-core mb-2">
                       {template.price}
                       {template.priceNote && (
-                        <span className="text-sm text-haleo-gray ml-2 font-normal">{template.priceNote}</span>
+                        <span className="text-xs text-haleo-gray ml-2 font-normal">{template.priceNote}</span>
                       )}
                     </div>
-                    <CardDescription className="text-haleo-gray leading-relaxed">
+                    <CardDescription className="text-haleo-gray text-sm leading-relaxed">
                       {template.description}
                     </CardDescription>
                   </CardHeader>
                   
-                  <CardContent className="pt-0 flex flex-col h-full">
-                    <div className="flex-1 space-y-4">
-                      <ul className="space-y-2">
+                  <CardContent className="p-4 pt-0 flex flex-col justify-between h-full">
+                    <div className="space-y-3">
+                      <ul className="space-y-1.5">
                         {template.features.map((feature, idx) => (
-                          <li key={idx} className="flex items-start text-sm text-haleo-gray">
-                            <CheckCircle className="h-4 w-4 text-haleo-violet mr-3 flex-shrink-0 mt-0.5" />
+                          <li key={idx} className="flex items-start text-xs text-haleo-gray">
+                            <CheckCircle className="h-3 w-3 text-haleo-violet mr-2 flex-shrink-0 mt-0.5" />
                             <span>{feature}</span>
                           </li>
                         ))}
                       </ul>
                       
-                      <div className="bg-haleo-cloud/50 rounded-lg p-3">
+                      <div className="bg-haleo-cloud/50 rounded-lg p-2">
                         <span className="text-xs font-semibold text-haleo-ink">Perfect for: </span>
                         <span className="text-xs text-haleo-gray">{template.perfectFor}</span>
                       </div>
                       
                       {template.testimonial && (
-                        <blockquote className="text-sm text-haleo-ink italic bg-gradient-to-r from-haleo-violet/5 to-transparent border-l-3 border-haleo-violet pl-4 py-2 rounded-r-lg">
+                        <blockquote className="text-xs text-haleo-ink italic bg-gradient-to-r from-haleo-violet/5 to-transparent border-l-2 border-haleo-violet pl-3 py-2 rounded-r-lg">
                           "{template.testimonial}"
                         </blockquote>
                       )}
                     </div>
                     
-                    <div className="mt-6 pt-4">
+                    <div className="mt-4">
                       {template.comingSoon ? (
-                        <button disabled className="w-full bg-gray-200 text-gray-500 px-6 py-3 rounded-lg text-sm font-medium">
+                        <button disabled className="w-full bg-gray-200 text-gray-500 px-4 py-2.5 rounded-lg text-sm font-medium">
                           Coming Soon
                         </button>
                       ) : (
@@ -169,7 +169,7 @@ const Templates = () => {
                           href={template.link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="block w-full gradient-bg text-white px-6 py-3 rounded-lg hover:opacity-90 transition-all duration-300 text-center font-semibold group-hover:shadow-lg"
+                          className="block w-full gradient-bg text-white px-4 py-2.5 rounded-lg hover:opacity-90 transition-all duration-300 text-center text-sm font-semibold group-hover:shadow-lg"
                         >
                           Get Template
                         </a>
