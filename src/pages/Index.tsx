@@ -7,10 +7,16 @@ import HeroSection from '../components/HeroSection';
 import FeaturedTemplateSection from '../components/FeaturedTemplateSection';
 import Footer from '../components/Footer';
 import PageTransition from '../components/PageTransition';
+import SEOHead from '../components/SEOHead';
 
 const Index = () => {
   return (
     <PageTransition>
+      <SEOHead 
+        title="Haleo - Automation Systems That Work While You Don't | Solopreneur Tools"
+        description="Build scalable business automation systems for solopreneurs. Get custom templates, AI agents, and automated workflows that work 24/7. Start automating your business today."
+        keywords="automation systems, solopreneur automation, business automation tools, AI agents, workflow automation, small business productivity, custom templates, automated systems"
+      />
       <div className="min-h-screen">
         <Navigation />
         <HeroSection />
@@ -18,9 +24,9 @@ const Index = () => {
         {/* Brief Services Preview */}
         <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl font-bold text-haleo-ink mb-4">What We Offer</h2>
+            <h2 className="text-3xl font-bold text-haleo-ink mb-4">Automation Systems for Growing Businesses</h2>
             <p className="text-haleo-gray mb-8 max-w-2xl mx-auto">
-              From automation to AI agents, we build systems that work while you focus on what matters.
+              From custom automation workflows to AI-powered agents, we build scalable systems that work 24/7 while you focus on strategic growth and business development.
             </p>
             <Link 
               to="/services" 
@@ -37,9 +43,9 @@ const Index = () => {
         {/* Brief Why Haleo Preview */}
         <section className="py-16 bg-haleo-cloud">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl font-bold text-haleo-ink mb-4">Why Choose Haleo</h2>
+            <h2 className="text-3xl font-bold text-haleo-ink mb-4">Why Solopreneurs Choose Haleo for Business Automation</h2>
             <p className="text-haleo-gray mb-8 max-w-2xl mx-auto">
-              Built specifically for solopreneurs who need systems that scale without the complexity.
+              Purpose-built automation systems for solopreneurs and small business owners who need scalable solutions without enterprise complexity or overhead costs.
             </p>
             <Link 
               to="/why-haleo" 

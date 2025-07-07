@@ -2,6 +2,7 @@ import React from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import PageTransition from '../components/PageTransition';
+import SEOHead from '../components/SEOHead';
 import { ArrowRight, Settings, Brain, Database, Wrench, Calendar } from 'lucide-react';
 
 const Services = () => {
@@ -89,6 +90,11 @@ const Services = () => {
 
   return (
     <PageTransition>
+      <SEOHead 
+        title="Business Automation Services | AI Agents & Custom Systems | Haleo"
+        description="Professional automation services for solopreneurs. Custom AI agents, workflow automation, CRM systems, and done-with-you intensives. Start automating your business operations today."
+        keywords="business automation services, AI agents, custom automation systems, solopreneur services, workflow automation, CRM automation, business process automation"
+      />
       <div className="min-h-screen bg-haleo-cloud">
         <Navigation />
         
@@ -96,10 +102,10 @@ const Services = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12 sm:mb-16 px-4">
               <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-7xl font-bold text-haleo-ink mb-6 leading-tight">
-                What We <span className="gradient-text">Offer</span>
+                Business Automation <span className="gradient-text">Services</span>
               </h1>
               <p className="text-lg sm:text-xl lg:text-2xl text-haleo-gray max-w-4xl mx-auto leading-relaxed">
-                Everything you need to automate your business and reclaim your time
+                Custom automation systems, AI agents, and workflow solutions designed specifically for growing solopreneurs and small businesses
               </p>
             </div>
 
