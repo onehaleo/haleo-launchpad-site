@@ -101,30 +101,30 @@ const Services = () => {
             </p>
           </div>
 
-          <div className="space-y-20">
+          <div className="space-y-16 sm:space-y-20">
             {services.map((service, index) => (
-              <div key={index} className="bg-white rounded-3xl p-8 md:p-12 shadow-xl">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+              <div key={index} className="bg-white rounded-3xl p-6 sm:p-8 lg:p-12 shadow-xl">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
                   <div>
-                    <div className="flex items-center gap-6 mb-6">
+                    <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6 mb-6 text-center sm:text-left">
                       {service.icon}
                       <div>
-                        <h2 className="text-3xl font-bold text-haleo-ink mb-2">{service.title}</h2>
-                        <p className="text-xl font-semibold text-haleo-violet">{service.subtitle}</p>
+                        <h2 className="text-2xl sm:text-3xl font-bold text-haleo-ink mb-2">{service.title}</h2>
+                        <p className="text-lg sm:text-xl font-semibold text-haleo-violet">{service.subtitle}</p>
                       </div>
                     </div>
                     
-                    <p className="text-lg text-haleo-gray mb-8 leading-relaxed">
+                    <p className="text-base sm:text-lg text-haleo-gray mb-8 leading-relaxed text-center sm:text-left">
                       {service.description}
                     </p>
 
                     {service.features.length > 0 && (
                       <div className="mb-6">
-                        <h4 className="font-semibold text-haleo-ink mb-4">What I automate for you:</h4>
+                        <h4 className="font-semibold text-haleo-ink mb-4 text-center sm:text-left">What I automate for you:</h4>
                         <ul className="space-y-3">
                           {service.features.map((feature, idx) => (
-                            <li key={idx} className="flex items-start text-haleo-gray">
-                              <div className="w-2 h-2 bg-haleo-violet rounded-full mt-3 mr-4 flex-shrink-0"></div>
+                            <li key={idx} className="flex items-start text-haleo-gray text-sm sm:text-base">
+                              <div className="w-2 h-2 bg-haleo-violet rounded-full mt-2 mr-4 flex-shrink-0"></div>
                               {feature}
                             </li>
                           ))}

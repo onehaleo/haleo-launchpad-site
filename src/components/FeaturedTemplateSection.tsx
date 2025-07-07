@@ -39,14 +39,14 @@ const FeaturedTemplateSection = () => {
   return (
     <section className="py-20 bg-haleo-cloud">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-haleo-ink mb-6">Featured Templates</h2>
-          <p className="text-xl text-haleo-gray max-w-3xl mx-auto">
+        <div className="text-center mb-12 sm:mb-16 px-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-haleo-ink mb-6">Featured Templates</h2>
+          <p className="text-lg sm:text-xl text-haleo-gray max-w-3xl mx-auto">
             Plug-and-play systems for solopreneurs who want clarity without the chaos.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12">
           {templates.map((template, index) => (
             <Card key={index} className={`shadow-lg hover:shadow-xl transition-all duration-300 ${template.comingSoon ? 'opacity-75' : 'hover:scale-105'}`}>
               <CardHeader className="pb-4">
@@ -86,10 +86,10 @@ const FeaturedTemplateSection = () => {
           ))}
         </div>
         
-        <div className="text-center">
+        <div className="text-center px-4">
           <Link 
             to="/templates" 
-            className="border-2 border-haleo-core text-haleo-core px-8 py-3 rounded-full hover:bg-haleo-core hover:text-white transition-all duration-300 inline-flex items-center gap-2"
+            className="border-2 border-haleo-core text-haleo-core px-6 sm:px-8 py-3 rounded-full hover:bg-haleo-core hover:text-white transition-all duration-300 inline-flex items-center gap-2 w-full sm:w-auto justify-center"
           >
             Browse All Templates
           </Link>

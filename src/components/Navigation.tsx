@@ -39,6 +39,13 @@ const Navigation = () => {
           
           <div className="hidden md:flex space-x-8">
             <Link 
+              to="/" 
+              className="text-haleo-gray hover:text-haleo-core transition-colors"
+              onClick={scrollToTop}
+            >
+              Home
+            </Link>
+            <Link 
               to="/services" 
               className="text-haleo-gray hover:text-haleo-core transition-colors"
               onClick={scrollToTop}
@@ -69,7 +76,7 @@ const Navigation = () => {
           </div>
 
           <div className="hidden md:block">
-            <button className="gradient-bg text-white px-6 py-2 rounded-full hover:opacity-90 transition-opacity">
+            <button className="gradient-bg text-white px-4 py-2 rounded-full hover:opacity-90 transition-opacity text-sm">
               Book Consult
             </button>
           </div>
@@ -84,6 +91,13 @@ const Navigation = () => {
         {isOpen && (
           <div className="md:hidden bg-white shadow-lg rounded-lg mt-2 p-4">
             <div className="flex flex-col space-y-4">
+              <Link 
+                to="/" 
+                className="text-left text-haleo-gray hover:text-haleo-core" 
+                onClick={() => { setIsOpen(false); scrollToTop(); }}
+              >
+                Home
+              </Link>
               <Link 
                 to="/services" 
                 className="text-left text-haleo-gray hover:text-haleo-core" 
@@ -112,7 +126,7 @@ const Navigation = () => {
               >
                 About
               </Link>
-              <button className="gradient-bg text-white px-6 py-2 rounded-full hover:opacity-90 transition-opacity">
+              <button className="gradient-bg text-white px-6 py-2 rounded-full hover:opacity-90 transition-opacity text-sm">
                 Book Consult
               </button>
             </div>
