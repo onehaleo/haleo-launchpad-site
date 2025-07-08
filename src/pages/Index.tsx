@@ -35,7 +35,7 @@ const Index = () => {
               View All Services
               <ArrowRight className="h-4 w-4" />
             </Link>
-            <p className="text-sm text-haleo-gray mt-2">Get expert help setting up your first automation</p>
+            
           </div>
         </section>
 
