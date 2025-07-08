@@ -26,10 +26,18 @@ const HeroSection = () => {
               Browse Templates
               <ArrowRight className="h-4 sm:h-5 w-4 sm:w-5" />
             </a>
+            <p className="text-sm text-haleo-gray -mt-2 sm:hidden">Delivered instantly via Notion</p>
             
-            <button className="border-2 border-haleo-core text-haleo-core px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:bg-haleo-core hover:text-white transition-all duration-300 w-full sm:w-auto">
-              Book Free Consult
-            </button>
+            <div className="flex flex-col items-center">
+              <button className="border-2 border-haleo-core text-haleo-core px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:bg-haleo-core hover:text-white transition-all duration-300 w-full sm:w-auto">
+                Book Free Consult
+              </button>
+              <p className="text-sm text-haleo-gray mt-2">Get expert help setting up your first automation</p>
+            </div>
+          </div>
+          
+          <div className="hidden sm:flex justify-center gap-8 mt-4">
+            <p className="text-sm text-haleo-gray">Delivered instantly via Notion</p>
           </div>
         </div>
         
