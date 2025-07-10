@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import PageTransition from '../components/PageTransition';
@@ -29,13 +30,13 @@ const WhyHaleo = () => {
   ];
 
   return (
-    <PageTransition>
+    <PageTransition animate={false}>
       <div className="min-h-screen">
         <Navigation />
         
         <section className="pt-32 pb-20 bg-gradient-to-br from-haleo-cloud via-white to-purple-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16 animate-fade-in">
+            <div className="text-center mb-16">
               <h1 className="text-5xl md:text-7xl font-bold text-haleo-ink mb-6 leading-tight">
                 Why <span className="gradient-text">Haleo</span>
               </h1>
@@ -47,7 +48,7 @@ const WhyHaleo = () => {
               </p>
             </div>
 
-            <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl mb-16 animate-slide-up">
+            <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl mb-16">
               <div className="max-w-4xl mx-auto text-center">
                 <p className="text-lg md:text-xl text-haleo-gray leading-relaxed mb-6">
                   Most solopreneurs are running their businesses on a patchwork of tools, reminders, and vibes.
@@ -68,7 +69,7 @@ const WhyHaleo = () => {
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {differentiators.map((item, index) => (
-                  <div key={index} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 animate-scale-in">
+                  <div key={index} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
                     <div className="flex items-start gap-6">
                       <div className="flex-shrink-0">
                         {item.icon}
@@ -83,26 +84,32 @@ const WhyHaleo = () => {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-haleo-core to-haleo-violet rounded-3xl p-8 md:p-12 text-white text-center mb-16 animate-fade-in">
+            <div className="bg-gradient-to-br from-haleo-core to-haleo-violet rounded-3xl p-8 md:p-12 text-white text-center mb-16">
               <blockquote className="text-xl md:text-2xl italic mb-6 leading-relaxed">
                 "Working with Haleo gave me structure without the stress. I finally have systems that feel like they were built for me — because they were."
               </blockquote>
             </div>
 
             <div className="text-center">
-              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-12 shadow-xl max-w-4xl mx-auto animate-slide-up">
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-12 shadow-xl max-w-4xl mx-auto">
                 <h3 className="text-3xl font-bold text-haleo-ink mb-4">Solopreneurs deserve powerful systems, too.</h3>
                 <p className="text-xl text-haleo-gray mb-8">
                   Let's build the backend your business actually needs.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <button className="gradient-bg text-white px-8 py-4 rounded-full text-lg font-semibold hover:opacity-90 transition-all duration-300 hover:scale-105 flex items-center gap-2 mx-auto shadow-lg">
+                  <Link 
+                    to="/services"
+                    className="gradient-bg text-white px-8 py-4 rounded-full text-lg font-semibold hover:opacity-90 transition-all duration-300 hover:scale-105 flex items-center gap-2 mx-auto shadow-lg"
+                  >
                     See Services
                     <ArrowRight className="h-5 w-5" />
-                  </button>
-                  <button className="border-2 border-haleo-core text-haleo-core px-8 py-4 rounded-full text-lg font-semibold hover:bg-haleo-core hover:text-white transition-all duration-300">
+                  </Link>
+                  <Link 
+                    to="/templates"
+                    className="border-2 border-haleo-core text-haleo-core px-8 py-4 rounded-full text-lg font-semibold hover:bg-haleo-core hover:text-white transition-all duration-300"
+                  >
                     Shop Templates
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>

@@ -89,7 +89,7 @@ const Services = () => {
   ];
 
   return (
-    <PageTransition>
+    <PageTransition animate={false}>
       <SEOHead 
         title="Business Automation Services | AI Agents & Custom Systems | Haleo"
         description="Professional automation services for solopreneurs. Custom AI agents, workflow automation, CRM systems, and done-with-you intensives. Start automating your business operations today."
@@ -111,7 +111,7 @@ const Services = () => {
 
             <div className="space-y-16 sm:space-y-20">
               {services.map((service, index) => (
-                <div key={index} className="bg-white rounded-3xl p-6 sm:p-8 lg:p-12 shadow-xl animate-fade-in">
+                <div key={index} className="bg-white rounded-3xl p-6 sm:p-8 lg:p-12 shadow-xl">
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
                     <div>
                       <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6 mb-6 text-center sm:text-left">

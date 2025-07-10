@@ -7,9 +7,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../co
 import { ArrowRight, Mail, CheckCircle } from 'lucide-react';
 
 const Templates = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   const templates = [
     {
@@ -88,7 +85,7 @@ const Templates = () => {
   ];
 
   return (
-    <PageTransition>
+    <PageTransition animate={false}>
       <SEOHead 
         title="Business Automation Templates | Notion CRM & Workflow Systems | Haleo"
         description="Ready-to-use Notion templates for solopreneurs. Get our CRM system, content planner, AI assistants, and business dashboards. One-time purchase, lifetime access."
@@ -99,7 +96,7 @@ const Templates = () => {
         
         <section className="pt-32 pb-20 bg-gradient-to-br from-haleo-cloud via-white to-purple-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16 animate-fade-in">
+            <div className="text-center mb-16">
               <h1 className="text-5xl md:text-7xl font-bold text-haleo-ink mb-6 leading-tight">
                 <span className="gradient-text">Templates</span>
               </h1>
@@ -187,7 +184,7 @@ const Templates = () => {
             </div>
 
             {/* Template Includes */}
-            <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl mb-16 animate-slide-up">
+            <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl mb-16">
               <h3 className="text-2xl font-bold text-haleo-ink text-center mb-8">Every Template Includes:</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {templateIncludes.map((item, index) => (
@@ -209,7 +206,7 @@ const Templates = () => {
 
             {/* Bottom CTA Section */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-              <div className="bg-white rounded-2xl p-8 shadow-lg animate-slide-in">
+              <div className="bg-white rounded-2xl p-8 shadow-lg">
                 <h3 className="text-2xl font-bold text-haleo-ink mb-6">Coming Soon</h3>
                 <ul className="space-y-4">
                   {comingSoon.map((item, index) => (
@@ -236,7 +233,7 @@ const Templates = () => {
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-haleo-core to-haleo-violet rounded-2xl p-8 text-white animate-slide-in">
+              <div className="bg-gradient-to-br from-haleo-core to-haleo-violet rounded-2xl p-8 text-white">
                 <h3 className="text-2xl font-bold mb-6">Need something custom?</h3>
                 <p className="text-lg mb-8 leading-relaxed">
                   If your workflow doesn't fit a template — good.<br/>
