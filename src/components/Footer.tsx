@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Instagram, Youtube, Linkedin, Music } from 'lucide-react';
 import { useContent } from '../hooks/useContent';
 
@@ -45,9 +46,15 @@ const Footer = () => {
             <ul className="space-y-2">
               {content.footer.links.services.items.map((item, index) => (
                 <li key={index}>
-                  <a href={item.url} className="text-gray-300 hover:text-white transition-colors">
-                    {item.text}
-                  </a>
+                  {item.url.startsWith('/') ? (
+                    <Link to={item.url} className="text-gray-300 hover:text-white transition-colors">
+                      {item.text}
+                    </Link>
+                  ) : (
+                    <a href={item.url} className="text-gray-300 hover:text-white transition-colors">
+                      {item.text}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
@@ -58,9 +65,15 @@ const Footer = () => {
             <ul className="space-y-2">
               {content.footer.links.legal.items.map((item, index) => (
                 <li key={index}>
-                  <a href={item.url} className="text-gray-300 hover:text-white transition-colors">
-                    {item.text}
-                  </a>
+                  {item.url.startsWith('/') || item.url.startsWith('#') ? (
+                    <Link to={item.url} className="text-gray-300 hover:text-white transition-colors">
+                      {item.text}
+                    </Link>
+                  ) : (
+                    <a href={item.url} className="text-gray-300 hover:text-white transition-colors">
+                      {item.text}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
