@@ -22,7 +22,7 @@ const NotFound = () => {
             <div className="bg-white rounded-3xl p-8 sm:p-12 lg:p-16 shadow-xl">
               <div className="mb-8">
                 <div className="text-8xl sm:text-9xl font-bold gradient-text mb-6">404</div>
-                <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-9xl font-bold text-haleo-ink mb-6">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-haleo-ink mb-6">
                   Oops! Page Not Found
                 </h1>
                 <p className="text-lg sm:text-xl text-haleo-gray max-w-2xl mx-auto mb-8">
