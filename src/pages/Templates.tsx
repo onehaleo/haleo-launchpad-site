@@ -219,13 +219,13 @@ const Templates = () => {
                 
                 <div className="mt-8 bg-haleo-cloud rounded-xl p-6">
                   <p className="text-haleo-ink font-semibold mb-4">Want early access + launch discounts?</p>
-                  <div className="flex gap-3">
+                  <div className="flex flex-col sm:flex-row gap-3">
                     <input 
                       type="email" 
                       placeholder="Enter your email"
-                      className="flex-1 px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-haleo-violet transition-all duration-300"
+                      className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-haleo-violet transition-all duration-300 min-w-0"
                     />
-                    <button className="gradient-bg text-white px-6 py-2 rounded-lg hover:opacity-90 transition-all duration-300 flex items-center gap-2">
+                    <button className="gradient-bg text-white px-6 py-3 rounded-lg hover:opacity-90 transition-all duration-300 flex items-center justify-center gap-2 whitespace-nowrap">
                       <Mail className="h-4 w-4" />
                       Join
                     </button>

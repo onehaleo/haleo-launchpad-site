@@ -81,13 +81,13 @@ const Footer = () => {
             </ul>
             <div className="mt-6">
               <p className="text-gray-400 text-sm">{content.footer.newsletter.description}</p>
-              <div className="flex flex-col sm:flex-row gap-2 mt-2">
+              <div className="flex flex-col sm:flex-row gap-3 mt-2">
                 <input 
                   type="email" 
                   placeholder={content.footer.newsletter.placeholder}
-                  className="bg-haleo-gray text-white px-3 py-2 rounded-lg flex-1 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-haleo-violet text-sm"
+                  className="bg-haleo-gray text-white px-3 py-3 rounded-lg flex-1 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-haleo-violet text-sm min-w-0"
                 />
-                <button className="gradient-bg px-4 py-2 rounded-lg hover:opacity-90 transition-opacity text-sm">
+                <button className="gradient-bg px-4 py-3 rounded-lg hover:opacity-90 transition-opacity text-sm whitespace-nowrap">
                   {content.footer.newsletter.cta}
                 </button>
               </div>
