@@ -11,7 +11,7 @@ const Services = () => {
       icon: <Settings className="h-16 w-16 text-haleo-violet" />,
       title: "Automation Systems",
       subtitle: "Ditch the daily busywork.",
-      description: "Your time is too valuable to waste on repetitive tasks. I design custom automation systems that take work off your plate and make your business run smoother while you sleep.",
+      description: "Your time is too valuable to waste on repetitive tasks. Haleo designs custom automation systems that take work off your plate and make your business run smoother while you sleep.",
       features: [
         "Lead capture to CRM (yep, even without you touching a form)",
         "Proposal, contract, and invoice workflows", 
@@ -28,7 +28,7 @@ const Services = () => {
       icon: <Brain className="h-16 w-16 text-haleo-violet" />,
       title: "AI-Powered Systems", 
       subtitle: "AI is your assistant now — not your enemy.",
-      description: "Whether you're ready to clone your brain or delegate that client Q&A, I'll build AI agents that actually understand your workflows.",
+      description: "Whether you're ready to clone your brain or delegate that client Q&A, Haleo builds AI agents that actually understand your workflows.",
       features: [
         "AI project manager",
         "Personalized client assistant",
@@ -44,7 +44,7 @@ const Services = () => {
       icon: <Database className="h-16 w-16 text-haleo-violet" />,
       title: "Templates (But Make Them Smart)",
       subtitle: "Plug-and-play systems that feel custom.",
-      description: "Not ready to invest in done-for-you? My Notion-based templates are designed for solopreneurs who want clarity, systems, and strategy in one beautiful dashboard.",
+      description: "Not ready to invest in done-for-you? Haleo's Notion-based templates are designed for solopreneurs who want clarity, systems, and strategy in one beautiful dashboard.",
       features: [
         "Solopreneur CRM (client, task & content tracking)",
         "HQ Notion Command Center",
@@ -59,7 +59,7 @@ const Services = () => {
       icon: <Wrench className="h-16 w-16 text-haleo-violet" />,
       title: "Custom Systems",
       subtitle: "Your business doesn't fit a template. Good.",
-      description: "That's where I come in. I'll help you design a lightweight operations stack that works exactly how you work — no extra apps, fluff, or overwhelm.",
+      description: "That's where Haleo comes in. Haleo helps you design a lightweight operations stack that works exactly how you work — no extra apps, fluff, or overwhelm.",
       features: [
         "A fully mapped client journey",
         "Tools + tech to support your workflow",
@@ -75,7 +75,7 @@ const Services = () => {
       icon: <Calendar className="h-16 w-16 text-haleo-violet" />,
       title: "Done-With-You Intensives",
       subtitle: "Build it. Fix it. Upgrade it — together.",
-      description: "Whether you need a systems refresh or a Notion co-build session, you'll get my brain on your business (without the full custom price tag).",
+      description: "Whether you need a systems refresh or a Notion co-build session, you'll get Haleo's expertise on your business (without the full custom price tag).",
       features: [
         "90-minute power sessions",
         "1-day intensives",
@@ -128,7 +128,7 @@ const Services = () => {
 
                       {service.features.length > 0 && (
                         <div className="mb-6">
-                          <h4 className="font-semibold text-haleo-ink mb-4 text-center sm:text-left">What I automate for you:</h4>
+                          <h4 className="font-semibold text-haleo-ink mb-4 text-center sm:text-left">What Haleo automates for you:</h4>
                           <ul className="space-y-3">
                             {service.features.map((feature, idx) => (
                               <li key={idx} className="flex items-start text-haleo-gray text-sm sm:text-base">
@@ -143,7 +143,7 @@ const Services = () => {
                       {service.platforms && (
                         <div className="mb-6">
                           <p className="text-sm text-haleo-gray text-center sm:text-left">
-                            <strong>Platforms I work with:</strong> {service.platforms}
+                            <strong>Platforms Haleo works with:</strong> {service.platforms}
                           </p>
                         </div>
                       )}
@@ -171,7 +171,7 @@ const Services = () => {
               <div className="bg-gradient-to-br from-haleo-core to-haleo-violet rounded-3xl p-8 lg:p-12 text-white">
                 <h3 className="text-3xl lg:text-4xl font-bold mb-6">Ready to stop DIYing your backend?</h3>
                 <p className="text-lg lg:text-xl mb-8 max-w-4xl mx-auto leading-relaxed">
-                  I'll help you clear the clutter and build operations that scale with you — not against you.
+                  Haleo helps you clear the clutter and build operations that scale with you — not against you.
                 </p>
                 <p className="text-base lg:text-lg mb-8">
                   Book a free consult or shop the templates to get started today.
