@@ -24,11 +24,13 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="lg:col-span-2">
-            <img 
-              src={content.footer.logo}
-              alt={content.site.name}
-              className="h-10 w-auto mb-6 brightness-0 invert"
-            />
+            <div className="bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg inline-block mb-6">
+              <img 
+                src={content.footer.logo}
+                alt={content.site.name}
+                className="h-6 w-auto"
+              />
+            </div>
             <p className="text-gray-300 mb-6 max-w-md">
               {content.footer.description}
             </p>
