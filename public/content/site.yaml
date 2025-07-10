@@ -1,0 +1,211 @@
+# Site Configuration
+site:
+  name: "Haleo"
+  tagline: "Automation that works while you don't"
+  description: "Simple, scalable automation systems for solopreneurs who value their time"
+  email: "hello@onehaleo.com"
+  website: "https://onehaleo.com"
+
+# Brand Colors
+brand:
+  colors:
+    primary: "#6366f1"
+    secondary: "#8b5cf6"
+    accent: "#06b6d4"
+    neutral: "#64748b"
+
+# Hero Section
+hero:
+  headline: "Automation that works"
+  headline_accent: "while you don't."
+  subhead: "Haleo builds simple, scalable automation systems for solopreneurs — so you can ditch the chaos and get back to what you do best."
+  description: "Custom templates, AI agents, and business workflows that scale with your growth."
+  cta_primary:
+    text: "Browse Templates"
+    url: "https://onehaleo.gumroad.com"
+  cta_secondary:
+    text: "Book Free Consult"
+    url: "#"
+  stats:
+    - number: "50+"
+      label: "Templates Created"
+    - number: "100%"
+      label: "Solopreneur Focused"
+    - number: "24/7"
+      label: "Automation Running"
+
+# Navigation
+navigation:
+  logo: "/lovable-uploads/8bf9a199-52de-4152-9751-1a25c3bd7e0d.png"
+  items:
+    - text: "Home"
+      url: "/"
+    - text: "Services"
+      url: "/services"
+    - text: "Why Haleo"
+      url: "/why-haleo"
+    - text: "Templates"
+      url: "/templates"
+    - text: "About"
+      url: "/about"
+  cta:
+    text: "Book Consult"
+    url: "#"
+
+# Services Section
+services:
+  title: "What We"
+  title_accent: "Offer"
+  description: "Everything you need to automate your business and reclaim your time"
+  items:
+    - title: "Automation Services"
+      description: "Custom Make.com + Notion workflows"
+      icon: "settings"
+      features:
+        - "Seamless integrations"
+        - "Custom workflows"
+        - "Zero-maintenance setup"
+    - title: "AI Agents"
+      description: "Smart systems trained on your business"
+      icon: "brain"
+      features:
+        - "Business-specific training"
+        - "24/7 availability"
+        - "Continuous learning"
+    - title: "Notion Templates"
+      description: "Beautiful dashboards, ready in minutes"
+      icon: "database"
+      features:
+        - "Plug-and-play design"
+        - "Mobile optimized"
+        - "Regular updates"
+  cta:
+    text: "Book a Free Consult"
+    url: "#"
+
+# Index Page Sections
+index:
+  services_preview:
+    title: "💼 Done-For-You Services"
+    description: "From custom automation workflows to AI-powered agents, we build scalable systems that work 24/7 while you focus on strategic growth and business development."
+    cta:
+      text: "View All Services"
+      url: "/services"
+  
+  seo_section:
+    title: "Automation Systems Built for Solopreneurs Who Scale"
+    paragraphs:
+      - "Haleo builds done-for-you automation systems, custom AI agents, and business templates across tools like Notion, Zapier, and Make.com. Whether you're just starting or scaling fast, Haleo makes your systems smarter."
+      - "From Notion CRM templates to custom AI agents, our automation solutions help solopreneurs ditch the chaos and focus on what they do best. Join 100+ business owners who've automated their workflows with Haleo."
+    testimonial:
+      quote: "I didn't realize how much time I was losing until Haleo automated my entire intake system. Now I get leads, convert them, and onboard clients while I sleep."
+      author: "— Sarah K., Marketing Consultant"
+      rating: 5
+  
+  why_haleo_preview:
+    title: "🤖 Why Solopreneurs Choose Haleo"
+    description: "Purpose-built automation systems for solopreneurs and small business owners who need scalable solutions without enterprise complexity or overhead costs."
+    cta:
+      text: "Learn More"
+      url: "/why-haleo"
+    sub_text: "See how we've helped 100+ solopreneurs scale"
+
+# Featured Templates
+templates:
+  title: "Featured Templates"
+  description: "Plug-and-play systems for solopreneurs who want clarity without the chaos."
+  featured:
+    - title: "Solopreneur CRM"
+      description: "Your entire client experience in one intuitive dashboard."
+      price: "$47"
+      features:
+        - "Client database"
+        - "Task tracking"
+        - "Meeting logs"
+        - "Custom views"
+      url: "https://onehaleo.gumroad.com/l/solopreneur-crm"
+    - title: "Notion HQ Dashboard"
+      description: "Your business brain, all in one place."
+      price: "$29"
+      features:
+        - "Daily dashboard"
+        - "Habit tracker"
+        - "Business metrics"
+        - "Clean layout"
+      url: "https://onehaleo.gumroad.com"
+    - title: "Content Planner"
+      description: "Stop losing your best ideas. Start showing up consistently."
+      price: "$17"
+      features:
+        - "Content calendar"
+        - "Platform tracker"
+        - "Idea bank"
+        - "Hashtag library"
+      url: "https://onehaleo.gumroad.com"
+    - title: "AI Q&A Assistant"
+      description: "Smart client support that understands your business."
+      price: "Coming Soon"
+      features:
+        - "Custom training"
+        - "Brand voice"
+        - "Auto responses"
+        - "Private & secure"
+      url: "#"
+      coming_soon: true
+  cta:
+    text: "Browse All Templates"
+    url: "/templates"
+
+# Footer
+footer:
+  description: "Automation that works while you don't. Simple, scalable systems for solopreneurs who value their time."
+  logo: "/lovable-uploads/8bf9a199-52de-4152-9751-1a25c3bd7e0d.png"
+  social_links:
+    - platform: "instagram"
+      url: "#"
+    - platform: "tiktok"
+      url: "#"
+    - platform: "youtube"
+      url: "#"
+    - platform: "linkedin"
+      url: "#"
+  
+  links:
+    services:
+      title: "Services"
+      items:
+        - text: "Automation Systems"
+          url: "/services"
+        - text: "AI Agents"
+          url: "/services"
+        - text: "Templates"
+          url: "/templates"
+        - text: "Custom Systems"
+          url: "/services"
+    
+    legal:
+      title: "Legal & Support"
+      items:
+        - text: "About"
+          url: "/about"
+        - text: "Why Haleo"
+          url: "/why-haleo"
+        - text: "Terms & License"
+          url: "#"
+        - text: "Contact"
+          url: "mailto:hello@onehaleo.com"
+  
+  newsletter:
+    description: "Get automation tips and new templates first."
+    placeholder: "Enter your email"
+    cta: "Subscribe"
+  
+  copyright: "© 2024 Haleo LLC. All rights reserved."
+  license_text: "By purchasing templates, you agree to our license terms."
+
+# SEO
+seo:
+  default:
+    title: "Haleo - Automation Systems That Work While You Don't | Solopreneur Tools"
+    description: "Build scalable business automation systems for solopreneurs. Get custom templates, AI agents, and automated workflows that work 24/7. Start automating your business today."
+    keywords: "automation systems, solopreneur automation, business automation tools, AI agents, workflow automation, small business productivity, custom templates, automated systems"
