@@ -27,12 +27,14 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center">
-            <Link to="/">
-              <img 
-                src={content.navigation.logo}
-                alt={content.site.name}
-                className="h-8 w-auto"
-              />
+            <Link to="/" className="flex items-center">
+              <div className="bg-white/90 backdrop-blur-sm rounded-full p-2 shadow-lg hover:bg-white transition-all duration-300 hover:scale-105">
+                <img 
+                  src={content.navigation.logo}
+                  alt={content.site.name}
+                  className="h-6 w-auto"
+                />
+              </div>
             </Link>
           </div>
           
