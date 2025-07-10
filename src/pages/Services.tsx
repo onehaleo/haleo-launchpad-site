@@ -140,6 +140,31 @@ const Services = () => {
                         </div>
                       )}
 
+                      {service.title === "AI-Powered Systems" && (
+                        <div className="mb-6 p-4 bg-haleo-cloud rounded-xl border-l-4 border-haleo-violet">
+                          <h4 className="font-semibold text-haleo-ink mb-3 text-center sm:text-left">🔹 Every Haleo Agent Includes Access to the Haleo AI Studio</h4>
+                          <p className="text-sm text-haleo-gray mb-3 text-center sm:text-left">
+                            Your custom-built AI agents don't just run in the background—they come with their own interactive command center inside the Haleo AI Studio.
+                          </p>
+                          <p className="text-sm text-haleo-gray mb-3 text-center sm:text-left">
+                            This dashboard gives you full visibility into what your agents are doing and how they're performing—without needing to touch any code.
+                          </p>
+                          <div className="text-sm text-haleo-gray mb-3">
+                            <p className="font-medium mb-2 text-center sm:text-left">Inside the Haleo AI Studio, you can:</p>
+                            <ul className="space-y-1 ml-4">
+                              <li>• View agent activity and outputs in real time</li>
+                              <li>• Upload and manage the files your agents reference</li>
+                              <li>• Customize tone, behavior, and key instructions</li>
+                              <li>• Monitor performance metrics like response time and interaction volume</li>
+                              <li>• Easily request updates or refinements as your business evolves</li>
+                            </ul>
+                          </div>
+                          <p className="text-sm text-haleo-gray text-center sm:text-left">
+                            Whether you're launching one agent or scaling a full AI ecosystem, Haleo AI Studio gives you the tools to stay in control while staying focused on what matters.
+                          </p>
+                        </div>
+                      )}
+
                       {service.platforms && (
                         <div className="mb-6">
                           <p className="text-sm text-haleo-gray text-center sm:text-left">
