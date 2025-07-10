@@ -18,7 +18,7 @@ const Index = () => {
   if (!content) return <div>No content available</div>;
 
   return (
-    <PageTransition>
+    <PageTransition animate={true}>
       <SEOHead 
         title={content.seo.default.title}
         description={content.seo.default.description}

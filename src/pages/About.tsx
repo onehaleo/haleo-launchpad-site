@@ -20,13 +20,13 @@ const About = () => {
   ];
 
   return (
-    <PageTransition>
+    <PageTransition animate={false}>
       <div className="min-h-screen">
         <Navigation />
         
         <section className="pt-32 pb-20 bg-gradient-to-br from-haleo-cloud via-white to-purple-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16 animate-fade-in">
+            <div className="text-center mb-16">
               <h1 className="text-5xl md:text-7xl font-bold text-haleo-ink mb-6 leading-tight">
                 Hey, I'm <span className="gradient-text">Alexis</span> 👋
               </h1>
@@ -36,7 +36,7 @@ const About = () => {
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-20">
-              <div className="bg-white rounded-3xl p-8 shadow-xl animate-scale-in">
+              <div className="bg-white rounded-3xl p-8 shadow-xl">
                 <div className="text-center mb-8">
                   <div className="w-32 h-32 bg-gradient-to-br from-haleo-core to-haleo-violet rounded-full mx-auto mb-6 flex items-center justify-center">
                     <span className="text-white text-4xl font-bold">A</span>
@@ -46,7 +46,7 @@ const About = () => {
                 </div>
               </div>
 
-              <div className="space-y-6 animate-slide-in">
+              <div className="space-y-6">
                 <p className="text-lg md:text-xl text-haleo-gray leading-relaxed">
                   I started Haleo because I was tired of seeing smart, capable solopreneurs stuck in messy ops, half-baked templates, or spending hours on things that should take seconds.
                 </p>
@@ -72,7 +72,7 @@ const About = () => {
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-              <div className="bg-white rounded-2xl p-8 shadow-lg animate-slide-up">
+              <div className="bg-white rounded-2xl p-8 shadow-lg">
                 <h3 className="text-2xl font-bold text-haleo-ink mb-6">What I do at Haleo:</h3>
                 <ul className="space-y-4">
                   {whatIDo.map((item, index) => (
@@ -84,7 +84,7 @@ const About = () => {
                 </ul>
               </div>
 
-              <div className="bg-white rounded-2xl p-8 shadow-lg animate-slide-up">
+              <div className="bg-white rounded-2xl p-8 shadow-lg">
                 <h3 className="text-2xl font-bold text-haleo-ink mb-6">What I believe:</h3>
                 <ul className="space-y-4">
                   {beliefs.map((belief, index) => (
@@ -97,7 +97,7 @@ const About = () => {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-haleo-core to-haleo-violet rounded-3xl p-8 md:p-12 text-white text-center mb-16 animate-fade-in">
+            <div className="bg-gradient-to-br from-haleo-core to-haleo-violet rounded-3xl p-8 md:p-12 text-white text-center mb-16">
               <p className="text-xl md:text-2xl leading-relaxed mb-6">
                 Whether you're buying a plug-and-play template or booking a full custom build, my goal is the same:
               </p>
@@ -107,7 +107,7 @@ const About = () => {
             </div>
 
             <div className="text-center">
-              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-12 shadow-xl max-w-4xl mx-auto animate-scale-in">
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-12 shadow-xl max-w-4xl mx-auto">
                 <h3 className="text-3xl font-bold gradient-text mb-6">
                   Let's build a business that runs beautifully behind the scenes.
                 </h3>
