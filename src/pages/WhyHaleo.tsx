@@ -15,7 +15,7 @@ const WhyHaleo = () => {
     {
       icon: <Shield className="h-16 w-16 text-haleo-violet" />,
       title: "Data-secure by design", 
-      description: "No shady scraping. No mystery automations. I use trusted tools like Make, Notion, and Wave — and build everything with ethical AI principles and private data handling in mind. Your systems stay yours."
+      description: "No shady scraping. No mystery automations. Haleo uses trusted tools like Make, Airtable, and ClickUp — and builds everything with ethical AI principles and private data handling in mind. Your systems stay yours."
     },
     {
       icon: <Users className="h-16 w-16 text-haleo-violet" />,

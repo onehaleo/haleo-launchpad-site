@@ -28,7 +28,7 @@ const Templates = () => {
       featured: true
     },
     {
-      title: "Notion HQ Dashboard", 
+      title: "Business HQ Dashboard", 
       description: "Your business brain, all in one place.",
       price: "$29",
       features: [
@@ -73,7 +73,7 @@ const Templates = () => {
 
   const templateIncludes = [
     "Lifetime access",
-    "One-click Notion duplication", 
+    "One-click setup", 
     "Instructions + onboarding notes",
     "Clean, minimalist design",
     "Built with real business strategy"
@@ -87,9 +87,9 @@ const Templates = () => {
   return (
     <PageTransition animate={false}>
       <SEOHead 
-        title="Business Automation Templates | Notion CRM & Workflow Systems | Haleo"
-        description="Ready-to-use Notion templates for solopreneurs. Get our CRM system, content planner, AI assistants, and business dashboards. One-time purchase, lifetime access."
-        keywords="notion templates, business templates, solopreneur CRM, automation templates, notion systems, business dashboards, content planning templates"
+        title="Business Automation Templates | CRM & Workflow Systems | Haleo"
+        description="Ready-to-use business templates for solopreneurs. Get our CRM system, content planner, AI assistants, and business dashboards. One-time purchase, lifetime access."
+        keywords="business templates, solopreneur CRM, automation templates, workflow systems, business dashboards, content planning templates"
       />
       <div className="min-h-screen">
         <Navigation />
@@ -107,7 +107,7 @@ const Templates = () => {
                 You've got clients to serve, content to post, and a business to grow — you don't have time to start from scratch every time you need a process.
               </p>
               <p className="text-lg text-haleo-gray max-w-3xl mx-auto leading-relaxed">
-                That's why I built these Notion templates: Clean, powerful systems that help you stay organized, deliver faster, and actually enjoy your backend.
+                That's why Haleo builds these business templates: Clean, powerful systems that help you stay organized, deliver faster, and actually enjoy your backend.
               </p>
               <div className="mt-8">
                 <p className="text-xl font-semibold text-haleo-core">

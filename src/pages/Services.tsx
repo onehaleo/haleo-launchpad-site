@@ -19,7 +19,7 @@ const Services = () => {
         "Payment + follow-up automations",
         "Internal ops (task creation, file sorting, reminders)"
       ],
-      platforms: "Make, Zapier, Notion, Wave, Airtable, and more.",
+      platforms: "Make, Zapier, Airtable, ClickUp, Wave, and more.",
       testimonial: "I didn't realize how much time I was losing until Haleo automated my entire intake system.",
       ctaText: "Book a Free Audit",
       ctaSubtext: "Let's map out your automation"
@@ -44,10 +44,10 @@ const Services = () => {
       icon: <Database className="h-16 w-16 text-haleo-violet" />,
       title: "Templates (But Make Them Smart)",
       subtitle: "Plug-and-play systems that feel custom.",
-      description: "Not ready to invest in done-for-you? Haleo's Notion-based templates are designed for solopreneurs who want clarity, systems, and strategy in one beautiful dashboard.",
+      description: "Not ready to invest in done-for-you? Haleo's ready-made templates are designed for solopreneurs who want clarity, systems, and strategy across their favorite platforms.",
       features: [
         "Solopreneur CRM (client, task & content tracking)",
-        "HQ Notion Command Center",
+        "Business HQ Command Center",
         "Mini systems (content planner, engagement tracker)"
       ],
       platforms: "One-time buy. Lifetime use.",
@@ -75,7 +75,7 @@ const Services = () => {
       icon: <Calendar className="h-16 w-16 text-haleo-violet" />,
       title: "Done-With-You Intensives",
       subtitle: "Build it. Fix it. Upgrade it — together.",
-      description: "Whether you need a systems refresh or a Notion co-build session, you'll get Haleo's expertise on your business (without the full custom price tag).",
+      description: "Whether you need a systems refresh or a template co-build session, you'll get Haleo's expertise on your business (without the full custom price tag).",
       features: [
         "90-minute power sessions",
         "1-day intensives",

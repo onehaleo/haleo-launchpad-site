@@ -15,7 +15,7 @@ const About = () => {
   const whatIDo = [
     "Build custom automations for things like lead gen, onboarding, invoicing, and internal ops",
     "Design AI agents that actually understand your workflows",
-    "Create clean, powerful Notion templates (like CRMs and central dashboards)",
+    "Create clean, powerful templates across platforms (like CRMs and central dashboards)",
     "Offer intensives for strategy, co-builds, or systems cleanup"
   ];
 
