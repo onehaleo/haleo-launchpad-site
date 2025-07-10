@@ -3,12 +3,14 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { useContent, scrollToTop } from '../hooks/useContent';
+import { useNavigationLoading } from '../hooks/useNavigation';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const { content, loading, error } = useContent();
+  const { startLoading } = useNavigationLoading();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,7 +29,14 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center">
-            <Link to="/" className="flex items-center">
+            <Link 
+              to="/" 
+              className="flex items-center"
+              onClick={() => {
+                startLoading();
+                scrollToTop();
+              }}
+            >
               <div className="bg-white/90 backdrop-blur-sm rounded-full p-2 shadow-lg hover:bg-white transition-all duration-300 hover:scale-105">
                 <img 
                   src={content.navigation.logo}
@@ -44,7 +53,10 @@ const Navigation = () => {
                 key={index}
                 to={item.url}
                 className="text-white hover:text-haleo-violet transition-all duration-300"
-                onClick={scrollToTop}
+                onClick={() => {
+                  startLoading();
+                  scrollToTop();
+                }}
               >
                 {item.text}
               </Link>
@@ -72,7 +84,11 @@ const Navigation = () => {
                   key={index}
                   to={item.url}
                   className="text-left text-haleo-gray hover:text-haleo-core transition-all duration-300" 
-                  onClick={() => { setIsOpen(false); scrollToTop(); }}
+                  onClick={() => { 
+                    setIsOpen(false); 
+                    startLoading();
+                    scrollToTop(); 
+                  }}
                 >
                   {item.text}
                 </Link>
