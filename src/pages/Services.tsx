@@ -101,7 +101,7 @@ const Services = () => {
         <div className="pt-20 sm:pt-24 pb-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12 sm:mb-16 px-4">
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-7xl font-bold text-haleo-ink mb-6 leading-tight">
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-9xl font-bold text-haleo-ink mb-6 leading-tight">
                 Business Automation <span className="gradient-text">Services</span>
               </h1>
               <p className="text-lg sm:text-xl lg:text-2xl text-haleo-gray max-w-4xl mx-auto leading-relaxed">

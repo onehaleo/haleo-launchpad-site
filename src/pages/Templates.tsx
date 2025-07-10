@@ -97,7 +97,7 @@ const Templates = () => {
         <section className="pt-32 pb-20 bg-gradient-to-br from-haleo-cloud via-white to-purple-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-7xl font-bold text-haleo-ink mb-6 leading-tight">
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-9xl font-bold text-haleo-ink mb-6 leading-tight">
                 <span className="gradient-text">Templates</span>
               </h1>
               <p className="text-xl md:text-2xl text-haleo-gray max-w-4xl mx-auto leading-relaxed mb-8">
