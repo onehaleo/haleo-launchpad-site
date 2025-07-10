@@ -1,7 +1,7 @@
 # Site Configuration
 site:
   name: "Haleo"
-  tagline: "Automation that works while you don't"
+  tagline: "Testing out yaml file!"
   description: "Simple, scalable automation systems for solopreneurs who value their time"
   email: "hello@onehaleo.com"
   website: "https://onehaleo.com"
