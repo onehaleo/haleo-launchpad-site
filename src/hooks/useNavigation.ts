@@ -9,7 +9,7 @@ export const useNavigationLoading = () => {
     setIsLoading(true);
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 800); // 800ms loading time for smooth UX
+    }, 300); // Reduced to 300ms for quicker transitions
 
     return () => clearTimeout(timer);
   }, [location.pathname]);
