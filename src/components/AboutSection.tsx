@@ -19,7 +19,7 @@ const AboutSection = () => {
                 <div className="w-24 h-24 bg-gradient-to-br from-haleo-core to-haleo-violet rounded-full mx-auto mb-4 flex items-center justify-center">
                   <span className="text-white text-2xl font-bold">A</span>
                 </div>
-                <h3 className="text-2xl font-bold text-haleo-ink">Hi, I'm Alexis 👋</h3>
+                <h3 className="text-2xl font-bold text-haleo-ink">Hi, I'm Alexis</h3>
                 <p className="text-haleo-gray">Founder & Automation Architect</p>
               </div>
               
@@ -47,7 +47,7 @@ const AboutSection = () => {
               </p>
               
               <p className="text-lg md:text-xl text-haleo-gray leading-relaxed mb-8">
-                Founded by a one-person team (hi, I'm Alexis 👋), Haleo was born from a love of automation and a refusal to hustle 24/7.
+                Founded by a one-person team (hi, I'm Alexis), Haleo was born from a love of automation and a refusal to hustle 24/7.
               </p>
             </div>
 
