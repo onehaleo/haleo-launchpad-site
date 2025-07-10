@@ -7,7 +7,7 @@ const HeroSection = () => {
     <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-haleo-cloud via-white to-purple-50 pt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="animate-fade-in">
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-haleo-ink mb-6 leading-tight px-4">
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-9xl font-bold text-haleo-ink mb-6 leading-tight px-4">
             Automation that works{' '}
             <span className="gradient-text">while you don't.</span>
           </h1>
