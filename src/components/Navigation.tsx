@@ -2,16 +2,13 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
-
-// Utility function to scroll to top when navigating
-const scrollToTop = () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-};
+import { useContent, scrollToTop } from '../hooks/useContent';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const { content, loading, error } = useContent();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,6 +17,8 @@ const Navigation = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  if (loading || error || !content) return null;
 
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
@@ -30,54 +29,29 @@ const Navigation = () => {
           <div className="flex items-center">
             <Link to="/">
               <img 
-                src="/lovable-uploads/8bf9a199-52de-4152-9751-1a25c3bd7e0d.png" 
-                alt="Haleo"
+                src={content.navigation.logo}
+                alt={content.site.name}
                 className="h-8 w-auto"
               />
             </Link>
           </div>
           
           <div className="hidden md:flex space-x-8">
-            <Link 
-              to="/" 
-              className="text-white hover:text-haleo-violet transition-all duration-300"
-              onClick={scrollToTop}
-            >
-              Home
-            </Link>
-            <Link 
-              to="/services" 
-              className="text-white hover:text-haleo-violet transition-all duration-300"
-              onClick={scrollToTop}
-            >
-              Services
-            </Link>
-            <Link 
-              to="/why-haleo" 
-              className="text-white hover:text-haleo-violet transition-all duration-300"
-              onClick={scrollToTop}
-            >
-              Why Haleo
-            </Link>
-            <Link 
-              to="/templates" 
-              className="text-white hover:text-haleo-violet transition-all duration-300"
-              onClick={scrollToTop}
-            >
-              Templates
-            </Link>
-            <Link 
-              to="/about" 
-              className="text-white hover:text-haleo-violet transition-all duration-300"
-              onClick={scrollToTop}
-            >
-              About
-            </Link>
+            {content.navigation.items.map((item, index) => (
+              <Link 
+                key={index}
+                to={item.url}
+                className="text-white hover:text-haleo-violet transition-all duration-300"
+                onClick={scrollToTop}
+              >
+                {item.text}
+              </Link>
+            ))}
           </div>
 
           <div className="hidden md:block">
             <button className="gradient-bg text-white px-4 py-2 rounded-full hover:opacity-90 transition-all duration-300 text-sm">
-              Book Consult
+              {content.navigation.cta.text}
             </button>
           </div>
 
@@ -91,43 +65,18 @@ const Navigation = () => {
         {isOpen && (
           <div className="md:hidden bg-white shadow-lg rounded-lg mt-2 p-4">
             <div className="flex flex-col space-y-4">
-              <Link 
-                to="/" 
-                className="text-left text-haleo-gray hover:text-haleo-core transition-all duration-300" 
-                onClick={() => { setIsOpen(false); scrollToTop(); }}
-              >
-                Home
-              </Link>
-              <Link 
-                to="/services" 
-                className="text-left text-haleo-gray hover:text-haleo-core transition-all duration-300" 
-                onClick={() => { setIsOpen(false); scrollToTop(); }}
-              >
-                Services
-              </Link>
-              <Link 
-                to="/why-haleo" 
-                className="text-left text-haleo-gray hover:text-haleo-core transition-all duration-300" 
-                onClick={() => { setIsOpen(false); scrollToTop(); }}
-              >
-                Why Haleo
-              </Link>
-              <Link 
-                to="/templates" 
-                className="text-left text-haleo-gray hover:text-haleo-core transition-all duration-300" 
-                onClick={() => { setIsOpen(false); scrollToTop(); }}
-              >
-                Templates
-              </Link>
-              <Link 
-                to="/about" 
-                className="text-left text-haleo-gray hover:text-haleo-core transition-all duration-300" 
-                onClick={() => { setIsOpen(false); scrollToTop(); }}
-              >
-                About
-              </Link>
+              {content.navigation.items.map((item, index) => (
+                <Link 
+                  key={index}
+                  to={item.url}
+                  className="text-left text-haleo-gray hover:text-haleo-core transition-all duration-300" 
+                  onClick={() => { setIsOpen(false); scrollToTop(); }}
+                >
+                  {item.text}
+                </Link>
+              ))}
               <button className="gradient-bg text-white px-6 py-2 rounded-full hover:opacity-90 transition-all duration-300 text-sm">
-                Book Consult
+                {content.navigation.cta.text}
               </button>
             </div>
           </div>

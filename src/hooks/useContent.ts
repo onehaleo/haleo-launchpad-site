@@ -1,33 +1,30 @@
-// Content management hook for easy YAML content loading
-// This would typically fetch from a CMS or YAML files in a real setup
+import { useEffect, useState } from 'react';
+import yaml from 'js-yaml';
 
 export const useContent = () => {
-  // For now, we'll return the content directly
-  // In a real app, this would fetch from your YAML files or CMS API
-  
-  const content = {
-    hero: {
-      headline: "Automation that works while you don't.",
-      subhead: "Haleo builds simple, scalable systems for solopreneurs — so you can ditch the chaos and get back to what you do best.",
-      cta_primary: {
-        text: "Browse Templates",
-        url: "https://onehaleo.gumroad.com"
-      },
-      cta_secondary: {
-        text: "Book Free Consult", 
-        url: "#"
-      }
-    },
-    
-    services: {
-      title: "What We Offer",
-      description: "From automation to AI agents, we build systems that work while you focus on what matters."
-    },
-    
-    // Add more content sections as needed
-  };
+  const [content, setContent] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  return content;
+  useEffect(() => {
+    const loadContent = async () => {
+      try {
+        const response = await fetch('/content/site.yaml');
+        const yamlText = await response.text();
+        const parsedContent = yaml.load(yamlText);
+        setContent(parsedContent);
+      } catch (err) {
+        console.error('Error loading content:', err);
+        setError(err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadContent();
+  }, []);
+
+  return { content, loading, error };
 };
 
 // Utility to scroll to top of page
