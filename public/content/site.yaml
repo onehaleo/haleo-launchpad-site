@@ -59,7 +59,7 @@ services:
   description: "Everything you need to automate your business and reclaim your time"
   items:
     - title: "Automation Services"
-      description: "Custom Make.com + Notion workflows"
+      description: "Custom automation workflows across platforms"
       icon: "settings"
       features:
         - "Seamless integrations"
@@ -72,8 +72,8 @@ services:
         - "Business-specific training"
         - "24/7 availability"
         - "Continuous learning"
-    - title: "Notion Templates"
-      description: "Beautiful dashboards, ready in minutes"
+    - title: "Ready-Made Templates"
+      description: "Plug-and-play systems for any platform"
       icon: "database"
       features:
         - "Plug-and-play design"
@@ -95,8 +95,8 @@ index:
   seo_section:
     title: "Automation Systems Built for Solopreneurs Who Scale"
     paragraphs:
-      - "Haleo builds done-for-you automation systems, custom AI agents, and business templates across tools like Notion, Zapier, and Make.com. Whether you're just starting or scaling fast, Haleo makes your systems smarter."
-      - "From Notion CRM templates to custom AI agents, our automation solutions help solopreneurs ditch the chaos and focus on what they do best. Join 100+ business owners who've automated their workflows with Haleo."
+      - "Haleo builds done-for-you automation systems, custom AI agents, and business templates across tools like Airtable, ClickUp, Zapier, and Make.com. Whether you're just starting or scaling fast, Haleo makes your systems smarter."
+      - "From CRM templates to custom AI agents, our automation solutions help solopreneurs ditch the chaos and focus on what they do best. Join 100+ business owners who've automated their workflows with Haleo."
     testimonial:
       quote: "I didn't realize how much time I was losing until Haleo automated my entire intake system. Now I get leads, convert them, and onboard clients while I sleep."
       author: "— Sarah K., Marketing Consultant"
@@ -124,7 +124,7 @@ templates:
         - "Meeting logs"
         - "Custom views"
       url: "https://onehaleo.gumroad.com/l/solopreneur-crm"
-    - title: "Notion HQ Dashboard"
+    - title: "Business HQ Dashboard"
       description: "Your business brain, all in one place."
       price: "$29"
       features:
