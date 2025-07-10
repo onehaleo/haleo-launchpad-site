@@ -10,7 +10,7 @@ const WhyHaleo = () => {
     {
       icon: <Brain className="h-16 w-16 text-haleo-violet" />,
       title: "Strategy-first builds",
-      description: "I don't just automate tasks. I design systems around your unique workflows, goals, and capacity. Whether you're a visual thinker, a list lover, or somewhere in between — your system will match the way you work."
+      description: "Haleo doesn't just automate tasks. We design systems around your unique workflows, goals, and capacity. Whether you're a visual thinker, a list lover, or somewhere in between — your system will match the way you work."
     },
     {
       icon: <Shield className="h-16 w-16 text-haleo-violet" />,
@@ -20,12 +20,12 @@ const WhyHaleo = () => {
     {
       icon: <Users className="h-16 w-16 text-haleo-violet" />,
       title: "Built for solopreneurs",
-      description: "I don't speak corporate. I speak \"one-person business doing big things.\" That means every automation, dashboard, or AI agent I build is lightweight, scalable, and totally manageable without a team."
+      description: "Haleo doesn't speak corporate. We speak \"one-person business doing big things.\" That means every automation, dashboard, or AI agent we build is lightweight, scalable, and totally manageable without a team."
     },
     {
       icon: <MessageCircle className="h-16 w-16 text-haleo-violet" />,
       title: "No jargon. No fluff.",
-      description: "I believe in clear systems, clean builds, and explanations you don't need to Google. Whether we're building together or you're buying a plug-and-play template, you'll always know exactly how it works."
+      description: "Haleo believes in clear systems, clean builds, and explanations you don't need to Google. Whether we're building together or you're buying a plug-and-play template, you'll always know exactly how it works."
     }
   ];
 
@@ -57,7 +57,7 @@ const WhyHaleo = () => {
                   You're not disorganized — your systems just haven't caught up with your growth.
                 </p>
                 <p className="text-xl md:text-2xl font-semibold text-haleo-ink">
-                  That's where I come in.
+                  That's where Haleo comes in.
                 </p>
               </div>
             </div>
