@@ -19,7 +19,7 @@ const Services = () => {
         "Payment + follow-up automations",
         "Internal ops (task creation, file sorting, reminders)"
       ],
-      platforms: "Make, Zapier, Airtable, ClickUp, Wave, and more.",
+      platforms: "Make, Zapier, Airtable, ClickUp, Wave, and 20+ other platforms.",
       testimonial: "I didn't realize how much time I was losing until Haleo automated my entire intake system.",
       ctaText: "Book a Free Audit",
       ctaSubtext: "Let's map out your automation"
@@ -35,7 +35,7 @@ const Services = () => {
         "Content researcher & rewriter", 
         "Internal ops buddy (trackers, reports, replies)"
       ],
-      platforms: "Ethical. Private. Built to protect your brand voice and client data.",
+      platforms: "OpenAI, Claude, Make, Zapier, and custom integrations. Ethical. Private. Built to protect your brand voice and client data.",
       testimonial: "I thought AI would be too complex. Haleo made it feel like magic — but it's built just for me.",
       ctaText: "Book Your AI Build",
       ctaSubtext: "Get your custom AI built"
@@ -50,7 +50,7 @@ const Services = () => {
         "Business HQ Command Center",
         "Mini systems (content planner, engagement tracker)"
       ],
-      platforms: "One-time buy. Lifetime use.",
+      platforms: "Notion, Airtable, ClickUp, and more. One-time buy. Lifetime use.",
       testimonial: "This CRM gave me back 5+ hours a week. Seriously.",
       ctaText: "Get the Templates",
       ctaSubtext: "Browse the shop"
@@ -66,7 +66,7 @@ const Services = () => {
         "Custom dashboards or automations",
         "Training videos (so you're never guessing)"
       ],
-      platforms: "",
+      platforms: "We work with your existing tools or recommend the best stack for your workflow.",
       testimonial: "I finally stopped duct-taping apps together. Haleo gave me a system I actually want to use.",
       ctaText: "Book Your Call",
       ctaSubtext: "Start with a Systems Strategy Call"
@@ -81,7 +81,7 @@ const Services = () => {
         "1-day intensives",
         "Audit + fix mini projects"
       ],
-      platforms: "",
+      platforms: "Zoom sessions with screen sharing, recordings, and follow-up resources included.",
       testimonial: "It felt like I had a cofounder for a day. Game changer.",
       ctaText: "Book a Working Session",
       ctaSubtext: "Let's get to work"
