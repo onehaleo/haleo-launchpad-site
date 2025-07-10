@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Star } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import HeroSection from '../components/HeroSection';
 import FeaturedTemplateSection from '../components/FeaturedTemplateSection';
@@ -60,9 +60,9 @@ const Index = () => {
             {/* Trust Signal - Testimonial */}
             <div className="mt-12 bg-haleo-cloud rounded-2xl p-8">
               <div className="flex justify-center mb-4">
-                <div className="flex text-yellow-500">
+                <div className="flex text-haleo-violet">
                   {Array.from({ length: content.index.seo_section.testimonial.rating }, (_, i) => (
-                    <span key={i}>⭐</span>
+                    <Star key={i} className="h-5 w-5 fill-current" />
                   ))}
                 </div>
               </div>
