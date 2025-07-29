@@ -2,12 +2,10 @@
 
 ## 🚀 Setup Steps for GitHub Pages + Decap CMS
 
-### 1. Update Repository Information
-In `public/admin/config.yml`, replace:
-```yaml
-repo: YOUR_USERNAME/YOUR_REPO_NAME
-```
-With your actual GitHub username and repository name.
+## 🚀 Setup Steps for onehaleo.com + Decap CMS
+
+### 1. Repository Configuration ✅
+Already configured for: `onehaleo/haleo-launch-site`
 
 ### 2. GitHub OAuth Application Setup
 1. Go to GitHub Settings → Developer settings → OAuth Apps
@@ -15,17 +13,15 @@ With your actual GitHub username and repository name.
 3. Fill in:
    - **Application name**: `Haleo CMS`
    - **Homepage URL**: `https://onehaleo.com`
-   - **Authorization callback URL**: `https://api.netlify.com/auth/done`
+   - **Authorization callback URL**: `https://onehaleo.com/admin/`
 
-### 3. Environment Setup
-Create a `.env` file (for local development):
-```
-GITHUB_CLIENT_ID=your_client_id_from_oauth_app
-GITHUB_CLIENT_SECRET=your_client_secret_from_oauth_app
-```
+### 3. No Additional Setup Needed
+- No Netlify services required
+- Uses GitHub's built-in OAuth with PKCE
+- Direct GitHub authentication
 
 ### 4. Access Your CMS
-Once deployed, access your admin panel at:
+Access your admin panel at:
 **https://onehaleo.com/admin/**
 
 ### 5. Authentication Flow
