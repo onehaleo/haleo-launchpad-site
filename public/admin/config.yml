@@ -1,7 +1,10 @@
-# Decap CMS Configuration
+# Decap CMS Configuration for GitHub Pages
 backend:
-  name: git-gateway
+  name: github
+  repo: YOUR_USERNAME/YOUR_REPO_NAME # Update this with your GitHub username/repo
   branch: main
+  base_url: https://api.netlify.com # For GitHub OAuth
+  auth_endpoint: oauth
 
 media_folder: "public/images"
 public_folder: "/images"
