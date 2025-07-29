@@ -1,0 +1,192 @@
+# Decap CMS Configuration
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/images"
+public_folder: "/images"
+
+# Enable Decap CMS admin interface
+display_url: https://onehaleo.com
+logo_url: /images/logo.png
+
+collections:
+  - name: "site"
+    label: "Site Configuration"
+    files:
+      - name: "general"
+        label: "General Settings"
+        file: "src/content/site.yaml"
+        fields:
+          - label: "Company Information"
+            name: "company"
+            widget: "object"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Tagline", name: "tagline", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Email", name: "email", widget: "string" }
+              - { label: "Website", name: "website", widget: "string" }
+
+          - label: "Brand Colors"
+            name: "colors"
+            widget: "object"
+            fields:
+              - { label: "Cloud", name: "cloud", widget: "string" }
+              - { label: "Ink", name: "ink", widget: "string" }
+              - { label: "Gray", name: "gray", widget: "string" }
+              - { label: "Violet", name: "violet", widget: "string" }
+              - { label: "Core", name: "core", widget: "string" }
+
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Headline", name: "headline", widget: "string" }
+              - { label: "Subhead", name: "subhead", widget: "text" }
+              - label: "Primary CTA"
+                name: "cta_primary"
+                widget: "object"
+                fields:
+                  - { label: "Text", name: "text", widget: "string" }
+                  - { label: "URL", name: "url", widget: "string" }
+              - label: "Secondary CTA"
+                name: "cta_secondary"
+                widget: "object"
+                fields:
+                  - { label: "Text", name: "text", widget: "string" }
+                  - { label: "URL", name: "url", widget: "string" }
+              - label: "Statistics"
+                name: "stats"
+                widget: "list"
+                fields:
+                  - { label: "Number", name: "number", widget: "string" }
+                  - { label: "Label", name: "label", widget: "string" }
+
+          - label: "Services"
+            name: "services"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - label: "Service Items"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Subtitle", name: "subtitle", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+                  - label: "Features"
+                    name: "features"
+                    widget: "list"
+                    field: { label: "Feature", name: "feature", widget: "string" }
+                  - { label: "Platforms", name: "platforms", widget: "string", required: false }
+                  - { label: "Note", name: "note", widget: "string", required: false }
+                  - { label: "Testimonial", name: "testimonial", widget: "string", required: false }
+                  - { label: "CTA", name: "cta", widget: "string" }
+                  - label: "Formats"
+                    name: "formats"
+                    widget: "list"
+                    required: false
+                    field: { label: "Format", name: "format", widget: "string" }
+
+          - label: "Why Haleo"
+            name: "why_haleo"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Intro", name: "intro", widget: "text" }
+              - { label: "Subtitle", name: "subtitle", widget: "string" }
+              - label: "Features"
+                name: "features"
+                widget: "list"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Icon", name: "icon", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+              - { label: "Testimonial", name: "testimonial", widget: "text" }
+              - { label: "Conclusion", name: "conclusion", widget: "text" }
+
+          - label: "About"
+            name: "about"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Intro", name: "intro", widget: "text" }
+              - { label: "Background", name: "background", widget: "text" }
+              - { label: "Founding", name: "founding", widget: "text" }
+              - label: "Services"
+                name: "services"
+                widget: "list"
+                field: { label: "Service", name: "service", widget: "string" }
+              - label: "Beliefs"
+                name: "beliefs"
+                widget: "list"
+                field: { label: "Belief", name: "belief", widget: "string" }
+              - { label: "Mission", name: "mission", widget: "text" }
+              - { label: "Conclusion", name: "conclusion", widget: "text" }
+
+          - label: "Templates"
+            name: "templates"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Intro", name: "intro", widget: "text" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Tagline", name: "tagline", widget: "string" }
+              - label: "Featured Templates"
+                name: "featured"
+                widget: "list"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+                  - { label: "Price", name: "price", widget: "string" }
+                  - { label: "Price Note", name: "price_note", widget: "string", required: false }
+                  - label: "Features"
+                    name: "features"
+                    widget: "list"
+                    field: { label: "Feature", name: "feature", widget: "string" }
+                  - { label: "Perfect For", name: "perfect_for", widget: "string" }
+                  - { label: "Testimonial", name: "testimonial", widget: "text", required: false }
+                  - { label: "URL", name: "url", widget: "string" }
+                  - { label: "Featured", name: "featured", widget: "boolean", required: false }
+              - label: "Includes"
+                name: "includes"
+                widget: "list"
+                field: { label: "Include", name: "include", widget: "string" }
+              - label: "Coming Soon"
+                name: "coming_soon"
+                widget: "list"
+                field: { label: "Item", name: "item", widget: "string" }
+
+          - label: "Footer"
+            name: "footer"
+            widget: "object"
+            fields:
+              - { label: "Copyright", name: "copyright", widget: "string" }
+              - label: "Social Links"
+                name: "social"
+                widget: "object"
+                fields:
+                  - { label: "Instagram", name: "instagram", widget: "string" }
+                  - { label: "TikTok", name: "tiktok", widget: "string" }
+                  - { label: "YouTube", name: "youtube", widget: "string" }
+                  - { label: "LinkedIn", name: "linkedin", widget: "string" }
+              - label: "Email Signup"
+                name: "email_signup"
+                widget: "object"
+                fields:
+                  - { label: "Placeholder", name: "placeholder", widget: "string" }
+                  - { label: "Button", name: "button", widget: "string" }
+
+  - name: "pages"
+    label: "Pages"
+    folder: "src/content/pages"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "SEO Title", name: "seo_title", widget: "string", required: false }
+      - { label: "SEO Description", name: "seo_description", widget: "text", required: false }
