@@ -1,10 +1,10 @@
 # Decap CMS Configuration for GitHub Pages
 backend:
   name: github
-  repo: YOUR_USERNAME/YOUR_REPO_NAME # Update this with your GitHub username/repo
+  repo: onehaleo/haleo-launch-site
   branch: main
-  base_url: https://api.netlify.com # For GitHub OAuth
-  auth_endpoint: oauth
+  # Direct GitHub OAuth (no Netlify)
+  auth_type: pkce
 
 media_folder: "public/images"
 public_folder: "/images"
