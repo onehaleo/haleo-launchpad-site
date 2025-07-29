@@ -9,7 +9,8 @@ backend:
 media_folder: "public/images"
 public_folder: "/images"
 
-# Enable Decap CMS admin interface
+# Site URL configuration
+site_url: https://onehaleo.com
 display_url: https://onehaleo.com
 logo_url: /images/logo.png
 
