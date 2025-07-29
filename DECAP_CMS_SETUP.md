@@ -14,7 +14,7 @@ With your actual GitHub username and repository name.
 2. Click "New OAuth App"
 3. Fill in:
    - **Application name**: `Haleo CMS`
-   - **Homepage URL**: `https://yourusername.github.io/your-repo-name`
+   - **Homepage URL**: `https://onehaleo.com`
    - **Authorization callback URL**: `https://api.netlify.com/auth/done`
 
 ### 3. Environment Setup
@@ -25,8 +25,8 @@ GITHUB_CLIENT_SECRET=your_client_secret_from_oauth_app
 ```
 
 ### 4. Access Your CMS
-Once deployed to GitHub Pages, access your admin panel at:
-`https://yourusername.github.io/your-repo-name/admin/`
+Once deployed, access your admin panel at:
+**https://onehaleo.com/admin/**
 
 ### 5. Authentication Flow
 1. Click "Login with GitHub" 
