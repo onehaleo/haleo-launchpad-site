@@ -4,28 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Content Manager - Haleo</title>
-    <!-- Decap CMS for GitHub Pages -->
   </head>
   <body>
     <!-- Include the script that builds the page and powers Decap CMS -->
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-    
-    <!-- Initialize Decap CMS -->
-    <script>
-      window.CMS_MANUAL_INIT = true;
-      
-      document.addEventListener('DOMContentLoaded', function() {
-        // Initialize CMS with GitHub backend
-        window.CMS.init({
-          config: {
-            backend: {
-              name: 'github',
-              repo: 'onehaleo/haleo-launchpad-site',
-              branch: 'main'
-            }
-          }
-        });
-      });
-    </script>
   </body>
 </html>
