@@ -13,10 +13,14 @@ Already configured for: `onehaleo/haleo-launchpad-site`
 3. Fill in:
    - **Application name**: `Haleo CMS`
    - **Homepage URL**: `https://onehaleo.com`
-   - **Authorization callback URL**: `https://onehaleo.com/admin/`
+   - **Authorization callback URL**: `https://decap-oauth-provider.netlify.app/callback`
 
-### 3. Alternative: Use GitHub's Implicit Flow
-The current configuration uses GitHub's implicit OAuth flow which doesn't require a separate OAuth app setup, but requires you to have admin access to the repository.
+### 3. Configure OAuth Provider
+After creating the OAuth app:
+1. Note your **Client ID** and **Client Secret**
+2. Go to: https://decap-oauth-provider.netlify.app/
+3. Follow setup instructions to register your OAuth app
+4. This provides the OAuth gateway needed for static sites
 
 ### 4. Access Your CMS
 Access your admin panel at:
