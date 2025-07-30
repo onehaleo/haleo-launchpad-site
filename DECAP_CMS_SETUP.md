@@ -7,26 +7,32 @@
 ### 1. Repository Configuration ✅
 Already configured for: `onehaleo/haleo-launchpad-site`
 
-### 2. Open Authoring Setup ✅
-Using Decap's Open Authoring feature which:
-- **No OAuth app needed** - Uses GitHub's built-in authentication
-- **Automatic forking** - Creates forks for contributors automatically  
-- **Pull request workflow** - Content changes create PRs for review
-- **Direct repository access** - You have full write access as repo owner
+### 2. GitHub OAuth Application Setup (Required)
+Even with Open Authoring, you need to create a GitHub OAuth app:
 
-### 3. How It Works
-1. **For you (repo owner)**: Direct editing access, changes commit to main branch
-2. **For contributors**: CMS creates forks and PRs automatically
-3. **Content workflow**: Draft → Ready for Review → Merge via GitHub
+1. Go to **GitHub Settings → Developer settings → OAuth Apps**
+2. Click **"New OAuth App"**
+3. Fill in:
+   - **Application name**: `Haleo CMS`
+   - **Homepage URL**: `https://onehaleo.com`
+   - **Authorization callback URL**: `https://decap-oauth-github.netlify.app/callback`
 
-### 4. Access Your CMS
-Access your admin panel at:
-**https://onehaleo.com/admin/**
+4. **Note your Client ID and Client Secret**
 
-### 5. No Additional Setup Required
-- Open Authoring uses GitHub's native authentication
-- You authenticate with your GitHub account that owns the repository
-- No OAuth apps, no external services needed!
+### 3. Configure OAuth Service
+1. Visit: **https://decap-oauth-github.netlify.app/**
+2. Register your OAuth app with the service:
+   - Enter your **Client ID**
+   - Enter your **Client Secret** 
+   - Set **Site URL**: `https://onehaleo.com`
+
+### 4. How It Works
+- **OAuth Proxy**: The service acts as a bridge between your static site and GitHub
+- **Repository Access**: You get full editing privileges as the repo owner
+- **Open Authoring**: External contributors can submit PRs automatically
+
+### 5. Access Your CMS
+Access your admin panel at: **https://onehaleo.com/admin/**
 
 ### 5. Authentication Flow
 1. Click "Login with GitHub" 
