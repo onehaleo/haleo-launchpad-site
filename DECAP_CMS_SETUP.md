@@ -5,7 +5,7 @@
 ## 🚀 Setup Steps for onehaleo.com + Decap CMS
 
 ### 1. Repository Configuration ✅
-Already configured for: `onehaleo/haleo-launch-site`
+Already configured for: `onehaleo/haleo-launchpad-site`
 
 ### 2. GitHub OAuth Application Setup
 1. Go to GitHub Settings → Developer settings → OAuth Apps
