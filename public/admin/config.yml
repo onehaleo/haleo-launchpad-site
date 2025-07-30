@@ -1,4 +1,3 @@
-# Decap CMS Configuration for GitHub Pages
 backend:
   name: github
   repo: onehaleo/haleo-launchpad-site
