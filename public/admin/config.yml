@@ -3,8 +3,8 @@ backend:
   repo: onehaleo/haleo-launchpad-site
   branch: main
   open_authoring: true
-  # Free Vercel OAuth provider
-  base_url: https://YOUR_VERCEL_DOMAIN.vercel.app
+  # Your Vercel OAuth provider
+  base_url: https://haleo-cms.vercel.app
   auth_endpoint: auth
 
 # Editorial workflow for content reviews
