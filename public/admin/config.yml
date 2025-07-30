@@ -2,9 +2,10 @@ backend:
   name: github
   repo: onehaleo/haleo-launchpad-site
   branch: main
-  # Use external OAuth service for GitHub Pages
-  base_url: https://decap-oauth-provider.netlify.app
-  auth_endpoint: auth
+  open_authoring: true
+
+# Editorial workflow for content reviews
+publish_mode: editorial_workflow
 
 media_folder: "public/images"
 public_folder: "/images"

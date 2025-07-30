@@ -7,24 +7,26 @@
 ### 1. Repository Configuration ✅
 Already configured for: `onehaleo/haleo-launchpad-site`
 
-### 2. GitHub OAuth Application Setup
-1. Go to GitHub Settings → Developer settings → OAuth Apps
-2. Click "New OAuth App"
-3. Fill in:
-   - **Application name**: `Haleo CMS`
-   - **Homepage URL**: `https://onehaleo.com`
-   - **Authorization callback URL**: `https://decap-oauth-provider.netlify.app/callback`
+### 2. Open Authoring Setup ✅
+Using Decap's Open Authoring feature which:
+- **No OAuth app needed** - Uses GitHub's built-in authentication
+- **Automatic forking** - Creates forks for contributors automatically  
+- **Pull request workflow** - Content changes create PRs for review
+- **Direct repository access** - You have full write access as repo owner
 
-### 3. Configure OAuth Provider
-After creating the OAuth app:
-1. Note your **Client ID** and **Client Secret**
-2. Go to: https://decap-oauth-provider.netlify.app/
-3. Follow setup instructions to register your OAuth app
-4. This provides the OAuth gateway needed for static sites
+### 3. How It Works
+1. **For you (repo owner)**: Direct editing access, changes commit to main branch
+2. **For contributors**: CMS creates forks and PRs automatically
+3. **Content workflow**: Draft → Ready for Review → Merge via GitHub
 
 ### 4. Access Your CMS
 Access your admin panel at:
 **https://onehaleo.com/admin/**
+
+### 5. No Additional Setup Required
+- Open Authoring uses GitHub's native authentication
+- You authenticate with your GitHub account that owns the repository
+- No OAuth apps, no external services needed!
 
 ### 5. Authentication Flow
 1. Click "Login with GitHub" 
