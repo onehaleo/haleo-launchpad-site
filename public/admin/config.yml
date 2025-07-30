@@ -4,7 +4,7 @@ backend:
   branch: main
   open_authoring: true
   # Your Vercel OAuth provider
-  base_url: https://haleo-cms.vercel.app
+  base_url: https://hale-oauth.vercel.app
   auth_endpoint: auth
 
 # Editorial workflow for content reviews
