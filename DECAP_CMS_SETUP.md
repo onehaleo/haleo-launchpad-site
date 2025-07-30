@@ -15,10 +15,8 @@ Already configured for: `onehaleo/haleo-launchpad-site`
    - **Homepage URL**: `https://onehaleo.com`
    - **Authorization callback URL**: `https://onehaleo.com/admin/`
 
-### 3. No Additional Setup Needed
-- No Netlify services required
-- Uses GitHub's built-in OAuth with PKCE
-- Direct GitHub authentication
+### 3. Alternative: Use GitHub's Implicit Flow
+The current configuration uses GitHub's implicit OAuth flow which doesn't require a separate OAuth app setup, but requires you to have admin access to the repository.
 
 ### 4. Access Your CMS
 Access your admin panel at:
