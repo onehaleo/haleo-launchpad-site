@@ -3,8 +3,8 @@ backend:
   repo: onehaleo/haleo-launchpad-site
   branch: main
   open_authoring: true
-  # GitHub OAuth proxy for static hosting
-  base_url: https://decap-oauth-github.netlify.app
+  # Free Vercel OAuth provider
+  base_url: https://YOUR_VERCEL_DOMAIN.vercel.app
   auth_endpoint: auth
 
 # Editorial workflow for content reviews
