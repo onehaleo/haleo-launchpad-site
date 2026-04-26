@@ -4,7 +4,7 @@ backend:
   branch: main
   open_authoring: true
   base_url: https://cms-oauth-github.vercel.app
-  auth_endpoint: auth
+  auth_endpoint: api/auth
 
 publish_mode: editorial_workflow
 
