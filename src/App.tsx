@@ -9,6 +9,7 @@ import WhyHaleo from "./pages/WhyHaleo";
 import About from "./pages/About";
 import Templates from "./pages/Templates";
 import NotFound from "./pages/NotFound";
+import DemoDetail from "./pages/DemoDetail";
 import PlaceholderPage from "./pages/PlaceholderPage";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
@@ -26,9 +27,9 @@ const AppContent = () => (
     <Route path="/terms" element={<Terms />} />
     <Route path="/privacy" element={<Privacy />} />
     <Route path="/license" element={<License />} />
-    <Route path="/demos/marketing-agency" element={<PlaceholderPage title="Marketing Agency Operations System" description="Track clients, campaigns, deliverables, approvals, and team workload in one place." />} />
-    <Route path="/demos/construction-office" element={<PlaceholderPage title="Construction Office Workflow System" description="Manage jobs, estimates, subcontractor handoffs, materials, and project status without spreadsheet sprawl." />} />
-    <Route path="/demos/pr-studio" element={<PlaceholderPage title="PR / Creative Studio Delivery System" description="Organize clients, retainers, deliverables, approvals, and reporting across fast-moving accounts." />} />
+    <Route path="/demos/marketing-agency" element={<DemoDetail slug="marketing-agency" />} />
+    <Route path="/demos/construction-office" element={<DemoDetail slug="construction-office" />} />
+    <Route path="/demos/pr-studio" element={<DemoDetail slug="pr-studio" />} />
     <Route path="/workflow-review" element={<PlaceholderPage title="Workflow Review" description="Share your current workflow, tools, and bottlenecks. We will map what your 10-day internal system build could look like." />} />
     {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
     <Route path="*" element={<NotFound />} />

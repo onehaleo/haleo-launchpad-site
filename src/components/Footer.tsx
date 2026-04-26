@@ -2,12 +2,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Instagram, Youtube, Linkedin, Music } from 'lucide-react';
-import { useContent } from '../hooks/useContent';
+import { useCmsContent } from '../hooks/useCmsContent';
 
 const Footer = () => {
-  const { content, loading, error } = useContent();
+  const { content, loading, error } = useCmsContent();
 
   if (loading || error || !content) return null;
+  const { settings } = content;
 
   const resolveAssetUrl = (assetPath) => {
     if (!assetPath) return assetPath;
@@ -32,14 +33,14 @@ const Footer = () => {
     if (isInternalRoute) {
       return (
         <Link to={item.url} className="text-gray-300 hover:text-white transition-colors">
-          {item.text}
+          {item.label}
         </Link>
       );
     }
 
     return (
       <a href={item.url} className="text-gray-300 hover:text-white transition-colors">
-        {item.text}
+        {item.label}
       </a>
     );
   };
@@ -51,22 +52,22 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <div className="inline-block mb-5">
               <img 
-                src={resolveAssetUrl(content.footer.logo)}
-                alt={content.site.name}
+                src={resolveAssetUrl(settings.logo_path)}
+                alt={settings.site_name}
                 className="h-16 w-16 sm:h-20 sm:w-20 rounded-xl object-cover"
               />
             </div>
             <p className="text-gray-300 mb-6 max-w-md">
-              {content.footer.description}
+              {settings.footer_description}
             </p>
             <Link
-              to="/workflow-review"
+              to={settings.footer_cta.url}
               className="gradient-bg text-white px-6 py-3 rounded-full font-semibold inline-flex justify-center items-center hover:opacity-90 transition-all duration-300 mb-6 w-full sm:w-auto"
             >
-              Start With a Workflow Review
+              {settings.footer_cta.text}
             </Link>
             <div className="flex space-x-4">
-              {content.footer.social_links.map((social, index) => (
+              {settings.social_links.map((social, index) => (
                 <a key={index} href={social.url} className="text-gray-400 hover:text-haleo-violet transition-colors">
                   {getSocialIcon(social.platform)}
                 </a>
@@ -75,9 +76,9 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-4">{content.footer.links.company.title}</h4>
+            <h4 className="text-lg font-semibold mb-4">{settings.footer_links.company.title}</h4>
             <ul className="space-y-2">
-              {content.footer.links.company.items.map((item, index) => (
+              {settings.footer_links.company.items.map((item, index) => (
                 <li key={index}>
                   {renderFooterLink(item, index)}
                 </li>
@@ -86,25 +87,25 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-4">{content.footer.links.legal.title}</h4>
+            <h4 className="text-lg font-semibold mb-4">{settings.footer_links.legal.title}</h4>
             <ul className="space-y-2">
-              {content.footer.links.legal.items.map((item, index) => (
+              {settings.footer_links.legal.items.map((item, index) => (
                 <li key={index}>
                   {renderFooterLink(item, index)}
                 </li>
               ))}
             </ul>
-            {content.footer.newsletter && (
+            {settings.newsletter && (
               <div className="mt-6">
-                <p className="text-gray-400 text-sm">{content.footer.newsletter.description}</p>
+                <p className="text-gray-400 text-sm">{settings.newsletter.description}</p>
                 <div className="flex flex-col gap-3 mt-3">
                   <input 
                     type="email" 
-                    placeholder={content.footer.newsletter.placeholder}
+                    placeholder={settings.newsletter.placeholder}
                     className="bg-haleo-gray text-white px-3 py-3 rounded-lg placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-haleo-violet text-sm min-w-0"
                   />
                   <button className="gradient-bg px-4 py-3 rounded-lg hover:opacity-90 transition-opacity text-sm whitespace-nowrap">
-                    {content.footer.newsletter.cta}
+                    {settings.newsletter.cta}
                   </button>
                 </div>
               </div>
@@ -114,8 +115,8 @@ const Footer = () => {
 
         <div className="border-t border-haleo-gray mt-10 sm:mt-12 pt-7 sm:pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
-            <p className="text-gray-400 mb-4 md:mb-0">{content.footer.copyright}</p>
-            <p className="text-gray-400 text-sm">{content.footer.license_text}</p>
+            <p className="text-gray-400 mb-4 md:mb-0">{settings.copyright}</p>
+            <p className="text-gray-400 text-sm">{settings.license_text}</p>
           </div>
         </div>
       </div>

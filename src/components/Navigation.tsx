@@ -2,14 +2,15 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
-import { useContent, scrollToTop } from '../hooks/useContent';
+import { scrollToTop } from '../hooks/useContent';
+import { useCmsContent } from '../hooks/useCmsContent';
 import { useNavigationLoading } from '../hooks/useNavigation';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
-  const { content, loading, error } = useContent();
+  const { content, loading, error } = useCmsContent();
   const { startLoading } = useNavigationLoading();
 
   useEffect(() => {
@@ -37,6 +38,7 @@ const Navigation = () => {
   }, [location]);
 
   if (loading || error || !content) return null;
+  const { settings } = content;
 
   const resolveAssetUrl = (assetPath: string) => {
     if (!assetPath) return assetPath;
@@ -65,8 +67,8 @@ const Navigation = () => {
             >
               <div className="rounded-lg p-1 transition-all duration-300 hover:scale-105">
                 <img
-                  src={resolveAssetUrl(content.navigation.logo)}
-                  alt={content.site.name}
+                  src={resolveAssetUrl(settings.logo_path)}
+                  alt={settings.site_name}
                   className="h-11 w-11 sm:h-14 sm:w-14 rounded-md object-cover"
                 />
               </div>
@@ -74,25 +76,25 @@ const Navigation = () => {
           </div>
           
           <div className="hidden md:flex items-center space-x-6">
-            {content.navigation.items.map((item, index) => (
+            {settings.nav_links.map((item, index) => (
               <Link 
                 key={index}
                 to={item.url}
                 className="text-white/90 hover:text-haleo-violet transition-all duration-300 text-sm font-medium"
                 onClick={() => handleNavigationClick(item.url)}
               >
-                {item.text}
+                {item.label}
               </Link>
             ))}
           </div>
 
           <div className="hidden md:block">
             <Link
-              to={content.navigation.cta.url}
+              to={settings.nav_cta.url}
               className="gradient-bg text-white px-5 py-2 rounded-full hover:opacity-90 transition-all duration-300 text-sm font-semibold inline-block whitespace-nowrap"
-              onClick={() => handleNavigationClick(content.navigation.cta.url)}
+              onClick={() => handleNavigationClick(settings.nav_cta.url)}
             >
-              {content.navigation.cta.text}
+              {settings.nav_cta.text}
             </Link>
           </div>
 
@@ -106,7 +108,7 @@ const Navigation = () => {
         {isOpen && (
           <div className="md:hidden bg-white shadow-lg rounded-lg mt-2 p-4 mb-2">
             <div className="flex flex-col space-y-4">
-              {content.navigation.items.map((item, index) => (
+              {settings.nav_links.map((item, index) => (
                 <Link 
                   key={index}
                   to={item.url}
@@ -116,18 +118,18 @@ const Navigation = () => {
                     handleNavigationClick(item.url);
                   }}
                 >
-                  {item.text}
+                  {item.label}
                 </Link>
               ))}
               <Link
-                to={content.navigation.cta.url}
+                to={settings.nav_cta.url}
                 className="gradient-bg text-white px-6 py-3 rounded-full hover:opacity-90 transition-all duration-300 text-sm text-center font-semibold"
                 onClick={() => {
                   setIsOpen(false);
-                  handleNavigationClick(content.navigation.cta.url);
+                  handleNavigationClick(settings.nav_cta.url);
                 }}
               >
-                {content.navigation.cta.text}
+                {settings.nav_cta.text}
               </Link>
             </div>
           </div>

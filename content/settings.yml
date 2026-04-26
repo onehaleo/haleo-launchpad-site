@@ -1,0 +1,58 @@
+site_name: "Haleo"
+logo_text: "Haleo"
+contact_email: "hello@onehaleo.com"
+footer_description: "Haleo builds custom internal systems for fast-moving small teams in 10 days, replacing spreadsheet chaos and manual operations."
+logo_path: "/lovable-uploads/haleo-logo-new.png"
+social_links:
+  - platform: "instagram"
+    url: "#"
+  - platform: "tiktok"
+    url: "#"
+  - platform: "youtube"
+    url: "#"
+  - platform: "linkedin"
+    url: "#"
+newsletter:
+  description: "Get system design insights and launch updates."
+  placeholder: "Enter your email"
+  cta: "Join"
+copyright: "© 2026 Haleo LLC. All rights reserved."
+license_text: "Built for fast-moving teams that need operational clarity."
+nav_links:
+  - label: "Home"
+    url: "/"
+  - label: "What Haleo Builds"
+    url: "/#services"
+  - label: "Demos"
+    url: "/#demos"
+  - label: "About"
+    url: "/about"
+nav_cta:
+  text: "Start Workflow Review"
+  url: "/workflow-review"
+footer_cta:
+  text: "Start With a Workflow Review"
+  url: "/workflow-review"
+footer_links:
+  company:
+    title: "Company"
+    items:
+      - label: "What Haleo Builds"
+        url: "/#services"
+      - label: "Workflow Review"
+        url: "/workflow-review"
+      - label: "About"
+        url: "/about"
+      - label: "Demos"
+        url: "/#demos"
+  legal:
+    title: "Contact & Legal"
+    items:
+      - label: "Contact"
+        url: "mailto:hello@onehaleo.com"
+      - label: "Terms"
+        url: "/terms"
+      - label: "Privacy"
+        url: "/privacy"
+      - label: "License"
+        url: "/license"

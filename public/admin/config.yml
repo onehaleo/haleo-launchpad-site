@@ -16,16 +16,172 @@ display_url: https://onehaleo.com
 logo_url: /lovable-uploads/haleo-logo-new.png
 
 collections:
-  - name: "site_content"
-    label: "Site Content"
+  - name: "homepage"
+    label: "Homepage"
     files:
-      - name: "site_yaml"
-        label: "Site YAML"
-        file: "public/content/site.yaml"
+      - name: "home"
+        label: "Homepage Content"
+        file: "content/home.yml"
         fields:
-          - label: "Content (YAML)"
-            name: "raw"
-            widget: "code"
-            default_language: yaml
-            output_code_only: true
-            allow_language_selection: false
+          - { label: "Hero Headline", name: "hero_headline", widget: "string" }
+          - { label: "Hero Subheadline", name: "hero_subheadline", widget: "text" }
+          - { label: "Primary CTA Text", name: "primary_cta_text", widget: "string" }
+          - { label: "Primary CTA Link", name: "primary_cta_link", widget: "string" }
+          - { label: "Secondary CTA Text", name: "secondary_cta_text", widget: "string" }
+          - { label: "Secondary CTA Link", name: "secondary_cta_link", widget: "string" }
+          - { label: "Problem Section Title", name: "problem_section_title", widget: "string" }
+          - label: "Problem Points"
+            name: "problem_points"
+            widget: "list"
+            field: { label: "Problem Point", name: "item", widget: "string" }
+          - { label: "Before/After Title", name: "before_after_title", widget: "string" }
+          - label: "Before Points"
+            name: "before_points"
+            widget: "list"
+            field: { label: "Before Point", name: "item", widget: "string" }
+          - label: "After Points"
+            name: "after_points"
+            widget: "list"
+            field: { label: "After Point", name: "item", widget: "string" }
+          - { label: "Process Title", name: "process_title", widget: "string" }
+          - label: "Process Steps"
+            name: "process_steps"
+            widget: "list"
+            fields:
+              - { label: "Step Title", name: "title", widget: "string" }
+              - { label: "Step Description", name: "description", widget: "text" }
+          - { label: "Final CTA Headline", name: "final_cta_headline", widget: "string" }
+          - { label: "Final CTA Subheadline", name: "final_cta_subheadline", widget: "text" }
+          - { label: "Final CTA Text", name: "final_cta_text", widget: "string" }
+          - { label: "Final CTA Link", name: "final_cta_link", widget: "string" }
+
+  - name: "demos"
+    label: "Demo Examples"
+    label_singular: "Demo Example"
+    folder: "content/demos"
+    create: true
+    extension: "yml"
+    format: "yaml"
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string", hint: "Use URL-safe text like marketing-agency" }
+      - { label: "Agency Type", name: "agency_type", widget: "string" }
+      - { label: "Short Description", name: "short_description", widget: "text" }
+      - { label: "Problem Summary", name: "problem_summary", widget: "text" }
+      - label: "Modules"
+        name: "modules"
+        widget: "list"
+        field: { label: "Module", name: "item", widget: "string" }
+      - { label: "Before State", name: "before_state", widget: "text" }
+      - { label: "After State", name: "after_state", widget: "text" }
+      - { label: "CTA Text", name: "cta_text", widget: "string" }
+      - { label: "CTA Link", name: "cta_link", widget: "string" }
+      - { label: "Featured Image", name: "featured_image", widget: "image", required: false }
+
+  - name: "services"
+    label: "Services / System Types"
+    label_singular: "Service"
+    folder: "content/services"
+    create: true
+    extension: "yml"
+    format: "yaml"
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string", hint: "Use URL-safe text like lead-sales-pipeline" }
+      - { label: "Short Description", name: "short_description", widget: "text" }
+      - { label: "Replaces", name: "replaces", widget: "text" }
+      - { label: "Helps With", name: "helps_with", widget: "text" }
+      - { label: "Best For", name: "best_for", widget: "text" }
+      - label: "Features"
+        name: "features"
+        widget: "list"
+        field: { label: "Feature", name: "item", widget: "string" }
+
+  - name: "testimonials"
+    label: "Testimonials"
+    label_singular: "Testimonial"
+    folder: "content/testimonials"
+    create: true
+    extension: "yml"
+    format: "yaml"
+    slug: "{{slug}}"
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Company", name: "company", widget: "string" }
+      - { label: "Role", name: "role", widget: "string" }
+      - { label: "Quote", name: "quote", widget: "text" }
+      - { label: "Result", name: "result", widget: "text", required: false }
+
+  - name: "settings"
+    label: "Global Settings"
+    files:
+      - name: "global_settings"
+        label: "Site Settings"
+        file: "content/settings.yml"
+        fields:
+          - { label: "Site Name", name: "site_name", widget: "string" }
+          - { label: "Logo Text", name: "logo_text", widget: "string" }
+          - { label: "Logo Path", name: "logo_path", widget: "string" }
+          - { label: "Contact Email", name: "contact_email", widget: "string" }
+          - { label: "Footer Description", name: "footer_description", widget: "text" }
+          - label: "Navigation Links"
+            name: "nav_links"
+            widget: "list"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+          - label: "Navigation CTA"
+            name: "nav_cta"
+            widget: "object"
+            fields:
+              - { label: "Text", name: "text", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+          - label: "Footer CTA"
+            name: "footer_cta"
+            widget: "object"
+            fields:
+              - { label: "Text", name: "text", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+          - label: "Social Links"
+            name: "social_links"
+            widget: "list"
+            fields:
+              - { label: "Platform", name: "platform", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+          - label: "Newsletter"
+            name: "newsletter"
+            widget: "object"
+            fields:
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Placeholder", name: "placeholder", widget: "string" }
+              - { label: "Button Text", name: "cta", widget: "string" }
+          - { label: "Footer Copyright", name: "copyright", widget: "string" }
+          - { label: "Footer License Text", name: "license_text", widget: "string" }
+          - label: "Footer Links"
+            name: "footer_links"
+            widget: "object"
+            fields:
+              - label: "Company Column"
+                name: "company"
+                widget: "object"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - label: "Items"
+                    name: "items"
+                    widget: "list"
+                    fields:
+                      - { label: "Label", name: "label", widget: "string" }
+                      - { label: "URL", name: "url", widget: "string" }
+              - label: "Legal Column"
+                name: "legal"
+                widget: "object"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - label: "Items"
+                    name: "items"
+                    widget: "list"
+                    fields:
+                      - { label: "Label", name: "label", widget: "string" }
+                      - { label: "URL", name: "url", widget: "string" }
