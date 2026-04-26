@@ -22,8 +22,9 @@ export const useContent = () => {
           return;
         }
 
-        // Load from file system (works with Decap CMS)
-        const response = await fetch('/content/site.yaml?' + now); // Cache busting
+        // Load from file system (works with Decap CMS and GitHub Pages subpaths)
+        const contentPath = `${import.meta.env.BASE_URL}content/site.yaml?${now}`;
+        const response = await fetch(contentPath); // Cache busting
         if (!response.ok) {
           throw new Error(`Failed to load content: ${response.status}`);
         }
