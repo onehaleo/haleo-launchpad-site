@@ -67,7 +67,7 @@ const Navigation = () => {
                 <img 
                   src={resolveAssetUrl(content.navigation.logo)}
                   alt={content.site.name}
-                  className="h-10 w-10 rounded-md object-cover"
+                  className="h-14 w-14 rounded-md object-cover"
                 />
               </div>
             </Link>
