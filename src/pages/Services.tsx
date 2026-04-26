@@ -65,13 +65,13 @@ const Services = () => {
       <div className="min-h-screen bg-haleo-cloud">
         <Navigation />
         
-        <div className="pt-20 sm:pt-24 pb-16">
+        <div className="pt-20 sm:pt-24 pb-14 sm:pb-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12 sm:mb-16 px-4">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-haleo-ink mb-6 leading-tight">
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-haleo-ink mb-6 leading-tight">
                 What <span className="gradient-text">Haleo Builds</span>
               </h1>
-              <p className="text-lg sm:text-xl lg:text-2xl text-haleo-gray max-w-4xl mx-auto leading-relaxed">
+              <p className="text-base sm:text-xl lg:text-2xl text-haleo-gray max-w-4xl mx-auto leading-relaxed">
                 Custom internal systems for agencies and operational teams under 20 people that need cleaner execution, visibility, and accountability.
               </p>
             </div>
@@ -123,7 +123,7 @@ const Services = () => {
                       
                       <div className="text-center">
                         <p className="text-haleo-gray mb-4">👉 {service.ctaSubtext}</p>
-                        <Link to="/workflow-review" className="gradient-bg text-white px-8 py-4 rounded-full text-lg font-semibold hover:opacity-90 transition-all duration-300 hover:scale-105 flex items-center gap-2 mx-auto shadow-lg w-fit">
+                        <Link to="/workflow-review" className="gradient-bg text-white px-6 sm:px-8 py-4 rounded-full text-base sm:text-lg font-semibold hover:opacity-90 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 mx-auto shadow-lg w-full sm:w-fit">
                           {service.ctaText}
                           <ArrowRight className="h-5 w-5" />
                         </Link>
@@ -136,14 +136,14 @@ const Services = () => {
 
             <div className="mt-20 text-center">
               <div className="bg-gradient-to-br from-haleo-core to-haleo-violet rounded-3xl p-8 lg:p-12 text-white">
-                <h3 className="text-3xl lg:text-4xl font-bold mb-6">Built fast because the scope is clear.</h3>
+                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6">Built fast because the scope is clear.</h3>
                 <p className="text-lg lg:text-xl mb-8 max-w-4xl mx-auto leading-relaxed">
                   Every build follows a focused 10-day scope with clear boundaries, no bloated implementation cycle, and optional add-on modules after launch.
                 </p>
                 <p className="text-base lg:text-lg mb-8">
                   If your team is juggling spreadsheets, manual follow-ups, and disconnected tools, this is likely a fit.
                 </p>
-                <Link to="/workflow-review" className="bg-white text-haleo-core px-12 py-6 rounded-full text-xl font-bold hover:bg-gray-100 transition-all duration-300 hover:scale-105 flex items-center gap-2 mx-auto shadow-lg w-fit">
+                <Link to="/workflow-review" className="bg-white text-haleo-core px-7 sm:px-12 py-4 sm:py-6 rounded-full text-base sm:text-xl font-bold hover:bg-gray-100 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 mx-auto shadow-lg w-full sm:w-fit">
                   Start With a Workflow Review
                   <ArrowRight className="h-6 w-6" />
                 </Link>

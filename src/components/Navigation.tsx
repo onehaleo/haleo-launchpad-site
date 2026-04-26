@@ -56,7 +56,7 @@ const Navigation = () => {
       scrolled ? 'bg-haleo-ink/85 backdrop-blur-sm shadow-sm' : 'bg-haleo-ink backdrop-blur-sm shadow-lg'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-3">
+        <div className="flex justify-between items-center py-2.5 sm:py-3">
           <div className="flex items-center">
             <Link 
               to="/" 
@@ -64,10 +64,10 @@ const Navigation = () => {
               onClick={() => handleNavigationClick('/')}
             >
               <div className="rounded-lg p-1 transition-all duration-300 hover:scale-105">
-                <img 
+                <img
                   src={resolveAssetUrl(content.navigation.logo)}
                   alt={content.site.name}
-                  className="h-14 w-14 rounded-md object-cover"
+                  className="h-11 w-11 sm:h-14 sm:w-14 rounded-md object-cover"
                 />
               </div>
             </Link>
@@ -97,14 +97,14 @@ const Navigation = () => {
           </div>
 
           <div className="md:hidden">
-            <button onClick={() => setIsOpen(!isOpen)} className="text-white">
+            <button onClick={() => setIsOpen(!isOpen)} className="text-white p-1.5">
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
         </div>
 
         {isOpen && (
-          <div className="md:hidden bg-white shadow-lg rounded-lg mt-2 p-4">
+          <div className="md:hidden bg-white shadow-lg rounded-lg mt-2 p-4 mb-2">
             <div className="flex flex-col space-y-4">
               {content.navigation.items.map((item, index) => (
                 <Link 
@@ -121,7 +121,7 @@ const Navigation = () => {
               ))}
               <Link
                 to={content.navigation.cta.url}
-                className="gradient-bg text-white px-6 py-2 rounded-full hover:opacity-90 transition-all duration-300 text-sm text-center"
+                className="gradient-bg text-white px-6 py-3 rounded-full hover:opacity-90 transition-all duration-300 text-sm text-center font-semibold"
                 onClick={() => {
                   setIsOpen(false);
                   handleNavigationClick(content.navigation.cta.url);

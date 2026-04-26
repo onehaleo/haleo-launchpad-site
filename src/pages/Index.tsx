@@ -24,21 +24,21 @@ const Index = () => {
       />
       <div className="min-h-screen">
         <Navigation />
-        <section className="pt-32 pb-28 bg-gradient-to-br from-haleo-cloud via-white to-purple-50">
+        <section className="pt-24 sm:pt-28 lg:pt-32 pb-20 sm:pb-24 lg:pb-28 bg-gradient-to-br from-haleo-cloud via-white to-purple-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto text-center">
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-haleo-ink leading-tight">
+                <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-haleo-ink leading-tight">
                   Your messy spreadsheets turned into a custom internal system in 10 days.
                 </h1>
-                <p className="text-lg sm:text-xl text-haleo-gray mt-6 max-w-3xl mx-auto">
+                <p className="text-base sm:text-xl text-haleo-gray mt-5 sm:mt-6 max-w-3xl mx-auto">
                   For fast-moving agencies and small teams that have outgrown spreadsheets, manual tracking, and duct-taped workflows.
                 </p>
-                <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link to="/workflow-review" className="gradient-bg text-white px-8 py-4 rounded-full font-semibold hover:opacity-90 transition-all duration-300 inline-flex items-center justify-center gap-2">
+                <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch">
+                  <Link to="/workflow-review" className="gradient-bg text-white px-6 sm:px-8 py-4 rounded-full font-semibold hover:opacity-90 transition-all duration-300 inline-flex items-center justify-center gap-2 w-full sm:w-auto">
                     See How This Would Look For Your Business
                     <ArrowRight className="h-4 w-4" />
                   </Link>
-                  <a href="#demos" className="border-2 border-haleo-core text-haleo-core px-8 py-4 rounded-full font-semibold hover:bg-haleo-core hover:text-white transition-all duration-300 inline-flex items-center justify-center gap-2">
+                  <a href="#demos" className="border-2 border-haleo-core text-haleo-core px-6 sm:px-8 py-4 rounded-full font-semibold hover:bg-haleo-core hover:text-white transition-all duration-300 inline-flex items-center justify-center gap-2 w-full sm:w-auto">
                     <PlayCircle className="h-4 w-4" />
                     Watch Demo
                   </a>
@@ -52,9 +52,9 @@ const Index = () => {
           </div>
         </section>
 
-        <section className="py-20 bg-white">
+        <section className="py-16 sm:py-20 bg-white">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-haleo-ink mb-8 text-center">Your team is moving fast. Your systems are barely holding on.</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-haleo-ink mb-8 text-center">Your team is moving fast. Your systems are barely holding on.</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {[
                 'Projects tracked across too many spreadsheets',
@@ -71,22 +71,22 @@ const Index = () => {
           </div>
         </section>
 
-        <section className="py-20 bg-haleo-cloud">
+        <section className="py-16 sm:py-20 bg-haleo-cloud">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <div className="bg-white rounded-2xl p-10 shadow-sm">
+              <div className="bg-white rounded-2xl p-7 sm:p-10 shadow-sm">
                 <h3 className="text-2xl font-bold text-haleo-ink mb-4">Before</h3>
                 <ul className="space-y-3 text-haleo-gray">
                   {['Scattered spreadsheets', 'Manual updates', 'Unclear ownership', 'Missed handoffs', 'Reactive operations'].map((item) => (
-                    <li key={item} className="flex items-center gap-2"><XCircle className="h-5 w-5 text-red-500" /> {item}</li>
+                    <li key={item} className="flex items-start gap-2"><XCircle className="h-5 w-5 text-red-500 mt-0.5 shrink-0" /> {item}</li>
                   ))}
                 </ul>
               </div>
-              <div className="bg-white rounded-2xl p-10 shadow-sm">
+              <div className="bg-white rounded-2xl p-7 sm:p-10 shadow-sm">
                 <h3 className="text-2xl font-bold text-haleo-ink mb-4">After</h3>
                 <ul className="space-y-3 text-haleo-gray">
                   {['One internal system', 'Clear workflow stages', 'Assigned owners', 'Live project visibility', 'Cleaner handoffs', 'Faster reporting'].map((item) => (
-                    <li key={item} className="flex items-center gap-2"><CheckCircle2 className="h-5 w-5 text-green-600" /> {item}</li>
+                    <li key={item} className="flex items-start gap-2"><CheckCircle2 className="h-5 w-5 text-green-600 mt-0.5 shrink-0" /> {item}</li>
                   ))}
                 </ul>
               </div>
@@ -94,9 +94,9 @@ const Index = () => {
           </div>
         </section>
 
-        <section className="py-20 bg-white" id="services">
+        <section className="py-16 sm:py-20 bg-white" id="services">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-haleo-ink text-center mb-4">What Haleo builds</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-haleo-ink text-center mb-4">What Haleo builds</h2>
             <p className="text-haleo-gray text-center max-w-3xl mx-auto mb-10">
               A custom internal system built around the way your team actually works — not a generic template you have to force your business into.
             </p>
@@ -132,9 +132,9 @@ const Index = () => {
           </div>
         </section>
 
-        <section className="py-20 bg-haleo-cloud" id="demos">
+        <section className="py-16 sm:py-20 bg-haleo-cloud" id="demos">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-haleo-ink text-center mb-10">Explore example systems</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-haleo-ink text-center mb-10">Explore example systems</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 {
@@ -165,9 +165,9 @@ const Index = () => {
           </div>
         </section>
 
-        <section className="py-20 bg-white">
+        <section className="py-16 sm:py-20 bg-white">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-haleo-ink text-center mb-10">How it works</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-haleo-ink text-center mb-10">How it works</h2>
             <div className="space-y-5">
               {[
                 ['1. Show us the chaos', 'You complete a structured intake showing your current workflow, spreadsheets, tools, and bottlenecks.'],
@@ -184,9 +184,9 @@ const Index = () => {
           </div>
         </section>
 
-        <section className="py-20 bg-haleo-cloud">
+        <section className="py-16 sm:py-20 bg-haleo-cloud">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-haleo-ink text-center mb-8">Built fast because the scope is clear.</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-haleo-ink text-center mb-8">Built fast because the scope is clear.</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 text-haleo-gray">
               {[
                 '10-day build timeline',
@@ -202,9 +202,9 @@ const Index = () => {
           </div>
         </section>
 
-        <section className="py-20 bg-white">
+        <section className="py-16 sm:py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-haleo-ink text-center mb-10">Who it is for</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-haleo-ink text-center mb-10">Who it is for</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="bg-haleo-cloud rounded-2xl p-8">
                 <h3 className="text-xl font-semibold text-haleo-ink mb-4">Good fit</h3>
@@ -237,11 +237,11 @@ const Index = () => {
           </div>
         </section>
 
-        <section className="py-20 bg-haleo-ink text-white">
+        <section className="py-16 sm:py-20 bg-haleo-ink text-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">Want to see how this would look for your business?</h2>
-            <p className="text-gray-300 mb-8">Send us your current workflow. We’ll show you what your internal system could become.</p>
-            <Link to="/workflow-review" className="gradient-bg text-white px-8 py-4 rounded-full font-semibold hover:opacity-90 transition-all duration-300 inline-flex items-center gap-2">
+            <p className="text-gray-300 mb-8 px-2">Send us your current workflow. We’ll show you what your internal system could become.</p>
+            <Link to="/workflow-review" className="gradient-bg text-white px-6 sm:px-8 py-4 rounded-full font-semibold hover:opacity-90 transition-all duration-300 inline-flex items-center justify-center gap-2 w-full sm:w-auto">
               Start With a Workflow Review
               <ArrowRight className="h-4 w-4" />
             </Link>

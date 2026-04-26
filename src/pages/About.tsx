@@ -25,10 +25,10 @@ const About = () => {
       <div className="min-h-screen">
         <Navigation />
         
-        <section className="pt-32 pb-24 bg-gradient-to-br from-haleo-cloud via-white to-purple-50">
+        <section className="pt-24 sm:pt-28 lg:pt-32 pb-16 sm:pb-24 bg-gradient-to-br from-haleo-cloud via-white to-purple-50">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-14">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-haleo-ink mb-6 leading-tight">
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-haleo-ink mb-6 leading-tight">
                 Hey, I'm <span className="gradient-text">Alexis</span>
               </h1>
               <p className="text-lg sm:text-xl text-haleo-gray max-w-3xl mx-auto leading-relaxed">
@@ -38,20 +38,20 @@ const About = () => {
 
             <div className="bg-white rounded-2xl p-8 sm:p-10 shadow-sm mb-12">
               <div className="space-y-5 text-haleo-gray">
-                <p className="text-lg leading-relaxed">
+                <p className="text-base sm:text-lg leading-relaxed">
                   Before Haleo, I worked in automation and cloud architecture where operational clarity was non-negotiable.
                 </p>
-                <p className="text-lg leading-relaxed">
+                <p className="text-base sm:text-lg leading-relaxed">
                   I kept seeing small teams with strong delivery and weak systems: scattered spreadsheets, unclear ownership, and constant status chasing.
                 </p>
-                <p className="text-lg leading-relaxed">
+                <p className="text-base sm:text-lg leading-relaxed">
                   Haleo exists to fix that with focused internal systems built in 10 days for agencies and operational businesses under 20 people.
                 </p>
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-              <div className="bg-white rounded-2xl p-8 shadow-sm">
+              <div className="bg-white rounded-2xl p-7 sm:p-8 shadow-sm">
                 <h3 className="text-2xl font-bold text-haleo-ink mb-6">What I do at Haleo:</h3>
                 <ul className="space-y-3">
                   {whatIDo.map((item, index) => (
@@ -63,7 +63,7 @@ const About = () => {
                 </ul>
               </div>
 
-              <div className="bg-white rounded-2xl p-8 shadow-sm">
+              <div className="bg-white rounded-2xl p-7 sm:p-8 shadow-sm">
                 <h3 className="text-2xl font-bold text-haleo-ink mb-6">What I believe:</h3>
                 <ul className="space-y-3">
                   {beliefs.map((belief, index) => (
@@ -77,14 +77,14 @@ const About = () => {
             </div>
 
             <div className="text-center">
-              <div className="bg-haleo-ink rounded-2xl p-10 text-white max-w-4xl mx-auto">
-                <h3 className="text-3xl font-bold mb-4">
+              <div className="bg-haleo-ink rounded-2xl p-7 sm:p-10 text-white max-w-4xl mx-auto">
+                <h3 className="text-2xl sm:text-3xl font-bold mb-4">
                   Want to see how this would look in your business?
                 </h3>
                 <p className="text-gray-300 mb-7">
                   Send your current workflow and I will map what your internal system can become.
                 </p>
-                <Link to="/workflow-review" className="gradient-bg text-white px-8 py-4 rounded-full text-lg font-semibold hover:opacity-90 transition-all duration-300 inline-flex items-center gap-2 mx-auto shadow-lg w-fit">
+                <Link to="/workflow-review" className="gradient-bg text-white px-8 py-4 rounded-full text-base sm:text-lg font-semibold hover:opacity-90 transition-all duration-300 inline-flex items-center justify-center gap-2 mx-auto shadow-lg w-full sm:w-fit">
                   Start With a Workflow Review
                   <ArrowRight className="h-5 w-5" />
                 </Link>
