@@ -9,6 +9,13 @@ const Footer = () => {
 
   if (loading || error || !content) return null;
 
+  const resolveAssetUrl = (assetPath) => {
+    if (!assetPath) return assetPath;
+    if (/^(https?:)?\/\//.test(assetPath)) return assetPath;
+    const normalized = assetPath.startsWith('/') ? assetPath.slice(1) : assetPath;
+    return `${import.meta.env.BASE_URL}${normalized}`;
+  };
+
   const getSocialIcon = (platform) => {
     switch (platform) {
       case 'instagram': return <Instagram className="h-6 w-6" />;
@@ -44,7 +51,7 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <div className="inline-block mb-6">
               <img 
-                src={content.footer.logo}
+                src={resolveAssetUrl(content.footer.logo)}
                 alt={content.site.name}
                 className="h-20 w-20 rounded-xl object-cover"
               />

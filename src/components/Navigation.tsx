@@ -38,6 +38,13 @@ const Navigation = () => {
 
   if (loading || error || !content) return null;
 
+  const resolveAssetUrl = (assetPath: string) => {
+    if (!assetPath) return assetPath;
+    if (/^(https?:)?\/\//.test(assetPath)) return assetPath;
+    const normalized = assetPath.startsWith('/') ? assetPath.slice(1) : assetPath;
+    return `${import.meta.env.BASE_URL}${normalized}`;
+  };
+
   const handleNavigationClick = (url: string) => {
     startLoading();
     if (url.includes('#')) return;
@@ -58,7 +65,7 @@ const Navigation = () => {
             >
               <div className="rounded-lg p-1 transition-all duration-300 hover:scale-105">
                 <img 
-                  src={content.navigation.logo}
+                  src={resolveAssetUrl(content.navigation.logo)}
                   alt={content.site.name}
                   className="h-10 w-10 rounded-md object-cover"
                 />
