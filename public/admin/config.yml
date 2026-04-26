@@ -3,7 +3,7 @@ backend:
   repo: onehaleo/haleo-launchpad-site
   branch: main
   open_authoring: true
-  base_url: https://hale-oauth.vercel.app
+  base_url: https://cms-oauth-github.vercel.app
   auth_endpoint: auth
 
 publish_mode: editorial_workflow
