@@ -180,12 +180,6 @@ footer:
           url: "/about"
         - text: "Demos"
           url: "/#demos"
-        - text: "Marketing Agency Demo"
-          url: "/demos/marketing-agency"
-        - text: "Construction Office Demo"
-          url: "/demos/construction-office"
-        - text: "PR / Studio Demo"
-          url: "/demos/pr-studio"
 
     legal:
       title: "Contact & Legal"
@@ -193,9 +187,11 @@ footer:
         - text: "Contact"
           url: "mailto:hello@onehaleo.com"
         - text: "Terms"
-          url: "#"
+          url: "/terms"
         - text: "Privacy"
-          url: "#"
+          url: "/privacy"
+        - text: "License"
+          url: "/license"
   
   newsletter:
     description: "Get system design insights and launch updates."
