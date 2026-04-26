@@ -1,8 +1,8 @@
 # Site Configuration
 site:
   name: "Haleo"
-  tagline: "Automation that works while you don't"
-  description: "Simple, scalable automation systems for solopreneurs who value their time"
+  tagline: "Custom internal systems in 10 days"
+  description: "Haleo builds custom internal systems for fast-moving small teams in 10 days."
   email: "hello@onehaleo.com"
   website: "https://onehaleo.com"
 
@@ -36,21 +36,19 @@ hero:
 
 # Navigation
 navigation:
-  logo: "/lovable-uploads/8bf9a199-52de-4152-9751-1a25c3bd7e0d.png"
+  logo: "/lovable-uploads/haleo-logo-new.png"
   items:
     - text: "Home"
       url: "/"
-    - text: "Services"
-      url: "/services"
-    - text: "Why Haleo"
-      url: "/why-haleo"
-    - text: "Templates"
-      url: "/templates"
+    - text: "What Haleo Builds"
+      url: "/#services"
+    - text: "Demos"
+      url: "/#demos"
     - text: "About"
       url: "/about"
   cta:
-    text: "Book Consult"
-    url: "#"
+    text: "Start Workflow Review"
+    url: "/workflow-review"
 
 # Services Section
 services:
@@ -158,8 +156,8 @@ templates:
 
 # Footer
 footer:
-  description: "Automation that works while you don't. Simple, scalable systems for solopreneurs who value their time."
-  logo: "/lovable-uploads/8bf9a199-52de-4152-9751-1a25c3bd7e0d.png"
+  description: "Haleo builds custom internal systems for fast-moving small teams in 10 days, replacing spreadsheet chaos and manual operations."
+  logo: "/lovable-uploads/haleo-logo-new.png"
   social_links:
     - platform: "instagram"
       url: "#"
@@ -171,41 +169,45 @@ footer:
       url: "#"
   
   links:
-    services:
-      title: "Services"
+    company:
+      title: "Company"
       items:
-        - text: "Automation Systems"
-          url: "/services"
-        - text: "AI Agents"
-          url: "/services"
-        - text: "Templates"
-          url: "/templates"
-        - text: "Custom Systems"
-          url: "/services"
-    
-    legal:
-      title: "Legal & Support"
-      items:
+        - text: "What Haleo Builds"
+          url: "/#services"
+        - text: "Workflow Review"
+          url: "/workflow-review"
         - text: "About"
           url: "/about"
-        - text: "Why Haleo"
-          url: "/why-haleo"
-        - text: "Terms & License"
-          url: "#"
+        - text: "Demos"
+          url: "/#demos"
+        - text: "Marketing Agency Demo"
+          url: "/demos/marketing-agency"
+        - text: "Construction Office Demo"
+          url: "/demos/construction-office"
+        - text: "PR / Studio Demo"
+          url: "/demos/pr-studio"
+
+    legal:
+      title: "Contact & Legal"
+      items:
         - text: "Contact"
           url: "mailto:hello@onehaleo.com"
+        - text: "Terms"
+          url: "#"
+        - text: "Privacy"
+          url: "#"
   
   newsletter:
-    description: "Get automation tips and new templates first."
+    description: "Get system design insights and launch updates."
     placeholder: "Enter your email"
-    cta: "Subscribe"
+    cta: "Join"
   
-  copyright: "© 2024 Haleo LLC. All rights reserved."
-  license_text: "By purchasing templates, you agree to our license terms."
+  copyright: "© 2026 Haleo LLC. All rights reserved."
+  license_text: "Built for fast-moving teams that need operational clarity."
 
 # SEO
 seo:
   default:
-    title: "Haleo - Automation Systems That Work While You Don't | Solopreneur Tools"
-    description: "Build scalable business automation systems for solopreneurs. Get custom templates, AI agents, and automated workflows that work 24/7. Start automating your business today."
-    keywords: "automation systems, solopreneur automation, business automation tools, AI agents, workflow automation, small business productivity, custom templates, automated systems"
+    title: "Haleo - Custom Internal Systems in 10 Days"
+    description: "Haleo builds custom internal systems for fast-moving small teams in 10 days, replacing messy spreadsheets, manual tracking, and scattered workflows."
+    keywords: "internal systems, operations system, agency workflow, small team operations, spreadsheet replacement, custom workflow build"

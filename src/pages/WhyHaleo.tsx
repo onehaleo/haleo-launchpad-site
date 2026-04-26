@@ -3,29 +3,24 @@ import { Link } from 'react-router-dom';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import PageTransition from '../components/PageTransition';
-import { Brain, Shield, Users, MessageCircle, ArrowRight } from 'lucide-react';
+import { Timer, Target, Compass, ArrowRight } from 'lucide-react';
 
 const WhyHaleo = () => {
   const differentiators = [
     {
-      icon: <Brain className="h-16 w-16 text-haleo-violet" />,
-      title: "Strategy-first builds",
-      description: "Haleo doesn't just automate tasks. We design systems around your unique workflows, goals, and capacity. Whether you're a visual thinker, a list lover, or somewhere in between — your system will match the way you work."
+      icon: <Timer className="h-16 w-16 text-haleo-violet" />,
+      title: "Built in 10 days",
+      description: "Haleo is designed for fast-moving teams that need operational relief now, not after a multi-month implementation cycle."
     },
     {
-      icon: <Shield className="h-16 w-16 text-haleo-violet" />,
-      title: "Data-secure by design", 
-      description: "No shady scraping. No mystery automations. Haleo uses trusted tools like Make, Airtable, and ClickUp — and builds everything with ethical AI principles and private data handling in mind. Your systems stay yours."
+      icon: <Target className="h-16 w-16 text-haleo-violet" />,
+      title: "Focused internal systems",
+      description: "This is not generic consulting and not enterprise software replacement. Haleo scopes tightly around the workflows your team relies on every week."
     },
     {
-      icon: <Users className="h-16 w-16 text-haleo-violet" />,
-      title: "Built for solopreneurs",
-      description: "Haleo doesn't speak corporate. We speak \"one-person business doing big things.\" That means every automation, dashboard, or AI agent we build is lightweight, scalable, and totally manageable without a team."
-    },
-    {
-      icon: <MessageCircle className="h-16 w-16 text-haleo-violet" />,
-      title: "No jargon. No fluff.",
-      description: "Haleo believes in clear systems, clean builds, and explanations you don't need to Google. Whether we're building together or you're buying a plug-and-play template, you'll always know exactly how it works."
+      icon: <Compass className="h-16 w-16 text-haleo-violet" />,
+      title: "Operational clarity over tool complexity",
+      description: "Haleo removes spreadsheet sprawl and scattered updates by creating one practical operating system your team can actually use day to day."
     }
   ];
 
@@ -41,43 +36,39 @@ const WhyHaleo = () => {
                 Why <span className="gradient-text">Haleo</span>
               </h1>
               <p className="text-xl md:text-2xl text-haleo-gray max-w-4xl mx-auto leading-relaxed mb-8">
-                You don't need more apps.
+                Your team is moving fast.
               </p>
               <p className="text-2xl md:text-3xl font-bold text-haleo-ink max-w-4xl mx-auto leading-tight">
-                You need a system that thinks like you do.
+                Your systems should not be the bottleneck.
               </p>
             </div>
 
             <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl mb-16">
               <div className="max-w-4xl mx-auto text-center">
                 <p className="text-lg md:text-xl text-haleo-gray leading-relaxed mb-6">
-                  Most solopreneurs are running their businesses on a patchwork of tools, reminders, and vibes.
+                  Most small teams under 20 people are operating across spreadsheets, chat threads, and disconnected tools.
                 </p>
                 <p className="text-lg md:text-xl text-haleo-gray leading-relaxed mb-6">
-                  You're not disorganized — your systems just haven't caught up with your growth.
+                  The issue usually is not effort. The issue is that the system never got rebuilt as the business grew.
                 </p>
                 <p className="text-xl md:text-2xl font-semibold text-haleo-ink">
-                  That's where Haleo comes in.
+                  Haleo fixes that with a custom internal system in 10 days.
                 </p>
               </div>
             </div>
 
             <div className="mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-haleo-ink text-center mb-12">
-                What makes <span className="gradient-text">Haleo</span> different?
+                What makes this approach <span className="gradient-text">different</span>?
               </h2>
 
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {differentiators.map((item, index) => (
                   <div key={index} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                    <div className="flex items-start gap-6">
-                      <div className="flex-shrink-0">
-                        {item.icon}
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-bold text-haleo-ink mb-4">{item.title}</h3>
-                        <p className="text-haleo-gray leading-relaxed">{item.description}</p>
-                      </div>
+                    <div className="flex flex-col items-center text-center gap-4">
+                      {item.icon}
+                      <h3 className="text-xl font-bold text-haleo-ink">{item.title}</h3>
+                      <p className="text-haleo-gray leading-relaxed">{item.description}</p>
                     </div>
                   </div>
                 ))}
@@ -86,29 +77,29 @@ const WhyHaleo = () => {
 
             <div className="bg-gradient-to-br from-haleo-core to-haleo-violet rounded-3xl p-8 md:p-12 text-white text-center mb-16">
               <blockquote className="text-xl md:text-2xl italic mb-6 leading-relaxed">
-                "Working with Haleo gave me structure without the stress. I finally have systems that feel like they were built for me — because they were."
+                "We stopped spending hours chasing status updates across spreadsheets and chat. Now everyone works from one system."
               </blockquote>
             </div>
 
             <div className="text-center">
               <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-12 shadow-xl max-w-4xl mx-auto">
-                <h3 className="text-3xl font-bold text-haleo-ink mb-4">Solopreneurs deserve powerful systems, too.</h3>
+                <h3 className="text-3xl font-bold text-haleo-ink mb-4">Want to see how this would look for your business?</h3>
                 <p className="text-xl text-haleo-gray mb-8">
-                  Let's build the backend your business actually needs.
+                  Send your current workflow and we will map what your internal system could become.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link 
-                    to="/services"
+                    to="/workflow-review"
                     className="gradient-bg text-white px-8 py-4 rounded-full text-lg font-semibold hover:opacity-90 transition-all duration-300 hover:scale-105 flex items-center gap-2 mx-auto shadow-lg"
                   >
-                    See Services
+                    Start With a Workflow Review
                     <ArrowRight className="h-5 w-5" />
                   </Link>
                   <Link 
-                    to="/templates"
+                    to="/demos/marketing-agency"
                     className="border-2 border-haleo-core text-haleo-core px-8 py-4 rounded-full text-lg font-semibold hover:bg-haleo-core hover:text-white transition-all duration-300"
                   >
-                    Shop Templates
+                    Watch Demo
                   </Link>
                 </div>
               </div>

@@ -65,7 +65,7 @@ export default {
 				},
 				haleo: {
 					'cloud': '#F9F9F9',
-					'ink': '#1f1f1f',
+					'ink': '#070A1C',
 					'gray': '#333333',
 					'violet': '#b850ff',
 					'core': '#521ca6'

@@ -19,21 +19,45 @@ const Footer = () => {
     }
   };
 
+  const renderFooterLink = (item, index) => {
+    const isInternalRoute = item.url.startsWith('/') && !item.url.includes('#');
+
+    if (isInternalRoute) {
+      return (
+        <Link to={item.url} className="text-gray-300 hover:text-white transition-colors">
+          {item.text}
+        </Link>
+      );
+    }
+
+    return (
+      <a href={item.url} className="text-gray-300 hover:text-white transition-colors">
+        {item.text}
+      </a>
+    );
+  };
+
   return (
     <footer className="bg-haleo-ink text-white py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="lg:col-span-2">
-            <div className="bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg inline-block mb-6">
+            <div className="inline-block mb-6">
               <img 
                 src={content.footer.logo}
                 alt={content.site.name}
-                className="h-6 w-auto"
+                className="h-20 w-20 rounded-xl object-cover"
               />
             </div>
             <p className="text-gray-300 mb-6 max-w-md">
               {content.footer.description}
             </p>
+            <Link
+              to="/workflow-review"
+              className="gradient-bg text-white px-6 py-3 rounded-full font-semibold inline-block hover:opacity-90 transition-all duration-300 mb-6"
+            >
+              Start With a Workflow Review
+            </Link>
             <div className="flex space-x-4">
               {content.footer.social_links.map((social, index) => (
                 <a key={index} href={social.url} className="text-gray-400 hover:text-haleo-violet transition-colors">
@@ -44,19 +68,11 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-4">{content.footer.links.services.title}</h4>
+            <h4 className="text-lg font-semibold mb-4">{content.footer.links.company.title}</h4>
             <ul className="space-y-2">
-              {content.footer.links.services.items.map((item, index) => (
+              {content.footer.links.company.items.map((item, index) => (
                 <li key={index}>
-                  {item.url.startsWith('/') ? (
-                    <Link to={item.url} className="text-gray-300 hover:text-white transition-colors">
-                      {item.text}
-                    </Link>
-                  ) : (
-                    <a href={item.url} className="text-gray-300 hover:text-white transition-colors">
-                      {item.text}
-                    </a>
-                  )}
+                  {renderFooterLink(item, index)}
                 </li>
               ))}
             </ul>
@@ -67,31 +83,25 @@ const Footer = () => {
             <ul className="space-y-2">
               {content.footer.links.legal.items.map((item, index) => (
                 <li key={index}>
-                  {item.url.startsWith('/') || item.url.startsWith('#') ? (
-                    <Link to={item.url} className="text-gray-300 hover:text-white transition-colors">
-                      {item.text}
-                    </Link>
-                  ) : (
-                    <a href={item.url} className="text-gray-300 hover:text-white transition-colors">
-                      {item.text}
-                    </a>
-                  )}
+                  {renderFooterLink(item, index)}
                 </li>
               ))}
             </ul>
-            <div className="mt-6">
-              <p className="text-gray-400 text-sm">{content.footer.newsletter.description}</p>
-              <div className="flex flex-col sm:flex-row gap-3 mt-2">
-                <input 
-                  type="email" 
-                  placeholder={content.footer.newsletter.placeholder}
-                  className="bg-haleo-gray text-white px-3 py-3 rounded-lg flex-1 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-haleo-violet text-sm min-w-0"
-                />
-                <button className="gradient-bg px-4 py-3 rounded-lg hover:opacity-90 transition-opacity text-sm whitespace-nowrap">
-                  {content.footer.newsletter.cta}
-                </button>
+            {content.footer.newsletter && (
+              <div className="mt-6">
+                <p className="text-gray-400 text-sm">{content.footer.newsletter.description}</p>
+                <div className="flex flex-col gap-3 mt-3">
+                  <input 
+                    type="email" 
+                    placeholder={content.footer.newsletter.placeholder}
+                    className="bg-haleo-gray text-white px-3 py-3 rounded-lg placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-haleo-violet text-sm min-w-0"
+                  />
+                  <button className="gradient-bg px-4 py-3 rounded-lg hover:opacity-90 transition-opacity text-sm whitespace-nowrap">
+                    {content.footer.newsletter.cta}
+                  </button>
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
 
