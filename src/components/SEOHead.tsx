@@ -7,6 +7,8 @@ interface SEOHeadProps {
   keywords?: string;
   canonicalUrl?: string;
   ogImage?: string;
+  /** e.g. `noindex, nofollow` for private routes */
+  robots?: string;
 }
 
 const SEOHead = ({ 
@@ -14,7 +16,8 @@ const SEOHead = ({
   description = "Build scalable automation systems that work while you don't. Custom templates, AI agents, and business workflows for growing solopreneurs.",
   keywords = "automation systems, solopreneurs, business automation, AI agents, workflow automation, small business tools, productivity systems, custom templates",
   canonicalUrl,
-  ogImage = "https://onehaleo.com/lovable-uploads/8bf9a199-52de-4152-9751-1a25c3bd7e0d.png"
+  ogImage = "https://onehaleo.com/lovable-uploads/8bf9a199-52de-4152-9751-1a25c3bd7e0d.png",
+  robots,
 }: SEOHeadProps) => {
   const location = useLocation();
   const baseUrl = "https://onehaleo.com";
@@ -60,7 +63,11 @@ const SEOHead = ({
     updateMeta('twitter:description', description);
     updateMeta('twitter:image', ogImage);
 
-  }, [title, description, keywords, fullUrl, ogImage]);
+    if (robots) {
+      updateMeta('robots', robots);
+    }
+
+  }, [title, description, keywords, fullUrl, ogImage, robots]);
 
   return null;
 };

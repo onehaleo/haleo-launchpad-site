@@ -2,7 +2,9 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { useEffect, useRef } from "react";
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { trackSpaPageView } from "./lib/gtag";
 import Index from "./pages/Index";
 import Services from "./pages/Services";
 import WhyHaleo from "./pages/WhyHaleo";
@@ -14,6 +16,7 @@ import WorkflowReview from "./pages/WorkflowReview";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
 import License from "./pages/License";
+import Admin from "./pages/Admin";
 import { DemoShell } from "./components/demo/DemoShell";
 import DemoDashboardPage from "./pages/demo/DemoDashboardPage";
 import DemoClientsPage from "./pages/demo/DemoClientsPage";
@@ -23,6 +26,23 @@ import DemoDeliverablesPage from "./pages/demo/DemoDeliverablesPage";
 import DemoApprovalsPage from "./pages/demo/DemoApprovalsPage";
 
 const queryClient = new QueryClient();
+
+/** Sends GA4 page_view on in-app route changes (first load is covered by gtag config in index.html). */
+function GtagSpaPageViews() {
+  const location = useLocation();
+  const isFirst = useRef(true);
+
+  useEffect(() => {
+    const path = `${location.pathname}${location.search}${location.hash}`;
+    if (isFirst.current) {
+      isFirst.current = false;
+      return;
+    }
+    trackSpaPageView(path);
+  }, [location.pathname, location.search, location.hash]);
+
+  return null;
+}
 
 const AppContent = () => (
   <Routes>
@@ -34,6 +54,7 @@ const AppContent = () => (
     <Route path="/terms" element={<Terms />} />
     <Route path="/privacy" element={<Privacy />} />
     <Route path="/license" element={<License />} />
+    <Route path="/admin" element={<Admin />} />
     <Route path="/demos/marketing-agency" element={<DemoDetail slug="marketing-agency" />} />
     <Route path="/demos/construction-office" element={<DemoDetail slug="construction-office" />} />
     <Route path="/demos/pr-studio" element={<DemoShell />}>
@@ -58,6 +79,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter basename={import.meta.env.BASE_URL}>
+        <GtagSpaPageViews />
         <AppContent />
       </BrowserRouter>
     </TooltipProvider>
