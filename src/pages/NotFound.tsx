@@ -11,7 +11,7 @@ const NotFound = () => {
     <PageTransition animate={false}>
       <SEOHead 
         title="Page Not Found | Haleo"
-        description="Sorry, the page you're looking for doesn't exist. Return to Haleo to explore internal systems built for fast-moving small teams."
+        description="Sorry, the page you're looking for doesn't exist. Return to Haleo for internal systems built for fast-moving teams."
         keywords="404, page not found, haleo, internal systems"
       />
       <div className="min-h-screen bg-haleo-cloud">
@@ -42,7 +42,7 @@ const NotFound = () => {
                   to="/workflow-review" 
                   className="border-2 border-haleo-core text-haleo-core px-8 py-4 rounded-full text-base sm:text-lg font-semibold hover:bg-haleo-core hover:text-white transition-all duration-300 inline-flex items-center justify-center gap-2 w-full sm:w-auto"
                 >
-                  Start Workflow Review
+                  Request a Workflow Review
                   <ArrowRight className="h-5 w-5" />
                 </Link>
               </div>
@@ -50,14 +50,11 @@ const NotFound = () => {
               <div className="border-t border-haleo-cloud pt-8 mt-8">
                 <p className="text-haleo-gray mb-4">Quick links</p>
                 <div className="flex flex-wrap justify-center gap-4">
-                  <Link to="/#services" className="text-haleo-violet hover:text-haleo-core transition-colors font-medium">
+                  <Link to="/services" className="text-haleo-violet hover:text-haleo-core transition-colors font-medium">
                     What Haleo Builds
                   </Link>
-                  <Link to="/about" className="text-haleo-violet hover:text-haleo-core transition-colors font-medium">
-                    About
-                  </Link>
-                  <Link to="/#demos" className="text-haleo-violet hover:text-haleo-core transition-colors font-medium">
-                    Demos
+                  <Link to="/workflow-review" className="text-haleo-violet hover:text-haleo-core transition-colors font-medium">
+                    Workflow Review
                   </Link>
                 </div>
               </div>

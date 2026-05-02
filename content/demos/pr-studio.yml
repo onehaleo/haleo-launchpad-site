@@ -10,5 +10,5 @@ modules:
   - "Reporting Snapshot Board"
 before_state: "Deliverables and approvals get buried across docs and chats, creating avoidable client friction."
 after_state: "Account teams work from one system with clear deliverable status, deadlines, and ownership."
-cta_text: "Start Workflow Review"
+cta_text: "Request a Workflow Review"
 cta_link: "/workflow-review"

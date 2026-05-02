@@ -1,9 +1,9 @@
 title: "Fulfillment + Task Tracking System"
 slug: "fulfillment-task-tracking"
-short_description: "Organize recurring execution work with clean stages, ownership, and reporting."
-replaces: "Ad-hoc checklists, manual reminders, and unclear handoffs."
-helps_with: "Execution flow, team accountability, and faster operational reporting."
-best_for: "Operational teams, construction offices, and delivery-heavy service businesses."
+short_description: "Organize recurring execution work with clear stages, ownership, and reporting."
+replaces: "Ad hoc checklists, manual reminders, and unclear handoffs."
+helps_with: "Execution flow, team accountability, and fewer open-loop tasks."
+best_for: "Operations teams, service businesses, and delivery-heavy teams."
 features:
   - "Workflow stage templates"
   - "Task ownership assignment"

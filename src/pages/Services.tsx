@@ -10,56 +10,50 @@ const Services = () => {
   const services = [
     {
       icon: <Workflow className="h-16 w-16 text-haleo-violet" />,
-      title: "Client + Project Operations System",
-      subtitle: "One system for delivery, ownership, and visibility.",
-      description: "Built for teams managing multiple clients and timelines at once. Haleo maps your workflow into a clean internal operating system so deadlines, handoffs, and status are always visible.",
+      title: 'Client + Project Operations System',
+      subtitle: 'One internal system for delivery workflows, ownership, and recurring updates.',
+      description:
+        'Built for teams managing multiple clients and timelines at once. Haleo maps your workflow into a single internal operating system so deliverables, ownership, and status stay in one place.',
       features: [
-        "What it replaces: scattered project sheets, Slack check-ins, and disconnected PM tools",
-        "What it helps with: stage tracking, ownership, approvals, and account health",
-        "Best for: marketing agencies, PR firms, and creative studios"
+        'Replaces: duplicate spreadsheets, Slack updates, and disconnected PM boards',
+        'Helps with: tracking deliverables, accountability, client visibility, and recurring status',
+        'Best for: agencies, studios, PR teams, and service businesses',
       ],
-      platforms: "Built around your current stack, then streamlined into a single source of truth.",
-      testimonial: "We finally stopped asking who owns what. The system made responsibilities and status obvious.",
-      ctaText: "See How This Would Look For Your Business",
-      ctaSubtext: "Start with a workflow review"
-    },
-    {
-      icon: <BriefcaseBusiness className="h-16 w-16 text-haleo-violet" />,
-      title: "Lead Intake + Sales Pipeline System",
-      subtitle: "Turn inbound chaos into a structured revenue workflow.",
-      description: "Haleo designs lead-to-close systems that give your team a clear qualification flow, ownership handoff, and pipeline visibility without bloated CRM overhead.",
-      features: [
-        "What it replaces: manual lead routing, duplicate follow-ups, and unstructured notes",
-        "What it helps with: intake standardization, assignment logic, and deal stage clarity",
-        "Best for: recruiting agencies, service businesses, and client-based teams"
-      ],
-      platforms: "Configured to match your sales motion and reporting needs.",
-      testimonial: "The same lead no longer gets touched by three people in three different tools.",
-      ctaText: "See How This Would Look For Your Business",
-      ctaSubtext: "Map your current pipeline"
+      platforms: 'Configured around how your team already runs delivery—not a generic template.',
     },
     {
       icon: <ClipboardList className="h-16 w-16 text-haleo-violet" />,
-      title: "Fulfillment + Task Tracking System",
-      subtitle: "Cleaner handoffs. Fewer dropped details. Faster delivery.",
-      description: "Haleo builds fulfillment systems that organize recurring operational work into clear stages with owners, priorities, and real-time visibility.",
+      title: 'Fulfillment + Task Tracking System',
+      subtitle: 'Organize recurring execution work with clear stages, ownership, and reporting.',
+      description:
+        'Haleo builds fulfillment systems that organize recurring operational work into clear stages with owners, priorities, and visibility—fewer open loops between handoffs.',
       features: [
-        "What it replaces: ad-hoc reminders, spreadsheet trackers, and reactive execution",
-        "What it helps with: delivery flow, team accountability, and bottleneck reduction",
-        "Best for: construction offices, operations teams, and execution-heavy businesses"
+        'Replaces: ad hoc checklists, manual reminders, and unclear handoffs',
+        'Helps with: execution flow, team accountability, and fewer open-loop tasks',
+        'Best for: operations teams, service businesses, and delivery-heavy teams',
       ],
-      platforms: "Designed for practical team adoption, not enterprise process overhead.",
-      testimonial: "Handoffs became clean, and reporting stopped taking half a day.",
-      ctaText: "See How This Would Look For Your Business",
-      ctaSubtext: "Review your current fulfillment flow"
-    }
+      platforms: 'Designed for practical team adoption, not heavyweight process overhead.',
+    },
+    {
+      icon: <BriefcaseBusiness className="h-16 w-16 text-haleo-violet" />,
+      title: 'Lead Intake + Sales Pipeline System',
+      subtitle: 'Turn inbound lead chaos into a clear, structured pipeline workflow.',
+      description:
+        'Haleo designs lead-to-close systems that give your team structured intake, ownership, and pipeline movement without bloated CRM overhead.',
+      features: [
+        'Replaces: manual lead routing, inconsistent follow-up, and fragmented CRM notes',
+        'Helps with: lead review, qualification, owner assignment, and clear pipeline movement',
+        'Best for: recruiting agencies, service businesses, and client-based teams',
+      ],
+      platforms: 'Configured to match your intake motion and reporting needs.',
+    },
   ];
 
   return (
     <PageTransition animate={false}>
       <SEOHead 
         title="What Haleo Builds | Internal Systems for Small Teams"
-        description="Haleo builds custom internal systems in 10 days for fast-moving agencies and operational businesses that have outgrown spreadsheets."
+        description="Haleo builds simple internal systems in 10 days for fast-moving agencies and operational teams that have outgrown spreadsheets."
         keywords="internal operations system, workflow system, agency operations, small team systems, spreadsheet replacement"
       />
       <div className="min-h-screen bg-haleo-cloud">
@@ -69,10 +63,10 @@ const Services = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12 sm:mb-16 px-4">
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-haleo-ink mb-6 leading-tight">
-                What <span className="gradient-text">Haleo Builds</span>
+                What <span className="gradient-text">Haleo builds</span>
               </h1>
               <p className="text-base sm:text-xl lg:text-2xl text-haleo-gray max-w-4xl mx-auto leading-relaxed">
-                Custom internal systems for agencies and operational teams under 20 people that need cleaner execution, visibility, and accountability.
+                Haleo builds simple internal systems for fast-moving agencies, studios, and small operational teams that have outgrown spreadsheets, manual tracking, and duct-taped workflows.
               </p>
             </div>
 
@@ -95,11 +89,11 @@ const Services = () => {
 
                       {service.features.length > 0 && (
                         <div className="mb-6">
-                          <h4 className="font-semibold text-haleo-ink mb-4 text-center sm:text-left">System fit details:</h4>
+                          <h4 className="font-semibold text-haleo-ink mb-4 text-center sm:text-left">System fit details</h4>
                           <ul className="space-y-3">
                             {service.features.map((feature, idx) => (
                               <li key={idx} className="flex items-start text-haleo-gray text-sm sm:text-base">
-                                <div className="w-2 h-2 bg-haleo-violet rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                                <div className="w-2 h-2 bg-haleo-violet rounded-full mt-2 mr-4 shrink-0" />
                                 {feature}
                               </li>
                             ))}
@@ -116,15 +110,13 @@ const Services = () => {
                       )}
                     </div>
 
-                    <div className="bg-haleo-cloud rounded-2xl p-6 lg:p-8">
-                      <blockquote className="text-lg italic text-haleo-ink mb-6 text-center">
-                        "{service.testimonial}"
-                      </blockquote>
-                      
+                    <div className="bg-haleo-cloud rounded-2xl p-6 lg:p-8 flex flex-col justify-center min-h-[200px]">
+                      <p className="text-haleo-gray text-center mb-6 text-sm sm:text-base">
+                        If this matches how your team operates today, the next step is a structured workflow review.
+                      </p>
                       <div className="text-center">
-                        <p className="text-haleo-gray mb-4">👉 {service.ctaSubtext}</p>
                         <Link to="/workflow-review" className="gradient-bg text-white px-6 sm:px-8 py-4 rounded-full text-base sm:text-lg font-semibold hover:opacity-90 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 mx-auto shadow-lg w-full sm:w-fit">
-                          {service.ctaText}
+                          Request a Workflow Review
                           <ArrowRight className="h-5 w-5" />
                         </Link>
                       </div>
@@ -138,13 +130,13 @@ const Services = () => {
               <div className="bg-gradient-to-br from-haleo-core to-haleo-violet rounded-3xl p-8 lg:p-12 text-white">
                 <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6">Built fast because the scope is clear.</h3>
                 <p className="text-lg lg:text-xl mb-8 max-w-4xl mx-auto leading-relaxed">
-                  Every build follows a focused 10-day scope with clear boundaries, no bloated implementation cycle, and optional add-on modules after launch.
+                  Every build follows a focused 10-day scope with clear boundaries, no bloated implementation cycle, and optional add-on modules after delivery.
                 </p>
                 <p className="text-base lg:text-lg mb-8">
-                  If your team is juggling spreadsheets, manual follow-ups, and disconnected tools, this is likely a fit.
+                  If your team is juggling spreadsheets, manual follow-up, and disconnected tools, this is likely a fit.
                 </p>
                 <Link to="/workflow-review" className="bg-white text-haleo-core px-7 sm:px-12 py-4 sm:py-6 rounded-full text-base sm:text-xl font-bold hover:bg-gray-100 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 mx-auto shadow-lg w-full sm:w-fit">
-                  Start With a Workflow Review
+                  Request a Workflow Review
                   <ArrowRight className="h-6 w-6" />
                 </Link>
               </div>

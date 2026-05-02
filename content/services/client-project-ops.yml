@@ -1,9 +1,9 @@
 title: "Client + Project Operations System"
 slug: "client-project-ops"
-short_description: "One internal system for delivery workflow, ownership, and project visibility."
-replaces: "Scattered spreadsheets, Slack updates, and disconnected PM boards."
-helps_with: "Tracking delivery stage, accountable owner, deadlines, and account status."
-best_for: "Marketing agencies, PR teams, and creative studios."
+short_description: "One internal system for delivery workflows, ownership, and recurring updates."
+replaces: "Duplicate spreadsheets, Slack updates, and disconnected PM boards."
+helps_with: "Tracking deliverables, accountability, client visibility, and recurring status."
+best_for: "Agencies, studios, PR teams, and service businesses."
 features:
   - "Central project workflow view"
   - "Owner-based accountability"

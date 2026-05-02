@@ -24,7 +24,7 @@ const DemoDetail = ({ slug }: DemoDetailProps) => {
               <div className="bg-white rounded-2xl p-8 shadow-sm text-center">
                 <h1 className="text-3xl font-bold text-haleo-ink mb-4">Demo Not Found</h1>
                 <p className="text-haleo-gray mb-6">This demo page is not available.</p>
-                <Link to="/#demos" className="text-haleo-core font-semibold">Back to Demos</Link>
+                <Link to="/" className="text-haleo-core font-semibold">Back to home</Link>
               </div>
             </div>
           </main>

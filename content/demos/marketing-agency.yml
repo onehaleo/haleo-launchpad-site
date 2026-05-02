@@ -10,5 +10,5 @@ modules:
   - "Team Capacity View"
 before_state: "Status updates are manual, deadlines are scattered, and account visibility depends on who is online."
 after_state: "One operating system shows campaign stage, owner, blockers, and client status in real time."
-cta_text: "Start Workflow Review"
+cta_text: "Request a Workflow Review"
 cta_link: "/workflow-review"

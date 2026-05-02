@@ -10,5 +10,5 @@ modules:
   - "Project Status Dashboard"
 before_state: "Office ops rely on disconnected sheets, text threads, and reactive follow-up across teams."
 after_state: "A structured system tracks every active job stage, owner, next action, and risk at a glance."
-cta_text: "Start Workflow Review"
+cta_text: "Request a Workflow Review"
 cta_link: "/workflow-review"

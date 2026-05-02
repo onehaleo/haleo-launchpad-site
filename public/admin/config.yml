@@ -27,8 +27,18 @@ collections:
           - { label: "Hero Subheadline", name: "hero_subheadline", widget: "text" }
           - { label: "Primary CTA Text", name: "primary_cta_text", widget: "string" }
           - { label: "Primary CTA Link", name: "primary_cta_link", widget: "string" }
-          - { label: "Secondary CTA Text", name: "secondary_cta_text", widget: "string" }
-          - { label: "Secondary CTA Link", name: "secondary_cta_link", widget: "string" }
+          - { label: "Secondary CTA Text", name: "secondary_cta_text", widget: "string", required: false }
+          - { label: "Secondary CTA Link", name: "secondary_cta_link", widget: "string", required: false }
+          - { label: "Hero trust line", name: "hero_trust_line", widget: "string" }
+          - { label: "Services section title", name: "services_section_title", widget: "string" }
+          - { label: "Services section intro", name: "services_section_intro", widget: "text" }
+          - { label: "Built-from heading", name: "built_from_heading", widget: "string" }
+          - { label: "Built-from body", name: "built_from_body", widget: "text" }
+          - label: "Built-from bullets"
+            name: "built_from_bullets"
+            widget: "list"
+            field: { label: "Bullet", name: "item", widget: "string" }
+          - { label: "Scope section title", name: "scope_section_title", widget: "string" }
           - { label: "Problem Section Title", name: "problem_section_title", widget: "string" }
           - label: "Problem Points"
             name: "problem_points"
@@ -153,6 +163,7 @@ collections:
           - label: "Newsletter"
             name: "newsletter"
             widget: "object"
+            required: false
             fields:
               - { label: "Description", name: "description", widget: "text" }
               - { label: "Placeholder", name: "placeholder", widget: "string" }

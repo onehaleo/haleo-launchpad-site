@@ -14,6 +14,13 @@ export interface HomeContent {
   primary_cta_link: string;
   secondary_cta_text: string;
   secondary_cta_link: string;
+  hero_trust_line: string;
+  services_section_title: string;
+  services_section_intro: string;
+  built_from_heading: string;
+  built_from_body: string;
+  built_from_bullets: StringList;
+  scope_section_title: string;
   problem_section_title: string;
   problem_points: StringList;
   before_after_title: string;
@@ -71,7 +78,7 @@ export interface SettingsContent {
   footer_description: string;
   logo_path: string;
   social_links: { platform: string; url: string }[];
-  newsletter: { description: string; placeholder: string; cta: string };
+  newsletter?: { description: string; placeholder: string; cta: string };
   copyright: string;
   license_text: string;
   nav_links: SiteLink[];

@@ -1,8 +1,8 @@
 title: "Lead Intake + Sales Pipeline System"
 slug: "lead-sales-pipeline"
-short_description: "Turn inbound lead chaos into a clean, structured pipeline workflow."
+short_description: "Turn inbound lead chaos into a clear, structured pipeline workflow."
 replaces: "Manual lead routing, inconsistent follow-up, and fragmented CRM notes."
-helps_with: "Standardized intake, owner assignment, and clear pipeline movement."
+helps_with: "Lead review, qualification, owner assignment, and clear pipeline movement."
 best_for: "Recruiting agencies, service businesses, and client-based teams."
 features:
   - "Lead qualification stages"

@@ -66,13 +66,15 @@ const Footer = () => {
             >
               {settings.footer_cta.text}
             </Link>
-            <div className="flex space-x-4">
-              {settings.social_links.map((social, index) => (
-                <a key={index} href={social.url} className="text-gray-400 hover:text-haleo-violet transition-colors">
-                  {getSocialIcon(social.platform)}
-                </a>
-              ))}
-            </div>
+            {settings.social_links.length > 0 && (
+              <div className="flex space-x-4">
+                {settings.social_links.map((social, index) => (
+                  <a key={index} href={social.url} className="text-gray-400 hover:text-haleo-violet transition-colors">
+                    {getSocialIcon(social.platform)}
+                  </a>
+                ))}
+              </div>
+            )}
           </div>
 
           <div>

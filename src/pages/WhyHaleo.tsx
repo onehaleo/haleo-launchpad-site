@@ -9,19 +9,19 @@ const WhyHaleo = () => {
   const differentiators = [
     {
       icon: <Timer className="h-16 w-16 text-haleo-violet" />,
-      title: "Built in 10 days",
-      description: "Haleo is designed for fast-moving teams that need operational relief now, not after a multi-month implementation cycle."
+      title: 'Built in 10 days',
+      description: 'Haleo is designed for fast-moving teams that need operational relief now, not after a multi-month implementation cycle.',
     },
     {
       icon: <Target className="h-16 w-16 text-haleo-violet" />,
-      title: "Focused internal systems",
-      description: "This is not generic consulting and not enterprise software replacement. Haleo scopes tightly around the workflows your team relies on every week."
+      title: 'Focused internal systems',
+      description: 'This is not open-ended software development or enterprise replacement. Haleo scopes tightly around the workflows your team relies on every week.',
     },
     {
       icon: <Compass className="h-16 w-16 text-haleo-violet" />,
-      title: "Operational clarity over tool complexity",
-      description: "Haleo removes spreadsheet sprawl and scattered updates by creating one practical operating system your team can actually use day to day."
-    }
+      title: 'Operational clarity over tool complexity',
+      description: 'Haleo removes spreadsheet sprawl and scattered updates by creating one practical operating system your team can use day to day.',
+    },
   ];
 
   return (
@@ -46,13 +46,13 @@ const WhyHaleo = () => {
             <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl mb-16">
               <div className="max-w-4xl mx-auto text-center">
                 <p className="text-lg md:text-xl text-haleo-gray leading-relaxed mb-6">
-                  Most small teams under 20 people are operating across spreadsheets, chat threads, and disconnected tools.
+                  Most small teams are operating across spreadsheets, chat threads, and disconnected tools.
                 </p>
                 <p className="text-lg md:text-xl text-haleo-gray leading-relaxed mb-6">
                   The issue usually is not effort. The issue is that the system never got rebuilt as the business grew.
                 </p>
                 <p className="text-xl md:text-2xl font-semibold text-haleo-ink">
-                  Haleo fixes that with a custom internal system in 10 days.
+                  Haleo addresses that with a focused internal system delivered in 10 days.
                 </p>
               </div>
             </div>
@@ -75,33 +75,19 @@ const WhyHaleo = () => {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-haleo-core to-haleo-violet rounded-3xl p-8 md:p-12 text-white text-center mb-16">
-              <blockquote className="text-xl md:text-2xl italic mb-6 leading-relaxed">
-                "We stopped spending hours chasing status updates across spreadsheets and chat. Now everyone works from one system."
-              </blockquote>
-            </div>
-
             <div className="text-center">
               <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-7 sm:p-12 shadow-xl max-w-4xl mx-auto">
                 <h3 className="text-2xl sm:text-3xl font-bold text-haleo-ink mb-4">Want to see how this would look for your business?</h3>
                 <p className="text-base sm:text-xl text-haleo-gray mb-8">
                   Send your current workflow and we will map what your internal system could become.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link 
-                    to="/workflow-review"
-                    className="gradient-bg text-white px-8 py-4 rounded-full text-base sm:text-lg font-semibold hover:opacity-90 transition-all duration-300 hover:scale-105 inline-flex items-center justify-center gap-2 mx-auto shadow-lg w-full sm:w-auto"
-                  >
-                    Start With a Workflow Review
-                    <ArrowRight className="h-5 w-5" />
-                  </Link>
-                  <Link 
-                    to="/demos/marketing-agency"
-                    className="border-2 border-haleo-core text-haleo-core px-8 py-4 rounded-full text-base sm:text-lg font-semibold hover:bg-haleo-core hover:text-white transition-all duration-300 w-full sm:w-auto"
-                  >
-                    Watch Demo
-                  </Link>
-                </div>
+                <Link 
+                  to="/workflow-review"
+                  className="gradient-bg text-white px-8 py-4 rounded-full text-base sm:text-lg font-semibold hover:opacity-90 transition-all duration-300 hover:scale-105 inline-flex items-center justify-center gap-2 mx-auto shadow-lg w-full sm:w-auto"
+                >
+                  Request a Workflow Review
+                  <ArrowRight className="h-5 w-5" />
+                </Link>
               </div>
             </div>
           </div>

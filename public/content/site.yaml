@@ -41,13 +41,11 @@ navigation:
     - text: "Home"
       url: "/"
     - text: "What Haleo Builds"
-      url: "/#services"
-    - text: "Demos"
-      url: "/#demos"
-    - text: "About"
-      url: "/about"
+      url: "/services"
+    - text: "Workflow Review"
+      url: "/workflow-review"
   cta:
-    text: "Start Workflow Review"
+    text: "Request a Workflow Review"
     url: "/workflow-review"
 
 # Services Section
@@ -156,36 +154,24 @@ templates:
 
 # Footer
 footer:
-  description: "Haleo builds custom internal systems for fast-moving small teams in 10 days, replacing spreadsheet chaos and manual operations."
+  description: "Haleo builds simple internal systems for fast-moving teams in 10 days, replacing spreadsheet chaos and manual operations."
   logo: "/lovable-uploads/haleo-logo-new.png"
-  social_links:
-    - platform: "instagram"
-      url: "#"
-    - platform: "tiktok"
-      url: "#"
-    - platform: "youtube"
-      url: "#"
-    - platform: "linkedin"
-      url: "#"
-  
+  social_links: []
+
   links:
     company:
       title: "Company"
       items:
         - text: "What Haleo Builds"
-          url: "/#services"
+          url: "/services"
         - text: "Workflow Review"
           url: "/workflow-review"
-        - text: "About"
-          url: "/about"
-        - text: "Demos"
-          url: "/#demos"
 
     legal:
       title: "Contact & Legal"
       items:
-        - text: "Contact"
-          url: "mailto:hello@onehaleo.com"
+        - text: "Workflow Review"
+          url: "/workflow-review"
         - text: "Terms"
           url: "/terms"
         - text: "Privacy"
@@ -193,17 +179,12 @@ footer:
         - text: "License"
           url: "/license"
   
-  newsletter:
-    description: "Get system design insights and launch updates."
-    placeholder: "Enter your email"
-    cta: "Join"
-  
   copyright: "© 2026 Haleo LLC. All rights reserved."
   license_text: "Built for fast-moving teams that need operational clarity."
 
 # SEO
 seo:
   default:
-    title: "Haleo - Custom Internal Systems in 10 Days"
-    description: "Haleo builds custom internal systems for fast-moving small teams in 10 days, replacing messy spreadsheets, manual tracking, and scattered workflows."
+    title: "Haleo — Simple internal systems in 10 days"
+    description: "Haleo builds simple internal systems for fast-moving teams in 10 days, replacing spreadsheet chaos and manual operations."
     keywords: "internal systems, operations system, agency workflow, small team operations, spreadsheet replacement, custom workflow build"

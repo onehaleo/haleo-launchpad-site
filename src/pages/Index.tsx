@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle2, PlayCircle, XCircle } from 'lucide-react';
+import { ArrowRight, CheckCircle2, XCircle } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import PageTransition from '../components/PageTransition';
@@ -14,18 +14,21 @@ const Index = () => {
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error loading content</div>;
   if (!content) return <div>No content available</div>;
-  const { home, services, demos, testimonials } = content;
+  const { home, services } = content;
+  const showSecondaryCta = Boolean(home.secondary_cta_text?.trim());
 
   return (
     <PageTransition animate={true}>
       <SEOHead 
-        title="Haleo - Custom Internal Systems in 10 Days"
-        description="Haleo builds custom internal systems for fast-moving small teams in 10 days."
-        keywords="internal systems, operations workflow, agency systems, small team operations"
+        title="Haleo — Internal systems for fast-moving teams"
+        description="Haleo builds simple internal systems for agencies, studios, and small operational teams in 10 days—replacing spreadsheet chaos and duct-taped workflows."
+        keywords="internal systems, operations workflow, agency systems, small team operations, workflow review"
       />
       <div className="min-h-screen">
         <Navigation />
-        <section className="pt-24 sm:pt-28 lg:pt-32 pb-20 sm:pb-24 lg:pb-28 bg-gradient-to-br from-haleo-cloud via-white to-purple-50">
+        <section className="relative overflow-hidden pt-24 sm:pt-28 lg:pt-32 pb-20 sm:pb-24 lg:pb-28 bg-gradient-to-br from-haleo-cloud via-white to-purple-50">
+          <div className="pointer-events-none absolute -top-20 -left-24 h-72 w-72 rounded-full bg-violet-200/35 blur-3xl" />
+          <div className="pointer-events-none absolute top-20 right-0 h-64 w-64 rounded-full bg-indigo-200/25 blur-3xl" />
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto text-center">
                 <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-haleo-ink leading-tight">
@@ -39,21 +42,21 @@ const Index = () => {
                     {home.primary_cta_text}
                     <ArrowRight className="h-4 w-4" />
                   </Link>
-                  <a href={home.secondary_cta_link} className="border-2 border-haleo-core text-haleo-core px-6 sm:px-8 py-4 rounded-full font-semibold hover:bg-haleo-core hover:text-white transition-all duration-300 inline-flex items-center justify-center gap-2 w-full sm:w-auto">
-                    <PlayCircle className="h-4 w-4" />
-                    {home.secondary_cta_text}
-                  </a>
+                  {showSecondaryCta && (
+                    <a href={home.secondary_cta_link} className="border-2 border-haleo-core text-haleo-core px-6 sm:px-8 py-4 rounded-full font-semibold hover:bg-haleo-core hover:text-white transition-all duration-300 inline-flex items-center justify-center gap-2 w-full sm:w-auto">
+                      {home.secondary_cta_text}
+                    </a>
+                  )}
                 </div>
-                <div className="mt-10 flex flex-wrap gap-3 justify-center text-sm text-haleo-gray">
-                  <span className="bg-white/80 px-4 py-2 rounded-full">Built in 10 days</span>
-                  <span className="bg-white/80 px-4 py-2 rounded-full">Teams under 20 people</span>
-                  <span className="bg-white/80 px-4 py-2 rounded-full">Operational clarity first</span>
-                </div>
+                <p className="mt-10 text-sm text-haleo-gray">
+                  {home.hero_trust_line}
+                </p>
               </div>
           </div>
         </section>
 
-        <section className="py-16 sm:py-20 bg-white">
+        <section className="relative overflow-hidden py-16 sm:py-20 bg-white">
+          <div className="pointer-events-none absolute -bottom-20 right-8 h-64 w-64 rounded-full bg-violet-100/45 blur-3xl" />
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-2xl sm:text-3xl font-bold text-haleo-ink mb-8 text-center">{home.problem_section_title}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -90,9 +93,9 @@ const Index = () => {
 
         <section className="py-16 sm:py-20 bg-white" id="services">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl sm:text-3xl font-bold text-haleo-ink text-center mb-4">What Haleo builds</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-haleo-ink text-center mb-4">{home.services_section_title}</h2>
             <p className="text-haleo-gray text-center max-w-3xl mx-auto mb-10">
-              A custom internal system built around the way your team actually works — not a generic template you have to force your business into.
+              {home.services_section_intro}
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {services.map((card) => (
@@ -108,42 +111,22 @@ const Index = () => {
           </div>
         </section>
 
-        <section className="py-16 sm:py-20 bg-haleo-cloud" id="demos">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl sm:text-3xl font-bold text-haleo-ink text-center mb-10">Explore example systems</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {demos.map((demo) => (
-                <div key={demo.title} className="bg-white rounded-2xl p-7 shadow-sm flex flex-col">
-                  <h3 className="text-xl font-semibold text-haleo-ink mb-3">{demo.title}</h3>
-                  <p className="text-haleo-gray mb-3">{demo.short_description}</p>
-                  <p className="text-sm text-haleo-gray mb-6 flex-1"><strong>Modules:</strong> {demo.modules.join(", ")}</p>
-                  <Link to={`/demos/${demo.slug}`} className="text-haleo-core font-semibold inline-flex items-center gap-2 hover:gap-3 transition-all duration-300">
-                    View Demo <ArrowRight className="h-4 w-4" />
-                  </Link>
-                </div>
+        <section className="py-16 sm:py-20 bg-white">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-2xl sm:text-3xl font-bold text-haleo-ink text-center mb-4">{home.built_from_heading}</h2>
+            <p className="text-haleo-gray text-center max-w-3xl mx-auto mb-10">
+              {home.built_from_body}
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {home.built_from_bullets.map((item) => (
+                <div key={item} className="bg-haleo-cloud rounded-xl p-4 text-haleo-gray text-center sm:text-left">{item}</div>
               ))}
             </div>
           </div>
         </section>
 
-        {testimonials.length > 0 && (
-          <section className="py-16 sm:py-20 bg-white">
-            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-              <p className="text-sm font-semibold text-haleo-violet mb-3">Client proof</p>
-              <blockquote className="text-2xl sm:text-3xl font-semibold text-haleo-ink leading-relaxed">
-                "{testimonials[0].quote}"
-              </blockquote>
-              <p className="text-haleo-gray mt-5">
-                {testimonials[0].name}, {testimonials[0].role} at {testimonials[0].company}
-              </p>
-              {testimonials[0].result && (
-                <p className="text-sm text-haleo-core mt-2">{testimonials[0].result}</p>
-              )}
-            </div>
-          </section>
-        )}
-
-        <section className="py-16 sm:py-20 bg-white">
+        <section className="relative overflow-hidden py-16 sm:py-20 bg-white">
+          <div className="pointer-events-none absolute top-8 -right-16 h-56 w-56 rounded-full bg-indigo-100/40 blur-3xl" />
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-2xl sm:text-3xl font-bold text-haleo-ink text-center mb-10">{home.process_title}</h2>
             <div className="space-y-5">
@@ -159,7 +142,7 @@ const Index = () => {
 
         <section className="py-16 sm:py-20 bg-haleo-cloud">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl sm:text-3xl font-bold text-haleo-ink text-center mb-8">Built fast because the scope is clear.</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-haleo-ink text-center mb-8">{home.scope_section_title}</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 text-haleo-gray">
               {[
                 '10-day build timeline',
@@ -183,10 +166,10 @@ const Index = () => {
                 <h3 className="text-xl font-semibold text-haleo-ink mb-4">Good fit</h3>
                 <ul className="space-y-2 text-haleo-gray">
                   {[
-                    'Teams under 20 people',
-                    'Agencies or operational businesses',
+                    'Teams under 50 people',
+                    'Agencies, studios, and operational businesses',
                     'Currently using spreadsheets or manual workflows',
-                    'Have recurring processes',
+                    'Fast-moving processes',
                     'Need visibility, accountability, and speed',
                   ].map((item) => (
                     <li key={item}>• {item}</li>

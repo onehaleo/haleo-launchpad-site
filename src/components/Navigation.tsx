@@ -76,16 +76,30 @@ const Navigation = () => {
           </div>
           
           <div className="hidden md:flex items-center space-x-6">
-            {settings.nav_links.map((item, index) => (
-              <Link 
-                key={index}
-                to={item.url}
-                className="text-white/90 hover:text-haleo-violet transition-all duration-300 text-sm font-medium"
-                onClick={() => handleNavigationClick(item.url)}
-              >
-                {item.label}
-              </Link>
-            ))}
+            {settings.nav_links.map((item, index) => {
+              const isExternal = /^(mailto:|https?:)/i.test(item.url);
+              if (isExternal) {
+                return (
+                  <a
+                    key={index}
+                    href={item.url}
+                    className="text-white/90 hover:text-haleo-violet transition-all duration-300 text-sm font-medium"
+                  >
+                    {item.label}
+                  </a>
+                );
+              }
+              return (
+                <Link
+                  key={index}
+                  to={item.url}
+                  className="text-white/90 hover:text-haleo-violet transition-all duration-300 text-sm font-medium"
+                  onClick={() => handleNavigationClick(item.url)}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
           </div>
 
           <div className="hidden md:block">
@@ -108,19 +122,34 @@ const Navigation = () => {
         {isOpen && (
           <div className="md:hidden bg-white shadow-lg rounded-lg mt-2 p-4 mb-2">
             <div className="flex flex-col space-y-4">
-              {settings.nav_links.map((item, index) => (
-                <Link 
-                  key={index}
-                  to={item.url}
-                  className="text-left text-haleo-gray hover:text-haleo-core transition-all duration-300" 
-                  onClick={() => { 
-                    setIsOpen(false); 
-                    handleNavigationClick(item.url);
-                  }}
-                >
-                  {item.label}
-                </Link>
-              ))}
+              {settings.nav_links.map((item, index) => {
+                const isExternal = /^(mailto:|https?:)/i.test(item.url);
+                if (isExternal) {
+                  return (
+                    <a
+                      key={index}
+                      href={item.url}
+                      className="text-left text-haleo-gray hover:text-haleo-core transition-all duration-300"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {item.label}
+                    </a>
+                  );
+                }
+                return (
+                  <Link
+                    key={index}
+                    to={item.url}
+                    className="text-left text-haleo-gray hover:text-haleo-core transition-all duration-300"
+                    onClick={() => {
+                      setIsOpen(false);
+                      handleNavigationClick(item.url);
+                    }}
+                  >
+                    {item.label}
+                  </Link>
+                );
+              })}
               <Link
                 to={settings.nav_cta.url}
                 className="gradient-bg text-white px-6 py-3 rounded-full hover:opacity-90 transition-all duration-300 text-sm text-center font-semibold"
