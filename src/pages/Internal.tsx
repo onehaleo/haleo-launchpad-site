@@ -109,8 +109,8 @@ const Internal = () => {
       />
       <div className="min-h-screen bg-haleo-cloud">
         <Navigation />
-        <main className="mx-auto max-w-[1600px] px-4 pb-16 pt-24 sm:px-6 sm:pt-28 lg:px-8 lg:pt-32">
-          <div className="mb-6 rounded-2xl border border-purple-100/80 bg-white p-6 shadow-sm sm:p-8">
+        <main className="mx-auto w-full min-w-0 max-w-[1600px] px-4 pb-16 pt-24 sm:px-6 sm:pt-28 lg:px-8 lg:pt-32">
+          <div className="mb-6 min-w-0 max-w-full rounded-2xl border border-purple-100/80 bg-white p-6 shadow-sm sm:p-8">
             <div className="mb-6 flex flex-col gap-4 border-b border-haleo-cloud pb-6 sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-wide text-haleo-violet">

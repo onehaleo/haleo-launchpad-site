@@ -153,8 +153,10 @@ export default function OutreachTracker() {
     [data.Prospects]
   );
 
+  const tableMinWidth = cols.reduce((a, c) => a + c.w, 0);
+
   return (
-    <div className="text-[13px] text-haleo-ink min-h-[500px] font-sans">
+    <div className="min-w-0 max-w-full text-[13px] text-haleo-ink min-h-[320px] font-sans">
       <h2 className="sr-only">Haleo Outreach Tracker</h2>
 
       <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
@@ -256,9 +258,10 @@ export default function OutreachTracker() {
       )}
 
       {activeTab === "Metrics" && (
-        <div className="overflow-x-auto">
-          <table className="w-full border-collapse text-xs">
-            <thead>
+        <div className="w-full min-w-0 max-w-full rounded-lg border border-slate-200/90">
+          <div className="max-h-[min(72dvh,calc(100dvh-14rem))] min-h-[200px] overflow-auto overscroll-contain">
+          <table className="w-full min-w-[520px] border-collapse text-xs">
+            <thead className="sticky top-0 z-[1] bg-haleo-cloud shadow-[inset_0_-1px_0_0_rgb(226_232_240)]">
               <tr className="border-b border-slate-200/90">
                 {["Metric", "This Week", "Month Total", "Notes"].map((h) => (
                   <th
@@ -305,29 +308,28 @@ export default function OutreachTracker() {
               ))}
             </tbody>
           </table>
+          </div>
         </div>
       )}
 
       {activeTab !== "Metrics" && (
-        <div
-          className="overflow-x-auto rounded-lg border border-slate-200/90"
-          style={{ minWidth: cols.reduce((a, c) => a + c.w, 0) }}
-        >
+        <div className="w-full min-w-0 max-w-full rounded-lg border border-slate-200/90 bg-white">
+          <div className="max-h-[min(72dvh,calc(100dvh-14rem))] min-h-[240px] overflow-auto overscroll-contain">
           <table
-            className="w-full table-fixed border-collapse text-xs"
-            style={{ minWidth: cols.reduce((a, c) => a + c.w, 0) }}
+            className="w-full table-fixed border-collapse text-[12px] leading-snug sm:text-[13px]"
+            style={{ minWidth: tableMinWidth }}
           >
             <colgroup>
               {cols.map((c) => (
                 <col key={c.key} style={{ width: c.w }} />
               ))}
             </colgroup>
-            <thead>
-              <tr className="border-b border-slate-200/90 bg-haleo-cloud">
+            <thead className="sticky top-0 z-[1] bg-haleo-cloud shadow-[inset_0_-1px_0_0_rgb(226_232_240)]">
+              <tr className="border-b border-slate-200/90">
                 {cols.map((c) => (
                   <th
                     key={c.key}
-                    className="truncate px-2.5 py-2 text-left text-[11px] font-medium text-haleo-gray"
+                    className="whitespace-normal px-2 py-2 text-left text-[11px] font-semibold leading-tight text-haleo-gray"
                     title={c.label}
                   >
                     {c.label}
@@ -359,7 +361,7 @@ export default function OutreachTracker() {
                         else if (val === "Low") cellBg = "#F7C1C1";
                       }
                       return (
-                        <td key={col.key} className="align-middle px-1.5 py-1">
+                        <td key={col.key} className="align-top px-1.5 py-1.5">
                           {isEditing ? (
                             col.type === "select" ? (
                               <select
@@ -418,8 +420,12 @@ export default function OutreachTracker() {
                             <button
                               type="button"
                               onClick={() => setEditCell({ r: ri, k: col.key })}
+                              title={val ? String(val) : undefined}
                               className={cn(
-                                "min-h-6 w-full cursor-text truncate rounded px-1.5 py-0.5 text-left text-xs",
+                                "min-h-[1.75rem] w-full max-w-full cursor-text rounded px-1.5 py-1 text-left text-[12px] sm:text-[13px]",
+                                col.type === "text" || col.key === "notes" || col.key === "painPoints" || col.key === "nextAction" || col.key === "text"
+                                  ? "line-clamp-3 break-words text-left"
+                                  : "truncate",
                                 col.key === "stage" && val && "font-medium"
                               )}
                               style={{
@@ -447,15 +453,16 @@ export default function OutreachTracker() {
               })}
             </tbody>
           </table>
+          </div>
         </div>
       )}
 
       {activeTab === "Prospects" && dueProspects.length > 0 && (
-        <div className="mt-3 rounded-md border border-amber-400/60 bg-[#FAEEDA] px-3.5 py-2 text-xs text-[#633806]">
+        <div className="mt-3 rounded-md border border-amber-400/60 bg-[#FAEEDA] px-3.5 py-2 text-xs leading-relaxed text-[#633806]">
           <span aria-hidden>⚠ </span>
           {dueProspects.length} prospect{dueProspects.length > 1 ? "s" : ""} overdue for follow-up
           (5+ days, no reply):{" "}
-          <strong>{dueProspects.map((r) => r.name).join(", ")}</strong>
+          <strong className="break-words font-semibold">{dueProspects.map((r) => r.name).join(", ")}</strong>
         </div>
       )}
 
