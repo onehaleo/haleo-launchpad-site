@@ -7,8 +7,8 @@ Sitemap: https://onehaleo.com/sitemap.xml
 # Crawl-delay for respectful crawling
 Crawl-delay: 1
 
-# Block access to admin areas (if any in future)
-Disallow: /admin/
+# Internal workspace (Decap CMS remains at /admin/)
+Disallow: /internal/
 Disallow: /_internal/
 Disallow: /api/private/
 

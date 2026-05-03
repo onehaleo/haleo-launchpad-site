@@ -12,8 +12,8 @@ import {
   getOauthSiteId,
 } from "@/lib/netlifyGithubAuth";
 
-const TOKEN_KEY = "haleo_admin_gh_token";
-const LOGIN_KEY = "haleo_admin_gh_login";
+const TOKEN_KEY = "haleo_internal_gh_token";
+const LOGIN_KEY = "haleo_internal_gh_login";
 
 async function fetchGitHubLogin(token: string): Promise<string> {
   const res = await fetch("https://api.github.com/user", {
@@ -39,7 +39,7 @@ function getAllowedLogins(): Set<string> | null {
   );
 }
 
-const Admin = () => {
+const Internal = () => {
   const [token, setToken] = useState<string | null>(() =>
     sessionStorage.getItem(TOKEN_KEY)
   );
@@ -121,12 +121,11 @@ const Admin = () => {
                 </h1>
                 <p className="mt-1 max-w-2xl text-sm text-haleo-gray">
                   Outreach and pipeline tracking. Sign in with the same GitHub account you use for
-                  the Decap CMS (
-                  <span className="font-mono text-xs">{getCmsOauthBaseUrl()}</span>,{" "}
-                  <span className="font-mono text-xs">site_id={getOauthSiteId()}</span>). Add{" "}
-                  <code className="rounded bg-haleo-cloud px-1">https://admin.onehaleo.com</code>{" "}
-                  to the OAuth proxy <code className="rounded bg-haleo-cloud px-1">ORIGIN</code>{" "}
-                  list if you use that host.
+                  Decap CMS at <code className="rounded bg-haleo-cloud px-1">/admin</code>. OAuth
+                  proxy: <span className="font-mono text-xs">{getCmsOauthBaseUrl()}</span>,{" "}
+                  <span className="font-mono text-xs">site_id={getOauthSiteId()}</span>. Ensure{" "}
+                  <code className="rounded bg-haleo-cloud px-1">https://onehaleo.com</code> is in
+                  the proxy <code className="rounded bg-haleo-cloud px-1">ORIGIN</code> list.
                 </p>
               </div>
               {token ? (
@@ -170,7 +169,8 @@ const Admin = () => {
             {!token ? (
               <p className="text-sm text-haleo-gray">
                 This area is not linked from the public marketing site. Bookmark{" "}
-                <span className="font-mono text-xs">/admin</span> on your own device.
+                <span className="font-mono text-xs">https://onehaleo.com/internal</span> (Decap CMS
+                stays at <span className="font-mono text-xs">/admin</span>).
               </p>
             ) : (
               <OutreachTracker />
@@ -183,4 +183,4 @@ const Admin = () => {
   );
 };
 
-export default Admin;
+export default Internal;

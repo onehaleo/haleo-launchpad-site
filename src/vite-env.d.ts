@@ -7,6 +7,6 @@ interface ImportMetaEnv {
   readonly VITE_CMS_OAUTH_BASE_URL?: string;
   /** Override `site_id` query param for OAuth (defaults to current host, or `onehaleo.com` on localhost). */
   readonly VITE_ADMIN_SITE_ID?: string;
-  /** Optional comma-separated GitHub usernames allowed to use `/admin` (lowercase). */
+  /** Optional comma-separated GitHub usernames allowed to use `/internal` (lowercase). */
   readonly VITE_ADMIN_ALLOWED_GITHUB_USERS?: string;
 }

@@ -16,7 +16,7 @@ import WorkflowReview from "./pages/WorkflowReview";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
 import License from "./pages/License";
-import Admin from "./pages/Admin";
+import Internal from "./pages/Internal";
 import { DemoShell } from "./components/demo/DemoShell";
 import DemoDashboardPage from "./pages/demo/DemoDashboardPage";
 import DemoClientsPage from "./pages/demo/DemoClientsPage";
@@ -54,7 +54,7 @@ const AppContent = () => (
     <Route path="/terms" element={<Terms />} />
     <Route path="/privacy" element={<Privacy />} />
     <Route path="/license" element={<License />} />
-    <Route path="/admin" element={<Admin />} />
+    <Route path="/internal" element={<Internal />} />
     <Route path="/demos/marketing-agency" element={<DemoDetail slug="marketing-agency" />} />
     <Route path="/demos/construction-office" element={<DemoDetail slug="construction-office" />} />
     <Route path="/demos/pr-studio" element={<DemoShell />}>

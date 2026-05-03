@@ -17,10 +17,10 @@ logo_url: /lovable-uploads/haleo-logo-new.png
 
 collections:
   - name: "homepage"
-    label: "Homepage"
+    label: "Homepage (marketing)"
     files:
       - name: "home"
-        label: "Homepage Content"
+        label: "Homepage content"
         file: "content/home.yml"
         fields:
           - { label: "Hero Headline", name: "hero_headline", widget: "string" }
@@ -39,6 +39,21 @@ collections:
             widget: "list"
             field: { label: "Bullet", name: "item", widget: "string" }
           - { label: "Scope section title", name: "scope_section_title", widget: "string" }
+          - label: "Scope bullets"
+            name: "scope_bullets"
+            widget: "list"
+            field: { label: "Bullet", name: "item", widget: "string" }
+          - { label: "Who it is for — section title", name: "who_for_section_title", widget: "string" }
+          - { label: "Who it is for — good column heading", name: "who_for_good_heading", widget: "string" }
+          - { label: "Who it is for — not a fit column heading", name: "who_for_not_heading", widget: "string" }
+          - label: "Who it is for — good fit bullets"
+            name: "who_for_good"
+            widget: "list"
+            field: { label: "Point", name: "item", widget: "string" }
+          - label: "Who it is for — not a fit bullets"
+            name: "who_for_not"
+            widget: "list"
+            field: { label: "Point", name: "item", widget: "string" }
           - { label: "Problem Section Title", name: "problem_section_title", widget: "string" }
           - label: "Problem Points"
             name: "problem_points"
@@ -65,70 +80,11 @@ collections:
           - { label: "Final CTA Text", name: "final_cta_text", widget: "string" }
           - { label: "Final CTA Link", name: "final_cta_link", widget: "string" }
 
-  - name: "demos"
-    label: "Demo Examples"
-    label_singular: "Demo Example"
-    folder: "content/demos"
-    create: true
-    extension: "yml"
-    format: "yaml"
-    slug: "{{slug}}"
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Slug", name: "slug", widget: "string", hint: "Use URL-safe text like marketing-agency" }
-      - { label: "Agency Type", name: "agency_type", widget: "string" }
-      - { label: "Short Description", name: "short_description", widget: "text" }
-      - { label: "Problem Summary", name: "problem_summary", widget: "text" }
-      - label: "Modules"
-        name: "modules"
-        widget: "list"
-        field: { label: "Module", name: "item", widget: "string" }
-      - { label: "Before State", name: "before_state", widget: "text" }
-      - { label: "After State", name: "after_state", widget: "text" }
-      - { label: "CTA Text", name: "cta_text", widget: "string" }
-      - { label: "CTA Link", name: "cta_link", widget: "string" }
-      - { label: "Featured Image", name: "featured_image", widget: "image", required: false }
-
-  - name: "services"
-    label: "Services / System Types"
-    label_singular: "Service"
-    folder: "content/services"
-    create: true
-    extension: "yml"
-    format: "yaml"
-    slug: "{{slug}}"
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Slug", name: "slug", widget: "string", hint: "Use URL-safe text like lead-sales-pipeline" }
-      - { label: "Short Description", name: "short_description", widget: "text" }
-      - { label: "Replaces", name: "replaces", widget: "text" }
-      - { label: "Helps With", name: "helps_with", widget: "text" }
-      - { label: "Best For", name: "best_for", widget: "text" }
-      - label: "Features"
-        name: "features"
-        widget: "list"
-        field: { label: "Feature", name: "item", widget: "string" }
-
-  - name: "testimonials"
-    label: "Testimonials"
-    label_singular: "Testimonial"
-    folder: "content/testimonials"
-    create: true
-    extension: "yml"
-    format: "yaml"
-    slug: "{{slug}}"
-    fields:
-      - { label: "Name", name: "name", widget: "string" }
-      - { label: "Company", name: "company", widget: "string" }
-      - { label: "Role", name: "role", widget: "string" }
-      - { label: "Quote", name: "quote", widget: "text" }
-      - { label: "Result", name: "result", widget: "text", required: false }
-
   - name: "settings"
-    label: "Global Settings"
+    label: "Navigation & footer"
     files:
       - name: "global_settings"
-        label: "Site Settings"
+        label: "Site settings"
         file: "content/settings.yml"
         fields:
           - { label: "Site Name", name: "site_name", widget: "string" }
@@ -196,3 +152,47 @@ collections:
                     fields:
                       - { label: "Label", name: "label", widget: "string" }
                       - { label: "URL", name: "url", widget: "string" }
+
+  - name: "services"
+    label: "Service cards (homepage grid)"
+    label_singular: "Service"
+    folder: "content/services"
+    create: true
+    extension: "yml"
+    format: "yaml"
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string", hint: "Use URL-safe text like lead-sales-pipeline" }
+      - { label: "Short Description", name: "short_description", widget: "text" }
+      - { label: "Replaces", name: "replaces", widget: "text" }
+      - { label: "Helps With", name: "helps_with", widget: "text" }
+      - { label: "Best For", name: "best_for", widget: "text" }
+      - label: "Features"
+        name: "features"
+        widget: "list"
+        field: { label: "Feature", name: "item", widget: "string" }
+
+  - name: "demos"
+    label: "Demo pages (/demos only)"
+    label_singular: "Demo page"
+    folder: "content/demos"
+    create: true
+    extension: "yml"
+    format: "yaml"
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string", hint: "URL path under /demos/ (not linked from homepage)" }
+      - { label: "Agency Type", name: "agency_type", widget: "string" }
+      - { label: "Short Description", name: "short_description", widget: "text" }
+      - { label: "Problem Summary", name: "problem_summary", widget: "text" }
+      - label: "Modules"
+        name: "modules"
+        widget: "list"
+        field: { label: "Module", name: "item", widget: "string" }
+      - { label: "Before State", name: "before_state", widget: "text" }
+      - { label: "After State", name: "after_state", widget: "text" }
+      - { label: "CTA Text", name: "cta_text", widget: "string" }
+      - { label: "CTA Link", name: "cta_link", widget: "string" }
+      - { label: "Featured Image", name: "featured_image", widget: "image", required: false }

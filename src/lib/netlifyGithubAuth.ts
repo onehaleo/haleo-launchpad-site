@@ -2,8 +2,7 @@
  * GitHub OAuth using the same Decap/Netlify CMS handshake as decap-cms-lib-auth
  * against your deployed proxy (e.g. cms-oauth-github on Vercel).
  *
- * Ensure Vercel `ORIGIN` includes every host that opens this flow (e.g.
- * `https://onehaleo.com,https://admin.onehaleo.com`).
+ * Ensure Vercel `ORIGIN` includes every host that opens this flow (e.g. `https://onehaleo.com`).
  */
 
 const DEFAULT_OAUTH_BASE = "https://cms-oauth-github.vercel.app";

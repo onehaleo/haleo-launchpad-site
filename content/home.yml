@@ -17,6 +17,27 @@ built_from_bullets:
   - "Reporting drag"
   - "Work disappearing between tools"
 scope_section_title: "Built fast because the scope is clear."
+scope_bullets:
+  - "10-day build timeline"
+  - "Focused internal systems"
+  - "No bloated enterprise implementation"
+  - "No endless consulting"
+  - "Clear project boundaries"
+  - "Optional add-on modules after delivery"
+who_for_section_title: "Who it is for"
+who_for_good_heading: "Good fit"
+who_for_not_heading: "Not a fit"
+who_for_good:
+  - "Teams under 50 people"
+  - "Agencies, studios, and operational businesses"
+  - "Currently using spreadsheets or manual workflows"
+  - "Fast-moving processes"
+  - "Need visibility, accountability, and speed"
+who_for_not:
+  - "Enterprise software replacement"
+  - "Complex custom SaaS"
+  - "Unclear or constantly changing workflows"
+  - "Teams wanting open-ended development support"
 problem_section_title: "Your team is moving fast. Your systems are barely holding on."
 problem_points:
   - "Projects tracked across too many spreadsheets"

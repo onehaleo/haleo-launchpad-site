@@ -21,6 +21,12 @@ export interface HomeContent {
   built_from_body: string;
   built_from_bullets: StringList;
   scope_section_title: string;
+  scope_bullets: StringList;
+  who_for_section_title: string;
+  who_for_good_heading: string;
+  who_for_not_heading: string;
+  who_for_good: StringList;
+  who_for_not: StringList;
   problem_section_title: string;
   problem_points: StringList;
   before_after_title: string;
@@ -56,14 +62,6 @@ export interface ServiceContent {
   helps_with: string;
   best_for: string;
   features: StringList;
-}
-
-export interface TestimonialContent {
-  name: string;
-  company: string;
-  role: string;
-  quote: string;
-  result?: string;
 }
 
 export interface SiteLink {
@@ -114,7 +112,6 @@ export const cmsContent = {
   settings: parseYaml<SettingsContent>("/content/settings.yml"),
   demos: parseYamlFolder<DemoContent>("/content/demos/"),
   services: parseYamlFolder<ServiceContent>("/content/services/"),
-  testimonials: parseYamlFolder<TestimonialContent>("/content/testimonials/"),
 };
 
 export const getDemoBySlug = (slug: string) =>

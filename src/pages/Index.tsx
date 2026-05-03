@@ -7,6 +7,7 @@ import Footer from '../components/Footer';
 import PageTransition from '../components/PageTransition';
 import SEOHead from '../components/SEOHead';
 import { useCmsContent } from '../hooks/useCmsContent';
+import { asStringList } from '../lib/cmsYamlLists';
 
 const Index = () => {
   const { content, loading, error } = useCmsContent();
@@ -16,6 +17,13 @@ const Index = () => {
   if (!content) return <div>No content available</div>;
   const { home, services } = content;
   const showSecondaryCta = Boolean(home.secondary_cta_text?.trim());
+  const problemPoints = asStringList(home.problem_points as unknown);
+  const beforePoints = asStringList(home.before_points as unknown);
+  const afterPoints = asStringList(home.after_points as unknown);
+  const builtFromBullets = asStringList(home.built_from_bullets as unknown);
+  const scopeBullets = asStringList(home.scope_bullets as unknown);
+  const whoForGood = asStringList(home.who_for_good as unknown);
+  const whoForNot = asStringList(home.who_for_not as unknown);
 
   return (
     <PageTransition animate={true}>
@@ -60,8 +68,8 @@ const Index = () => {
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-2xl sm:text-3xl font-bold text-haleo-ink mb-8 text-center">{home.problem_section_title}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {home.problem_points.map((point) => (
-                <div key={point} className="bg-haleo-cloud rounded-xl p-4 text-haleo-gray">{point}</div>
+              {problemPoints.map((point, i) => (
+                <div key={`${i}-${point}`} className="bg-haleo-cloud rounded-xl p-4 text-haleo-gray">{point}</div>
               ))}
             </div>
           </div>
@@ -74,16 +82,16 @@ const Index = () => {
               <div className="bg-white rounded-2xl p-7 sm:p-10 shadow-sm">
                 <h3 className="text-2xl font-bold text-haleo-ink mb-4">Before</h3>
                 <ul className="space-y-3 text-haleo-gray">
-                  {home.before_points.map((item) => (
-                    <li key={item} className="flex items-start gap-2"><XCircle className="h-5 w-5 text-red-500 mt-0.5 shrink-0" /> {item}</li>
+                  {beforePoints.map((item, i) => (
+                    <li key={`b-${i}-${item}`} className="flex items-start gap-2"><XCircle className="h-5 w-5 text-red-500 mt-0.5 shrink-0" /> {item}</li>
                   ))}
                 </ul>
               </div>
               <div className="bg-white rounded-2xl p-7 sm:p-10 shadow-sm">
                 <h3 className="text-2xl font-bold text-haleo-ink mb-4">After</h3>
                 <ul className="space-y-3 text-haleo-gray">
-                  {home.after_points.map((item) => (
-                    <li key={item} className="flex items-start gap-2"><CheckCircle2 className="h-5 w-5 text-green-600 mt-0.5 shrink-0" /> {item}</li>
+                  {afterPoints.map((item, i) => (
+                    <li key={`a-${i}-${item}`} className="flex items-start gap-2"><CheckCircle2 className="h-5 w-5 text-green-600 mt-0.5 shrink-0" /> {item}</li>
                   ))}
                 </ul>
               </div>
@@ -118,8 +126,8 @@ const Index = () => {
               {home.built_from_body}
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {home.built_from_bullets.map((item) => (
-                <div key={item} className="bg-haleo-cloud rounded-xl p-4 text-haleo-gray text-center sm:text-left">{item}</div>
+              {builtFromBullets.map((item, i) => (
+                <div key={`bf-${i}-${item}`} className="bg-haleo-cloud rounded-xl p-4 text-haleo-gray text-center sm:text-left">{item}</div>
               ))}
             </div>
           </div>
@@ -144,15 +152,8 @@ const Index = () => {
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-2xl sm:text-3xl font-bold text-haleo-ink text-center mb-8">{home.scope_section_title}</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 text-haleo-gray">
-              {[
-                '10-day build timeline',
-                'Focused internal systems',
-                'No bloated enterprise implementation',
-                'No endless consulting',
-                'Clear project boundaries',
-                'Optional add-on modules after delivery',
-              ].map((item) => (
-                <div key={item} className="bg-white rounded-xl p-5">{item}</div>
+              {scopeBullets.map((item, i) => (
+                <div key={`sc-${i}-${item}`} className="bg-white rounded-xl p-5">{item}</div>
               ))}
             </div>
           </div>
@@ -160,32 +161,21 @@ const Index = () => {
 
         <section className="py-16 sm:py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl sm:text-3xl font-bold text-haleo-ink text-center mb-10">Who it is for</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-haleo-ink text-center mb-10">{home.who_for_section_title}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="bg-haleo-cloud rounded-2xl p-8">
-                <h3 className="text-xl font-semibold text-haleo-ink mb-4">Good fit</h3>
+                <h3 className="text-xl font-semibold text-haleo-ink mb-4">{home.who_for_good_heading}</h3>
                 <ul className="space-y-2 text-haleo-gray">
-                  {[
-                    'Teams under 50 people',
-                    'Agencies, studios, and operational businesses',
-                    'Currently using spreadsheets or manual workflows',
-                    'Fast-moving processes',
-                    'Need visibility, accountability, and speed',
-                  ].map((item) => (
-                    <li key={item}>• {item}</li>
+                  {whoForGood.map((item, i) => (
+                    <li key={`wg-${i}-${item}`}>• {item}</li>
                   ))}
                 </ul>
               </div>
               <div className="bg-haleo-cloud rounded-2xl p-8">
-                <h3 className="text-xl font-semibold text-haleo-ink mb-4">Not a fit</h3>
+                <h3 className="text-xl font-semibold text-haleo-ink mb-4">{home.who_for_not_heading}</h3>
                 <ul className="space-y-2 text-haleo-gray">
-                  {[
-                    'Enterprise software replacement',
-                    'Complex custom SaaS',
-                    'Unclear or constantly changing workflows',
-                    'Teams wanting open-ended development support',
-                  ].map((item) => (
-                    <li key={item}>• {item}</li>
+                  {whoForNot.map((item, i) => (
+                    <li key={`wn-${i}-${item}`}>• {item}</li>
                   ))}
                 </ul>
               </div>
