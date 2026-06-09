@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useEffect, useRef } from "react";
 import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
+import ScrollRestoration from "./components/ScrollRestoration";
 import { trackSpaPageView } from "./lib/gtag";
 import Index from "./pages/Index";
 import Services from "./pages/Services";
@@ -79,6 +80,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter basename={import.meta.env.BASE_URL}>
+        <ScrollRestoration />
         <GtagSpaPageViews />
         <AppContent />
       </BrowserRouter>

@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
-import { scrollToTop } from '../hooks/useContent';
 import { useCmsContent } from '../hooks/useCmsContent';
 import { useNavigationLoading } from '../hooks/useNavigation';
 
@@ -47,10 +46,8 @@ const Navigation = () => {
     return `${import.meta.env.BASE_URL}${normalized}`;
   };
 
-  const handleNavigationClick = (url: string) => {
+  const handleNavigationClick = () => {
     startLoading();
-    if (url.includes('#')) return;
-    scrollToTop();
   };
 
   return (
@@ -63,7 +60,7 @@ const Navigation = () => {
             <Link 
               to="/" 
               className="flex items-center"
-              onClick={() => handleNavigationClick('/')}
+              onClick={() => handleNavigationClick()}
             >
               <div className="rounded-lg p-1 transition-all duration-300 hover:scale-105">
                 <img
@@ -94,7 +91,7 @@ const Navigation = () => {
                   key={index}
                   to={item.url}
                   className="text-white/90 hover:text-haleo-violet transition-all duration-300 text-sm font-medium"
-                  onClick={() => handleNavigationClick(item.url)}
+                  onClick={() => handleNavigationClick()}
                 >
                   {item.label}
                 </Link>
@@ -106,7 +103,7 @@ const Navigation = () => {
             <Link
               to={settings.nav_cta.url}
               className="gradient-bg text-white px-5 py-2 rounded-full hover:opacity-90 transition-all duration-300 text-sm font-semibold inline-block whitespace-nowrap"
-              onClick={() => handleNavigationClick(settings.nav_cta.url)}
+              onClick={() => handleNavigationClick()}
             >
               {settings.nav_cta.text}
             </Link>
@@ -143,7 +140,7 @@ const Navigation = () => {
                     className="text-left text-haleo-gray hover:text-haleo-core transition-all duration-300"
                     onClick={() => {
                       setIsOpen(false);
-                      handleNavigationClick(item.url);
+                      handleNavigationClick();
                     }}
                   >
                     {item.label}
@@ -155,7 +152,7 @@ const Navigation = () => {
                 className="gradient-bg text-white px-6 py-3 rounded-full hover:opacity-90 transition-all duration-300 text-sm text-center font-semibold"
                 onClick={() => {
                   setIsOpen(false);
-                  handleNavigationClick(settings.nav_cta.url);
+                  handleNavigationClick();
                 }}
               >
                 {settings.nav_cta.text}

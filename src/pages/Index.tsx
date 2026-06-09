@@ -28,9 +28,9 @@ const Index = () => {
   return (
     <PageTransition animate={true}>
       <SEOHead 
-        title="Haleo — Internal systems for fast-moving teams"
-        description="Haleo builds simple internal systems for agencies, studios, and small operational teams in 10 days—replacing spreadsheet chaos and duct-taped workflows."
-        keywords="internal systems, operations workflow, agency systems, small team operations, workflow review"
+        title="Haleo — Workflow Automation & Custom Tools for Small Teams"
+        description="I turn operational chaos into automated, affordable systems — workflow automation, custom web apps, and websites built for small teams that have outgrown spreadsheets."
+        keywords="workflow automation, internal tools, custom web app, process automation, small business automation, GitHub Pages website, no subscription tools"
       />
       <div className="min-h-screen">
         <Navigation />
