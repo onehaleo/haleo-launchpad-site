@@ -29,7 +29,7 @@ const Index = () => {
     <PageTransition animate={true}>
       <SEOHead 
         title="Haleo — Workflow Automation & Custom Tools for Small Teams"
-        description="I turn operational chaos into automated, affordable systems — workflow automation, custom web apps, and websites built for small teams that have outgrown spreadsheets."
+        description="We turn operational chaos into automated, affordable systems — workflow automation, custom web apps, and websites built for small teams that have outgrown spreadsheets."
         keywords="workflow automation, internal tools, custom web app, process automation, small business automation, GitHub Pages website, no subscription tools"
       />
       <div className="min-h-screen">

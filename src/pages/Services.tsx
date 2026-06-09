@@ -10,51 +10,51 @@ const Services = () => {
   const services = [
     {
       icon: <Workflow className="h-16 w-16 text-haleo-violet" />,
-      title: 'Client + Project Operations System',
-      subtitle: 'One internal system for delivery workflows, ownership, and recurring updates.',
+      title: 'Workflow & Process Automation',
+      subtitle: 'Replace manual, repetitive work with systems that run themselves.',
       description:
-        'Built for teams managing multiple clients and timelines at once. Haleo maps your workflow into a single internal operating system so deliverables, ownership, and status stay in one place.',
+        'We replace manual, spreadsheet-driven processes with automated systems that run on real data. Your team gets hours back every week, fewer errors, and a process that does not depend on someone remembering to do it.',
       features: [
-        'Replaces: duplicate spreadsheets, Slack updates, and disconnected PM boards',
-        'Helps with: tracking deliverables, accountability, client visibility, and recurring status',
-        'Best for: agencies, studios, PR teams, and service businesses',
+        'Replaces: manual data entry, copy-paste workflows, spreadsheet tracking',
+        'Helps with: saving time, reducing errors, creating repeatable processes',
+        'Best for: small operational teams with manual-heavy workflows',
       ],
-      platforms: 'Configured around how your team already runs delivery—not a generic template.',
+      platforms: 'Built with n8n, Make.com, Python, or REST APIs depending on your stack.',
     },
     {
       icon: <ClipboardList className="h-16 w-16 text-haleo-violet" />,
-      title: 'Fulfillment + Task Tracking System',
-      subtitle: 'Organize recurring execution work with clear stages, ownership, and reporting.',
+      title: 'Custom Web App Development',
+      subtitle: 'One tool built for how your team actually works.',
       description:
-        'Haleo builds fulfillment systems that organize recurring operational work into clear stages with owners, priorities, and visibility—fewer open loops between handoffs.',
+        'We build internal tools and multi-user apps for teams duct-taping together three SaaS tools that still do not quite work. One custom system, one flat fee, no monthly subscriptions, no paying for seats you do not use.',
       features: [
-        'Replaces: ad hoc checklists, manual reminders, and unclear handoffs',
-        'Helps with: execution flow, team accountability, and fewer open-loop tasks',
-        'Best for: operations teams, service businesses, and delivery-heavy teams',
+        'Replaces: SaaS subscription stacks, frankensteined tool combinations',
+        'Helps with: consolidating tools, eliminating recurring costs, building something that fits',
+        'Best for: teams paying monthly for software that still does not solve the problem',
       ],
-      platforms: 'Designed for practical team adoption, not heavyweight process overhead.',
+      platforms: 'Built with React, Node.js, and Python. You own the codebase outright.',
     },
     {
       icon: <BriefcaseBusiness className="h-16 w-16 text-haleo-violet" />,
-      title: 'Lead Intake + Sales Pipeline System',
-      subtitle: 'Turn inbound lead chaos into a clear, structured pipeline workflow.',
+      title: 'Website Builds',
+      subtitle: 'Clean, fast, and free to host forever.',
       description:
-        'Haleo designs lead-to-close systems that give your team structured intake, ownership, and pipeline movement without bloated CRM overhead.',
+        'Clean, fast websites for service businesses that need a professional presence without ongoing hosting costs. For static sites, we host on GitHub Pages — free forever, no Squarespace bill, no Webflow subscription.',
       features: [
-        'Replaces: manual lead routing, inconsistent follow-up, and fragmented CRM notes',
-        'Helps with: lead review, qualification, owner assignment, and clear pipeline movement',
-        'Best for: recruiting agencies, service businesses, and client-based teams',
+        'Replaces: Squarespace, Webflow, Wix, and other subscription site builders',
+        'Helps with: professional presence, eliminating monthly hosting costs',
+        'Best for: service businesses that want to own their site outright',
       ],
-      platforms: 'Configured to match your intake motion and reporting needs.',
+      platforms: 'Built with HTML/CSS/JS or React. GitHub Pages hosting included at no cost.',
     },
   ];
 
   return (
     <PageTransition animate={false}>
       <SEOHead 
-        title="What Haleo Builds | Internal Systems for Small Teams"
-        description="Haleo builds simple internal systems in 10 days for fast-moving agencies and operational teams that have outgrown spreadsheets."
-        keywords="internal operations system, workflow system, agency operations, small team systems, spreadsheet replacement"
+        title="What Haleo Builds | Workflow Automation & Custom Tools"
+        description="Workflow automation, custom web apps, and website builds for small operational teams — flat fee, no subscriptions, you own everything."
+        keywords="workflow automation, custom web app, website build, internal tools, process automation, no subscription"
       />
       <div className="min-h-screen bg-haleo-cloud">
         <Navigation />
@@ -66,7 +66,7 @@ const Services = () => {
                 What <span className="gradient-text">Haleo builds</span>
               </h1>
               <p className="text-base sm:text-xl lg:text-2xl text-haleo-gray max-w-4xl mx-auto leading-relaxed">
-                Haleo builds simple internal systems for fast-moving agencies, studios, and small operational teams that have outgrown spreadsheets, manual tracking, and duct-taped workflows.
+                Haleo builds workflow automations, custom internal tools, and websites for small operational teams — for a flat fee, with no ongoing subscription costs.
               </p>
             </div>
 
@@ -128,15 +128,12 @@ const Services = () => {
 
             <div className="mt-20 text-center">
               <div className="bg-gradient-to-br from-haleo-core to-haleo-violet rounded-3xl p-8 lg:p-12 text-white">
-                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6">Built fast because the scope is clear.</h3>
+                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6">Ready to stop doing it manually?</h3>
                 <p className="text-lg lg:text-xl mb-8 max-w-4xl mx-auto leading-relaxed">
-                  Every build follows a focused 10-day scope with clear boundaries, no bloated implementation cycle, and optional add-on modules after delivery.
+                  Let's talk about what's broken and figure out what to build. Flat fee, no subscriptions, you own everything.
                 </p>
-                <p className="text-base lg:text-lg mb-8">
-                  If your team is juggling spreadsheets, manual follow-up, and disconnected tools, this is likely a fit.
-                </p>
-                <Link to="/workflow-review" className="bg-white text-haleo-core px-7 sm:px-12 py-4 sm:py-6 rounded-full text-base sm:text-xl font-bold hover:bg-gray-100 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 mx-auto shadow-lg w-full sm:w-fit">
-                  Request a Workflow Review
+                <Link to="#contact" className="bg-white text-haleo-core px-7 sm:px-12 py-4 sm:py-6 rounded-full text-base sm:text-xl font-bold hover:bg-gray-100 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 mx-auto shadow-lg w-full sm:w-fit">
+                  Book a free 30-minute call
                   <ArrowRight className="h-6 w-6" />
                 </Link>
               </div>

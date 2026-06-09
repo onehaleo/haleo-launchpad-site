@@ -1,190 +1,125 @@
-# Site Configuration
-site:
+company:
   name: "Haleo"
-  tagline: "Custom internal systems in 10 days"
-  description: "Haleo builds custom internal systems for fast-moving small teams in 10 days."
+  tagline: "Technical translator. Problem solver."
+  description: "We turn operational chaos into automated, affordable systems for small teams that have outgrown spreadsheets."
   email: "hello@onehaleo.com"
   website: "https://onehaleo.com"
 
-# Brand Colors
-brand:
-  colors:
-    primary: "#6366f1"
-    secondary: "#8b5cf6"
-    accent: "#06b6d4"
-    neutral: "#64748b"
+colors:
+  cloud: "#F9F9F9"
+  ink: "#1f1f1f"
+  gray: "#333333"
+  violet: "#b850ff"
+  core: "#521ca6"
 
-# Hero Section
 hero:
-  headline: "Automation that works"
-  headline_accent: "while you don't."
-  subhead: "Haleo builds simple, scalable automation systems for solopreneurs — so you can ditch the chaos and get back to what you do best."
-  description: "Custom templates, AI agents, and business workflows that scale with your growth."
+  headline: "Is your team drowning in manual work?"
+  subhead: "We build workflow automations, custom internal tools, and websites for small operational teams — for a flat fee, with no ongoing subscription costs."
   cta_primary:
-    text: "Browse Templates"
-    url: "https://onehaleo.gumroad.com"
+    text: "Let's talk about your project"
+    url: "#contact"
   cta_secondary:
-    text: "Book Free Consult"
-    url: "#"
+    text: "See our work"
+    url: "#portfolio"
   stats:
-    - number: "50+"
-      label: "Templates Created"
-    - number: "100%"
-      label: "Solopreneur Focused"
-    - number: "24/7"
-      label: "Automation Running"
+    - number: "5+"
+      label: "Years Building Systems"
+    - number: "Flat"
+      label: "Fee, No Subscriptions"
+    - number: "0"
+      label: "Ongoing Monthly Costs"
 
-# Navigation
-navigation:
-  logo: "/lovable-uploads/haleo-logo-new.png"
-  items:
-    - text: "Home"
-      url: "/"
-    - text: "What Haleo Builds"
-      url: "/services"
-    - text: "Workflow Review"
-      url: "/workflow-review"
-  cta:
-    text: "Request a Workflow Review"
-    url: "/workflow-review"
-
-# Services Section
 services:
-  title: "What We"
-  title_accent: "Offer"
-  description: "Everything you need to automate your business and reclaim your time"
+  title: "What We Build"
+  description: "Three services, one philosophy — you should own your systems outright and stop paying monthly for tools that half-work."
   items:
-    - title: "Automation Services"
-      description: "Custom automation workflows across platforms"
-      icon: "settings"
+    - title: "Workflow & Process Automation"
+      subtitle: "Replace manual work with systems that run themselves."
+      description: "We replace manual, repetitive work with automated systems that run on real data. Get hours back every week, fewer errors, and a process that doesn't depend on someone remembering to do it."
       features:
-        - "Seamless integrations"
-        - "Custom workflows"
-        - "Zero-maintenance setup"
-    - title: "AI Agents"
-      description: "Smart systems trained on your business"
-      icon: "brain"
-      features:
-        - "Business-specific training"
-        - "24/7 availability"
-        - "Continuous learning"
-    - title: "Ready-Made Templates"
-      description: "Plug-and-play systems for any platform"
-      icon: "database"
-      features:
-        - "Plug-and-play design"
-        - "Mobile optimized"
-        - "Regular updates"
-  cta:
-    text: "Book a Free Consult"
-    url: "#"
+        - "Replace spreadsheet-driven manual processes"
+        - "Automated data intake, routing, and output"
+        - "API integrations between your existing tools"
+        - "Trigger-based notifications and task creation"
+        - "Built with n8n, Make, or Python depending on scope"
+      platforms: "n8n, Make.com, Python, REST APIs, Airtable"
+      testimonial: ""
+      cta: "Start with automation"
 
-# Index Page Sections
-index:
-  services_preview:
-    title: "💼 Done-For-You Services"
-    description: "From custom automation workflows to AI-powered agents, we build scalable systems that work 24/7 while you focus on strategic growth and business development."
-    cta:
-      text: "View All Services"
-      url: "/services"
-  
-  seo_section:
-    title: "Automation Systems Built for Solopreneurs Who Scale"
-    paragraphs:
-      - "Haleo builds done-for-you automation systems, custom AI agents, and business templates across tools like Airtable, ClickUp, Zapier, and Make.com. Whether you're just starting or scaling fast, Haleo makes your systems smarter."
-      - "From CRM templates to custom AI agents, our automation solutions help solopreneurs ditch the chaos and focus on what they do best. Join 100+ business owners who've automated their workflows with Haleo."
-    testimonial:
-      quote: "I didn't realize how much time I was losing until Haleo automated my entire intake system. Now I get leads, convert them, and onboard clients while I sleep."
-      author: "— Sarah K., Marketing Consultant"
-      rating: 5
-  
-  why_haleo_preview:
-    title: "🤖 Why Solopreneurs Choose Haleo"
-    description: "Purpose-built automation systems for solopreneurs and small business owners who need scalable solutions without enterprise complexity or overhead costs."
-    cta:
-      text: "Learn More"
-      url: "/why-haleo"
-    sub_text: "See how we've helped 100+ solopreneurs scale"
+    - title: "Custom Web App Development"
+      subtitle: "One tool built for how you actually work."
+      description: "We build internal tools and multi-user apps for teams that are duct-taping together three SaaS tools and still falling short. One custom system, one flat fee, no monthly subscriptions, no paying for seats you don't use."
+      features:
+        - "Multi-user internal dashboards and ops tools"
+        - "Custom data models built around your workflows"
+        - "Role-based access and permissions"
+        - "API integrations with your existing stack"
+        - "Replaces your SaaS subscription stack permanently"
+      platforms: "React, Node.js, Python, REST APIs"
+      testimonial: ""
+      cta: "Tell us what you need"
 
-# Featured Templates
-templates:
-  title: "Featured Templates"
-  description: "Plug-and-play systems for solopreneurs who want clarity without the chaos."
-  featured:
-    - title: "Solopreneur CRM"
-      description: "Your entire client experience in one intuitive dashboard."
-      price: "$47"
+    - title: "Website Builds"
+      subtitle: "Clean, fast, and free to host forever."
+      description: "Clean, fast websites for service businesses that need a professional presence without ongoing hosting costs. For static sites, we host on GitHub Pages — free forever, no Squarespace bill, no Webflow subscription."
       features:
-        - "Client database"
-        - "Task tracking"
-        - "Meeting logs"
-        - "Custom views"
-      url: "https://onehaleo.gumroad.com/l/solopreneur-crm"
-    - title: "Business HQ Dashboard"
-      description: "Your business brain, all in one place."
-      price: "$29"
-      features:
-        - "Daily dashboard"
-        - "Habit tracker"
-        - "Business metrics"
-        - "Clean layout"
-      url: "https://onehaleo.gumroad.com"
-    - title: "Content Planner"
-      description: "Stop losing your best ideas. Start showing up consistently."
-      price: "$17"
-      features:
-        - "Content calendar"
-        - "Platform tracker"
-        - "Idea bank"
-        - "Hashtag library"
-      url: "https://onehaleo.gumroad.com"
-    - title: "AI Q&A Assistant"
-      description: "Smart client support that understands your business."
-      price: "Coming Soon"
-      features:
-        - "Custom training"
-        - "Brand voice"
-        - "Auto responses"
-        - "Private & secure"
-      url: "#"
-      coming_soon: true
-  cta:
-    text: "Browse All Templates"
-    url: "/templates"
+        - "Clean, professional single or multi-page sites"
+        - "Free GitHub Pages hosting option (no monthly bills)"
+        - "Fast load times, mobile-ready"
+        - "Working contact and inquiry flows"
+        - "You own everything outright"
+      platforms: "HTML/CSS/JS, React, GitHub Pages"
+      testimonial: ""
+      cta: "Get a site that's yours"
 
-# Footer
+why_haleo:
+  title: "You don't need more subscriptions. You need a system that's actually yours."
+  intro: "Most small teams are running on a patchwork of SaaS tools, manual reminders, and spreadsheets held together with hope. You're not disorganized — your systems just haven't been built yet."
+  subtitle: "That's where we come in."
+  features:
+    - title: "Technical translator"
+      icon: "🧠"
+      description: "We bridge the gap between what your team actually does and what your systems support. We'll figure out what to build with you, not just hand you a spec sheet."
+
+    - title: "Flat fee, no surprises"
+      icon: "💰"
+      description: "Every project starts with a clear scope and a cost estimate. You know what you're paying before anything gets built. No hourly overruns, no retainer traps."
+
+    - title: "You own it outright"
+      icon: "🔑"
+      description: "Everything we build is yours. No vendor lock-in, no platform dependency. If we build it on open-source tools, it stays open. If it lives on GitHub Pages, it's free forever."
+
+    - title: "Built for small operational teams"
+      icon: "🤝"
+      description: "We work best with teams of 1 to 20 people who know something is broken but aren't sure what to build. We'll figure that out with you and deliver something your whole team can use from day one."
+
+  testimonial: ""
+  conclusion: "Small teams deserve systems that actually work. Let's build the infrastructure your operation actually needs."
+
+about:
+  title: "About Haleo"
+  intro: "We started Haleo because the teams that need good systems the most are usually the ones who can't afford an enterprise solution or an in-house engineer."
+  background: "Haleo is led by Alexis. We've spent 5+ years building data pipelines, automation systems, and internal tools for federal technology clients — the kind of work where the stakes are high and the systems have to actually hold. We work best as technical translators: we take the messy gap between how your team operates and how your tools work, and turn it into something clean, automated, and usable."
+  founding: "Haleo is the practice we built to bring that same quality of systems thinking to small teams and service businesses — without the enterprise price tag."
+  services:
+    - "Workflow and process automation that eliminates manual work"
+    - "Custom internal web apps that replace your SaaS subscription stack"
+    - "Clean websites with free hosting options"
+  beliefs:
+    - "Flat fees over hourly surprises"
+    - "You should own your systems outright"
+    - "Simple is better than clever"
+    - "Build it once, use it forever"
+  mission: "Whether you need a workflow automated, an internal tool built from scratch, or a site that costs nothing to host, the goal is the same: give your team back time and eliminate the monthly subscription creep."
+  conclusion: "Let's build something that actually works."
+
 footer:
-  description: "Haleo builds simple internal systems for fast-moving teams in 10 days, replacing spreadsheet chaos and manual operations."
-  logo: "/lovable-uploads/haleo-logo-new.png"
-  social_links: []
-
-  links:
-    company:
-      title: "Company"
-      items:
-        - text: "What Haleo Builds"
-          url: "/services"
-        - text: "Workflow Review"
-          url: "/workflow-review"
-
-    legal:
-      title: "Contact & Legal"
-      items:
-        - text: "Workflow Review"
-          url: "/workflow-review"
-        - text: "Terms"
-          url: "/terms"
-        - text: "Privacy"
-          url: "/privacy"
-        - text: "License"
-          url: "/license"
-  
-  copyright: "© 2026 Haleo LLC. All rights reserved."
-  license_text: "Built for fast-moving teams that need operational clarity."
-
-# SEO
-seo:
-  default:
-    title: "Haleo — Simple internal systems in 10 days"
-    description: "Haleo builds simple internal systems for fast-moving teams in 10 days, replacing spreadsheet chaos and manual operations."
-    keywords: "internal systems, operations system, agency workflow, small team operations, spreadsheet replacement, custom workflow build"
+  copyright: "© Haleo LLC. All rights reserved."
+  social:
+    instagram: "#"
+    tiktok: "#"
+    youtube: "#"
+    linkedin: "#"
+  email_signup:
+    placeholder: "Enter your email"
+    button: "Join List"
