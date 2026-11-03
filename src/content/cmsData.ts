@@ -40,26 +40,12 @@ export interface HomeContent {
   final_cta_link: string;
 }
 
-export interface DemoContent {
-  title: string;
-  slug: string;
-  agency_type: string;
-  short_description: string;
-  problem_summary: string;
-  modules: StringList;
-  before_state: string;
-  after_state: string;
-  cta_text: string;
-  cta_link: string;
-  featured_image?: string;
-}
-
 export interface ServiceContent {
   title: string;
   slug: string;
+  price?: string;
+  timeline?: string;
   short_description: string;
-  replaces: string;
-  helps_with: string;
   best_for: string;
   features: StringList;
 }
@@ -110,9 +96,5 @@ const parseYamlFolder = <T>(prefix: string): T[] => {
 export const cmsContent = {
   home: parseYaml<HomeContent>("/content/home.yml"),
   settings: parseYaml<SettingsContent>("/content/settings.yml"),
-  demos: parseYamlFolder<DemoContent>("/content/demos/"),
   services: parseYamlFolder<ServiceContent>("/content/services/"),
 };
-
-export const getDemoBySlug = (slug: string) =>
-  cmsContent.demos.find((demo) => demo.slug === slug);

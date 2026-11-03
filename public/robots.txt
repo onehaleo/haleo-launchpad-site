@@ -15,6 +15,5 @@ Disallow: /api/private/
 # Allow important pages
 Allow: /
 Allow: /services
-Allow: /why-haleo
+Allow: /safety-check
 Allow: /about
-Allow: /templates

@@ -1,125 +1,58 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Instagram, Youtube, Linkedin, Music } from 'lucide-react';
 import { useCmsContent } from '../hooks/useCmsContent';
+import { resolveAssetUrl } from './Navigation';
+
+type FooterLink = { label: string; url: string };
+
+const FooterItem = ({ item }: { item: FooterLink }) => {
+  const internal = item.url.startsWith('/') && !item.url.includes('#');
+  const cls = 'text-[15px] text-[#C9D9D3] hover:text-white transition-colors';
+  return internal ? (
+    <Link to={item.url} className={cls}>{item.label}</Link>
+  ) : (
+    <a href={item.url} className={cls}>{item.label}</a>
+  );
+};
 
 const Footer = () => {
-  const { content, loading, error } = useCmsContent();
-
-  if (loading || error || !content) return null;
+  const { content } = useCmsContent();
+  if (!content) return null;
   const { settings } = content;
-
-  const resolveAssetUrl = (assetPath) => {
-    if (!assetPath) return assetPath;
-    if (/^(https?:)?\/\//.test(assetPath)) return assetPath;
-    const normalized = assetPath.startsWith('/') ? assetPath.slice(1) : assetPath;
-    return `${import.meta.env.BASE_URL}${normalized}`;
-  };
-
-  const getSocialIcon = (platform) => {
-    switch (platform) {
-      case 'instagram': return <Instagram className="h-6 w-6" />;
-      case 'tiktok': return <Music className="h-6 w-6" />;
-      case 'youtube': return <Youtube className="h-6 w-6" />;
-      case 'linkedin': return <Linkedin className="h-6 w-6" />;
-      default: return null;
-    }
-  };
-
-  const renderFooterLink = (item, index) => {
-    const isInternalRoute = item.url.startsWith('/') && !item.url.includes('#');
-
-    if (isInternalRoute) {
-      return (
-        <Link to={item.url} className="text-gray-300 hover:text-white transition-colors">
-          {item.label}
-        </Link>
-      );
-    }
-
-    return (
-      <a href={item.url} className="text-gray-300 hover:text-white transition-colors">
-        {item.label}
-      </a>
-    );
-  };
+  const reverseLogo = resolveAssetUrl('/brand/haleo-lockup-reverse.svg');
 
   return (
-    <footer className="bg-haleo-ink text-white py-12 sm:py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-          <div className="lg:col-span-2">
-            <div className="inline-block mb-5">
-              <img 
-                src={resolveAssetUrl(settings.logo_path)}
-                alt={settings.site_name}
-                className="h-16 w-16 sm:h-20 sm:w-20 rounded-xl object-cover"
-              />
-            </div>
-            <p className="text-gray-300 mb-6 max-w-md">
-              {settings.footer_description}
-            </p>
+    <footer className="bg-haleo-vault text-white">
+      <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-[2fr_1fr_1fr]">
+          <div className="max-w-sm">
+            <img src={reverseLogo} alt="Haleo" className="mb-5 h-10 w-auto" />
+            <p className="font-text text-[16px] leading-relaxed text-[#C9D9D3]">{settings.footer_description}</p>
             <Link
               to={settings.footer_cta.url}
-              className="gradient-bg text-white px-6 py-3 rounded-full font-semibold inline-flex justify-center items-center hover:opacity-90 transition-all duration-300 mb-6 w-full sm:w-auto"
+              className="mt-6 inline-flex items-center justify-center rounded-lg bg-white px-5 py-2.5 text-[15px] font-semibold text-haleo-vault hover:bg-haleo-sage"
             >
               {settings.footer_cta.text}
             </Link>
-            {settings.social_links.length > 0 && (
-              <div className="flex space-x-4">
-                {settings.social_links.map((social, index) => (
-                  <a key={index} href={social.url} className="text-gray-400 hover:text-haleo-violet transition-colors">
-                    {getSocialIcon(social.platform)}
-                  </a>
+          </div>
+
+          {[settings.footer_links.company, settings.footer_links.legal].map((col) => (
+            <div key={col.title}>
+              <h2 className="mb-4 text-[15px] font-semibold text-white">{col.title}</h2>
+              <ul className="space-y-2.5">
+                {col.items.map((item) => (
+                  <li key={item.url}>
+                    <FooterItem item={item} />
+                  </li>
                 ))}
-              </div>
-            )}
-          </div>
-
-          <div>
-            <h4 className="text-lg font-semibold mb-4">{settings.footer_links.company.title}</h4>
-            <ul className="space-y-2">
-              {settings.footer_links.company.items.map((item, index) => (
-                <li key={index}>
-                  {renderFooterLink(item, index)}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-lg font-semibold mb-4">{settings.footer_links.legal.title}</h4>
-            <ul className="space-y-2">
-              {settings.footer_links.legal.items.map((item, index) => (
-                <li key={index}>
-                  {renderFooterLink(item, index)}
-                </li>
-              ))}
-            </ul>
-            {settings.newsletter && (
-              <div className="mt-6">
-                <p className="text-gray-400 text-sm">{settings.newsletter.description}</p>
-                <div className="flex flex-col gap-3 mt-3">
-                  <input 
-                    type="email" 
-                    placeholder={settings.newsletter.placeholder}
-                    className="bg-haleo-gray text-white px-3 py-3 rounded-lg placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-haleo-violet text-sm min-w-0"
-                  />
-                  <button className="gradient-bg px-4 py-3 rounded-lg hover:opacity-90 transition-opacity text-sm whitespace-nowrap">
-                    {settings.newsletter.cta}
-                  </button>
-                </div>
-              </div>
-            )}
-          </div>
+              </ul>
+            </div>
+          ))}
         </div>
 
-        <div className="border-t border-haleo-gray mt-10 sm:mt-12 pt-7 sm:pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
-            <p className="text-gray-400 mb-4 md:mb-0">{settings.copyright}</p>
-            <p className="text-gray-400 text-sm">{settings.license_text}</p>
-          </div>
+        <div className="mt-12 flex flex-col gap-2 border-t border-white/15 pt-6 text-sm text-[#A9BDB6] sm:flex-row sm:justify-between">
+          <p>{settings.copyright}</p>
+          <p>{settings.license_text}</p>
         </div>
       </div>
     </footer>

@@ -20,25 +20,25 @@ const Privacy = () => {
               <h1 className="text-3xl sm:text-4xl font-bold text-haleo-ink mb-6">Privacy Policy</h1>
               <div className="space-y-6 text-haleo-gray leading-relaxed">
                 <section>
-                  <h2 className="text-xl font-semibold text-haleo-ink mb-2">Information We Collect</h2>
+                  <h2 className="text-xl font-semibold text-haleo-ink mb-2">Information we collect</h2>
                   <p>
-                    We may collect contact information you submit through inquiries, workflow submissions, or newsletter forms.
+                    When you request a Safety Check or email Haleo, we receive the details you choose to share, such as your name, email, business name and team size. Requests sent through the website form are delivered by Formspree. The site also uses Google Analytics to count visits and see which pages are read.
                   </p>
                 </section>
                 <section>
-                  <h2 className="text-xl font-semibold text-haleo-ink mb-2">How We Use Information</h2>
+                  <h2 className="text-xl font-semibold text-haleo-ink mb-2">How we use it</h2>
                   <p>
-                    Information is used to respond to inquiries, deliver services, improve website experience, and share relevant updates.
+                    We use this information to reply to you, schedule and deliver services, and improve the website. We don't add you to a mailing list without asking.
                   </p>
                 </section>
                 <section>
-                  <h2 className="text-xl font-semibold text-haleo-ink mb-2">Data Sharing</h2>
+                  <h2 className="text-xl font-semibold text-haleo-ink mb-2">Sharing</h2>
                   <p>
-                    Haleo does not sell personal information. Data may be shared with trusted tools/providers only as needed to operate the business.
+                    Haleo does not sell personal information. Information is shared only with the service providers needed to run the business, such as the form and email providers named above.
                   </p>
                 </section>
                 <section>
-                  <h2 className="text-xl font-semibold text-haleo-ink mb-2">Data Security</h2>
+                  <h2 className="text-xl font-semibold text-haleo-ink mb-2">Security</h2>
                   <p>
                     We use reasonable safeguards to protect information, but no method of internet transmission is completely secure.
                   </p>

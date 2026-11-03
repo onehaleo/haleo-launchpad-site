@@ -1,78 +1,107 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import PageTransition from '../components/PageTransition';
-import { CheckCircle, ArrowRight } from 'lucide-react';
 import SEOHead from '../components/SEOHead';
+import { resolveAssetUrl } from '../components/Navigation';
+import { useCmsContent } from '../hooks/useCmsContent';
+import { asStringList } from '../lib/cmsYamlLists';
 
 const About = () => {
-  const beliefs = [
-    'Systems should make work clearer, not heavier',
-    'Small teams deserve operational visibility without enterprise software',
-    'The best system is the one people actually use',
-    'Fast builds require clear scope',
-    'Tools should support the workflow, not become the workflow',
-  ];
+  const { content } = useCmsContent();
+  if (!content) return null;
+  const { home } = content;
+  const background = asStringList(home.built_from_bullets);
 
   return (
-    <PageTransition animate={false}>
+    <PageTransition>
       <SEOHead
-        title="About Haleo | Systems studio"
-        description="Haleo is a small systems studio that builds practical internal tools for growing teams—replacing spreadsheet chaos with simple operating systems."
-        keywords="Haleo, internal systems, operations, workflow systems"
+        title="About | Haleo"
+        description="Haleo is run by Alexis Ortiz in Durham, North Carolina. She helps small businesses use AI safely, drawing on a background in cybersecurity and software."
       />
-      <div className="min-h-screen">
-        <Navigation />
-
-        <section className="pt-24 sm:pt-28 lg:pt-32 pb-16 sm:pb-24 bg-gradient-to-br from-haleo-cloud via-white to-purple-50">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 className="text-3xl sm:text-5xl font-bold text-haleo-ink mb-8 text-center leading-tight">
-              About Haleo
-            </h1>
-
-            <div className="bg-white rounded-2xl p-8 sm:p-10 shadow-sm mb-10">
-              <div className="space-y-5 text-haleo-gray text-base sm:text-lg leading-relaxed">
+      <Navigation />
+      <main className="bg-haleo-surface">
+        <section className="px-4 pb-16 pt-28 sm:px-6 sm:pt-32 lg:px-8">
+          <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.5fr_1fr]">
+            <div>
+              <p className="eyebrow mb-3">About</p>
+              <h1 className="text-[38px] font-bold leading-[1.1] text-haleo-ink sm:text-[46px]">
+                Hi, I'm Alexis. Haleo is my practice.
+              </h1>
+              <div className="reading mt-8 max-w-2xl space-y-5 text-[18px]">
                 <p>
-                  Haleo is a small systems studio that builds practical internal tools for growing teams. We help businesses replace scattered spreadsheets, manual follow-up, and unclear workflows with simple operating systems that are easier to run.
+                  I've spent five years at a large consulting firm, moving from software engineering to strategy work and then to cybersecurity. Most of my days involve vulnerability research and building the tools a security team relies on.
                 </p>
                 <p>
-                  Our focus is speed, clarity, and adoption. Each build starts with the workflow, not the tool, so the final system fits how the team actually works.
+                  The thing I'm best at is finding the slow, manual part of a process and fixing it. On one project I helped cut a task that took six people two weeks down to two people and three days. That's the same instinct I bring to AI: use it where it saves real time, and put guardrails around it so nothing private leaks out.
+                </p>
+                <p>
+                  Small businesses are adopting AI fast, usually without anyone deciding what's allowed. I started Haleo to give owners a clear, practical way to say yes to AI without gambling with their clients' trust.
+                </p>
+                <p>
+                  I live in Durham, I'm finishing an MBA, and I'm always happy to meet at your office or for coffee.
                 </p>
               </div>
+              <Link to="/safety-check" className="btn-primary mt-8">
+                Book a free AI Safety Check
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
             </div>
 
-            <div className="bg-white rounded-2xl p-8 sm:p-10 shadow-sm mb-12">
-              <h2 className="text-2xl font-bold text-haleo-ink mb-6">What we believe</h2>
-              <ul className="space-y-3">
-                {beliefs.map((belief, index) => (
-                  <li key={index} className="flex items-start text-haleo-gray">
-                    <CheckCircle className="h-6 w-6 text-haleo-violet mt-0.5 mr-3 shrink-0" />
-                    {belief}
+            <aside className="self-start">
+              <div className="arch-top flex aspect-[4/5] w-full max-w-sm items-end justify-center overflow-hidden bg-haleo-vault">
+                <img
+                  src={resolveAssetUrl('/brand/haleo-mark-reverse.svg')}
+                  alt=""
+                  className="mb-10 h-28 w-auto opacity-90"
+                />
+              </div>
+              <ul className="mt-6 max-w-sm rounded-lg border border-haleo-hairline bg-white p-6">
+                {background.map((b) => (
+                  <li key={b} className="border-b border-haleo-hairline py-2.5 text-[15px] text-haleo-ink last:border-0">
+                    {b}
                   </li>
                 ))}
               </ul>
-            </div>
+            </aside>
+          </div>
+        </section>
 
-            <div className="text-center">
-              <div className="bg-haleo-ink rounded-2xl p-7 sm:p-10 text-white max-w-4xl mx-auto">
-                <p className="text-gray-300 mb-7">
-                  Share your current workflow and bottlenecks—we will map what a focused internal system could look like for your team.
+        <section className="border-t border-haleo-hairline bg-white px-4 py-16 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-6xl">
+            <h2 className="text-[28px] font-bold leading-tight text-haleo-ink sm:text-[32px]">How I work</h2>
+            <div className="mt-8 grid gap-8 md:grid-cols-2">
+              <div>
+                <h3 className="text-[19px] font-semibold text-haleo-ink">Plain English, short documents</h3>
+                <p className="reading mt-2 text-haleo-muted">
+                  Your policy fits on one page. If your team won't read it, it doesn't protect anyone.
                 </p>
-                <Link
-                  to="/workflow-review"
-                  className="gradient-bg text-white px-8 py-4 rounded-full text-base sm:text-lg font-semibold hover:opacity-90 transition-all duration-300 inline-flex items-center justify-center gap-2 mx-auto shadow-lg w-full sm:w-fit"
-                >
-                  Request a Workflow Review
-                  <ArrowRight className="h-5 w-5" />
-                </Link>
+              </div>
+              <div>
+                <h3 className="text-[19px] font-semibold text-haleo-ink">Fixed prices, in writing</h3>
+                <p className="reading mt-2 text-haleo-muted">
+                  You'll know the cost and the timeline before any work starts. No hourly billing.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-[19px] font-semibold text-haleo-ink">Your data stays yours</h3>
+                <p className="reading mt-2 text-haleo-muted">
+                  I work in your accounts, sign an NDA before we talk specifics, and never keep client information I don't need.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-[19px] font-semibold text-haleo-ink">Honest about limits</h3>
+                <p className="reading mt-2 text-haleo-muted">
+                  I give practical guidance, not legal advice. If you need an attorney or a formal audit, I'll tell you and point you to one.
+                </p>
               </div>
             </div>
           </div>
         </section>
-
-        <Footer />
-      </div>
+      </main>
+      <Footer />
     </PageTransition>
   );
 };
