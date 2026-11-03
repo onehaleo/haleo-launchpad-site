@@ -25,7 +25,7 @@ after_points:
 services_section_title: "Ways to work together"
 services_section_intro: "Most clients start with the free Safety Check. After that you only pay for what the check shows you need."
 built_from_heading: "Who you'll work with"
-built_from_body: "I'm Alexis Ortiz. I've spent five years at a large consulting firm, most recently on cybersecurity work where handling data carefully isn't optional. I also write software, so I can set up the tools as well as write the rules. I live in Durham and I'm happy to come to your office."
+built_from_body: "I've spent five years at a large consulting firm, most recently on cybersecurity work where handling data carefully isn't optional. I also write software, so I can set up the tools as well as write the rules. I live in Durham and I'm happy to come to your office."
 built_from_bullets:
   - "Cybersecurity and vulnerability research"
   - "Full stack development in React and Python"

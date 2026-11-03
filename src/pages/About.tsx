@@ -19,7 +19,7 @@ const About = () => {
     <PageTransition>
       <SEOHead
         title="About | Haleo"
-        description="Haleo is run by Alexis Ortiz in Durham, North Carolina. She helps small businesses use AI safely, drawing on a background in cybersecurity and software."
+        description="Haleo is based in Durham, North Carolina, and helps small businesses use AI safely, drawing on a background in cybersecurity and software."
       />
       <Navigation />
       <main className="bg-haleo-surface">
@@ -28,7 +28,7 @@ const About = () => {
             <div>
               <p className="eyebrow mb-3">About</p>
               <h1 className="text-[38px] font-bold leading-[1.1] text-haleo-ink sm:text-[46px]">
-                Hi, I'm Alexis. Haleo is my practice.
+                Hi, I'm the founder of Haleo.
               </h1>
               <div className="reading mt-8 max-w-2xl space-y-5 text-[18px]">
                 <p>
