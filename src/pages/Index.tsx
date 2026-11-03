@@ -1,181 +1,230 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle2, XCircle } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import PageTransition from '../components/PageTransition';
 import SEOHead from '../components/SEOHead';
+import StatusTag from '../components/StatusTag';
 import { useCmsContent } from '../hooks/useCmsContent';
 import { asStringList } from '../lib/cmsYamlLists';
 
-const Index = () => {
-  const { content, loading, error } = useCmsContent();
+/** A sample from an approved tools list: the kind of document a client receives. */
+const SAMPLE_TOOLS: { tool: string; use: string; status: 'approved' | 'review' | 'blocked' }[] = [
+  { tool: 'Company AI account', use: 'Drafting and summaries, no client names', status: 'approved' },
+  { tool: 'Grammar and spell check', use: 'Internal documents only', status: 'approved' },
+  { tool: 'Meeting note recorders', use: 'Pending a vendor review', status: 'review' },
+  { tool: 'Free chatbots on personal accounts', use: 'Never with client information', status: 'blocked' },
+];
 
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error loading content</div>;
-  if (!content) return <div>No content available</div>;
+const Index = () => {
+  const { content } = useCmsContent();
+  if (!content) return null;
   const { home, services } = content;
-  const showSecondaryCta = Boolean(home.secondary_cta_text?.trim());
-  const problemPoints = asStringList(home.problem_points as unknown);
-  const beforePoints = asStringList(home.before_points as unknown);
-  const afterPoints = asStringList(home.after_points as unknown);
-  const builtFromBullets = asStringList(home.built_from_bullets as unknown);
-  const scopeBullets = asStringList(home.scope_bullets as unknown);
-  const whoForGood = asStringList(home.who_for_good as unknown);
-  const whoForNot = asStringList(home.who_for_not as unknown);
+  const problemPoints = asStringList(home.problem_points);
+  const beforePoints = asStringList(home.before_points);
+  const afterPoints = asStringList(home.after_points);
+  const aboutBullets = asStringList(home.built_from_bullets);
+  const scopeBullets = asStringList(home.scope_bullets);
+  const fitGood = asStringList(home.who_for_good);
+  const fitNot = asStringList(home.who_for_not);
 
   return (
-    <PageTransition animate={true}>
-      <SEOHead 
-        title="Haleo — Workflow Automation & Custom Tools for Small Teams"
-        description="We turn operational chaos into automated, affordable systems — workflow automation, custom web apps, and websites built for small teams that have outgrown spreadsheets."
-        keywords="workflow automation, internal tools, custom web app, process automation, small business automation, GitHub Pages website, no subscription tools"
+    <PageTransition>
+      <SEOHead
+        title="Haleo | Safe AI for small business"
+        description="Haleo helps small businesses in the Triangle use AI without putting client information at risk: a written AI policy, the right tools, and a team that knows the rules."
       />
-      <div className="min-h-screen">
-        <Navigation />
-        <section className="relative overflow-hidden pt-24 sm:pt-28 lg:pt-32 pb-20 sm:pb-24 lg:pb-28 bg-gradient-to-br from-haleo-cloud via-white to-purple-50">
-          <div className="pointer-events-none absolute -top-20 -left-24 h-72 w-72 rounded-full bg-violet-200/35 blur-3xl" />
-          <div className="pointer-events-none absolute top-20 right-0 h-64 w-64 rounded-full bg-indigo-200/25 blur-3xl" />
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-4xl mx-auto text-center">
-                <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-haleo-ink leading-tight">
-                  {home.hero_headline}
-                </h1>
-                <p className="text-base sm:text-xl text-haleo-gray mt-5 sm:mt-6 max-w-3xl mx-auto">
-                  {home.hero_subheadline}
-                </p>
-                <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch">
-                  <Link to={home.primary_cta_link} className="gradient-bg text-white px-6 sm:px-8 py-4 rounded-full font-semibold hover:opacity-90 transition-all duration-300 inline-flex items-center justify-center gap-2 w-full sm:w-auto">
-                    {home.primary_cta_text}
-                    <ArrowRight className="h-4 w-4" />
+      <Navigation />
+      <main className="bg-haleo-surface">
+        {/* Hero */}
+        <section className="px-4 pb-16 pt-28 sm:px-6 sm:pt-32 lg:px-8 lg:pb-24">
+          <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[1.15fr_1fr]">
+            <div>
+              <p className="eyebrow mb-4">Safe AI for small business</p>
+              <h1 className="text-[40px] font-bold leading-[1.08] tracking-[-0.015em] text-haleo-ink sm:text-[52px]">
+                {home.hero_headline}
+              </h1>
+              <p className="reading mt-6 max-w-xl text-[19px] leading-[1.6] text-haleo-muted sm:text-[20px]">
+                {home.hero_subheadline}
+              </p>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+                <Link to={home.primary_cta_link} className="btn-primary">
+                  {home.primary_cta_text}
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </Link>
+                {home.secondary_cta_text?.trim() && (
+                  <Link to={home.secondary_cta_link} className="btn-secondary">
+                    {home.secondary_cta_text}
                   </Link>
-                  {showSecondaryCta && (
-                    <a href={home.secondary_cta_link} className="border-2 border-haleo-core text-haleo-core px-6 sm:px-8 py-4 rounded-full font-semibold hover:bg-haleo-core hover:text-white transition-all duration-300 inline-flex items-center justify-center gap-2 w-full sm:w-auto">
-                      {home.secondary_cta_text}
-                    </a>
-                  )}
+                )}
+              </div>
+              <p className="mt-5 max-w-md text-sm text-haleo-muted">{home.hero_trust_line}</p>
+            </div>
+
+            {/* Arch framed sample deliverable */}
+            <div className="relative mx-auto w-full max-w-md">
+              <div className="arch-top bg-haleo-vault px-6 pb-6 pt-24 sm:px-8 sm:pt-28">
+                <div className="rounded-lg bg-white p-5 shadow-[0_1px_2px_rgba(14,59,57,0.08),0_8px_24px_rgba(14,59,57,0.18)]">
+                  <div className="mb-3 flex items-baseline justify-between gap-3 border-b border-haleo-hairline pb-3">
+                    <p className="text-[15px] font-semibold text-haleo-ink">Approved AI tools</p>
+                    <p className="text-xs tabular-nums text-haleo-muted">Sample · v1.0</p>
+                  </div>
+                  <ul className="divide-y divide-haleo-hairline">
+                    {SAMPLE_TOOLS.map((row) => (
+                      <li key={row.tool} className="flex items-start justify-between gap-3 py-3">
+                        <div className="min-w-0">
+                          <p className="text-[14px] font-semibold text-haleo-ink">{row.tool}</p>
+                          <p className="font-text text-[14px] leading-snug text-haleo-muted">{row.use}</p>
+                        </div>
+                        <StatusTag status={row.status} />
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <p className="mt-10 text-sm text-haleo-gray">
-                  {home.hero_trust_line}
-                </p>
               </div>
+              <p className="mt-3 text-center text-xs text-haleo-muted">
+                Part of a sample approved tools list, one of the documents every client gets.
+              </p>
+            </div>
           </div>
         </section>
 
-        <section className="relative overflow-hidden py-16 sm:py-20 bg-white">
-          <div className="pointer-events-none absolute -bottom-20 right-8 h-64 w-64 rounded-full bg-violet-100/45 blur-3xl" />
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl sm:text-3xl font-bold text-haleo-ink mb-8 text-center">{home.problem_section_title}</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {problemPoints.map((point, i) => (
-                <div key={`${i}-${point}`} className="bg-haleo-cloud rounded-xl p-4 text-haleo-gray">{point}</div>
+        {/* Problems */}
+        <section className="border-t border-haleo-hairline bg-white px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+          <div className="mx-auto max-w-6xl">
+            <h2 className="text-[30px] font-bold leading-tight text-haleo-ink sm:text-[34px]">{home.problem_section_title}</h2>
+            <ul className="mt-8 grid gap-x-12 gap-y-6 md:grid-cols-2">
+              {problemPoints.map((point) => (
+                <li key={point} className="reading border-t border-haleo-hairline pt-4">
+                  {point}
+                </li>
               ))}
+            </ul>
+          </div>
+        </section>
+
+        {/* Before and after */}
+        <section className="px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+          <div className="mx-auto max-w-6xl">
+            <h2 className="text-[30px] font-bold leading-tight text-haleo-ink sm:text-[34px]">{home.before_after_title}</h2>
+            <div className="mt-8 grid gap-6 md:grid-cols-2">
+              <div className="rounded-lg border border-haleo-hairline bg-white p-6 sm:p-8">
+                <h3 className="mb-4 text-[19px] font-semibold text-haleo-ink">Without written rules</h3>
+                <ul className="space-y-3">
+                  {beforePoints.map((p) => (
+                    <li key={p} className="flex gap-3 font-text text-[17px] leading-snug text-haleo-muted">
+                      <span aria-hidden="true" className="mt-2.5 h-px w-4 shrink-0 bg-haleo-line" />
+                      {p}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="rounded-lg bg-haleo-sage p-6 sm:p-8">
+                <h3 className="mb-4 text-[19px] font-semibold text-haleo-ink">After working with Haleo</h3>
+                <ul className="space-y-3">
+                  {afterPoints.map((p) => (
+                    <li key={p} className="flex gap-3 font-text text-[17px] leading-snug text-haleo-ink">
+                      <span aria-hidden="true" className="mt-2.5 h-px w-4 shrink-0 bg-haleo-pine" />
+                      {p}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
         </section>
 
-        <section className="py-16 sm:py-20 bg-haleo-cloud">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl sm:text-3xl font-bold text-haleo-ink mb-8 text-center">{home.before_after_title}</h2>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <div className="bg-white rounded-2xl p-7 sm:p-10 shadow-sm">
-                <h3 className="text-2xl font-bold text-haleo-ink mb-4">Before</h3>
-                <ul className="space-y-3 text-haleo-gray">
-                  {beforePoints.map((item, i) => (
-                    <li key={`b-${i}-${item}`} className="flex items-start gap-2"><XCircle className="h-5 w-5 text-red-500 mt-0.5 shrink-0" /> {item}</li>
-                  ))}
-                </ul>
+        {/* Services */}
+        <section className="border-t border-haleo-hairline bg-white px-4 py-16 sm:px-6 lg:px-8 lg:py-20" id="services">
+          <div className="mx-auto max-w-6xl">
+            <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
+              <div className="max-w-2xl">
+                <h2 className="text-[30px] font-bold leading-tight text-haleo-ink sm:text-[34px]">{home.services_section_title}</h2>
+                <p className="reading mt-3 text-haleo-muted">{home.services_section_intro}</p>
               </div>
-              <div className="bg-white rounded-2xl p-7 sm:p-10 shadow-sm">
-                <h3 className="text-2xl font-bold text-haleo-ink mb-4">After</h3>
-                <ul className="space-y-3 text-haleo-gray">
-                  {afterPoints.map((item, i) => (
-                    <li key={`a-${i}-${item}`} className="flex items-start gap-2"><CheckCircle2 className="h-5 w-5 text-green-600 mt-0.5 shrink-0" /> {item}</li>
-                  ))}
-                </ul>
-              </div>
+              <Link to="/services" className="btn-quiet shrink-0">See full details</Link>
             </div>
-          </div>
-        </section>
-
-        <section className="py-16 sm:py-20 bg-white" id="services">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl sm:text-3xl font-bold text-haleo-ink text-center mb-4">{home.services_section_title}</h2>
-            <p className="text-haleo-gray text-center max-w-3xl mx-auto mb-10">
-              {home.services_section_intro}
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {services.map((card) => (
-                <div key={card.title} className="bg-haleo-cloud rounded-2xl p-7">
-                  <h3 className="text-xl font-semibold text-haleo-ink mb-4">{card.title}</h3>
-                  <p className="text-sm text-haleo-gray mb-2">{card.short_description}</p>
-                  <p className="text-sm text-haleo-gray mb-2"><strong>Replaces:</strong> {card.replaces}</p>
-                  <p className="text-sm text-haleo-gray mb-2"><strong>Helps with:</strong> {card.helps_with}</p>
-                  <p className="text-sm text-haleo-gray"><strong>Best for:</strong> {card.best_for}</p>
+            <div className="mt-10 grid gap-px overflow-hidden rounded-lg border border-haleo-hairline bg-haleo-hairline sm:grid-cols-2 lg:grid-cols-4">
+              {services.map((s) => (
+                <div key={s.slug} className="flex flex-col bg-white p-6">
+                  <h3 className="text-[19px] font-semibold text-haleo-ink">{s.title}</h3>
+                  <p className="mt-1 text-[15px] font-semibold text-haleo-pine">{s.price}</p>
+                  <p className="mt-3 font-text text-[16px] leading-snug text-haleo-muted">{s.short_description}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="py-16 sm:py-20 bg-white">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl sm:text-3xl font-bold text-haleo-ink text-center mb-4">{home.built_from_heading}</h2>
-            <p className="text-haleo-gray text-center max-w-3xl mx-auto mb-10">
-              {home.built_from_body}
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {builtFromBullets.map((item, i) => (
-                <div key={`bf-${i}-${item}`} className="bg-haleo-cloud rounded-xl p-4 text-haleo-gray text-center sm:text-left">{item}</div>
+        {/* Deliverables */}
+        <section className="px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+          <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1fr_1.4fr]">
+            <h2 className="text-[30px] font-bold leading-tight text-haleo-ink sm:text-[34px]">{home.scope_section_title}</h2>
+            <ul className="grid gap-x-8 gap-y-4 sm:grid-cols-2">
+              {scopeBullets.map((b) => (
+                <li key={b} className="border-t border-haleo-hairline pt-4 font-text text-[17px] leading-snug text-haleo-ink">
+                  {b}
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
         </section>
 
-        <section className="relative overflow-hidden py-16 sm:py-20 bg-white">
-          <div className="pointer-events-none absolute top-8 -right-16 h-56 w-56 rounded-full bg-indigo-100/40 blur-3xl" />
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl sm:text-3xl font-bold text-haleo-ink text-center mb-10">{home.process_title}</h2>
-            <div className="space-y-5">
-              {home.process_steps.map((step, idx) => (
-                <div key={step.title} className="rounded-xl border border-purple-100 p-6">
-                  <h3 className="text-lg font-semibold text-haleo-ink">{idx + 1}. {step.title}</h3>
-                  <p className="text-haleo-gray mt-1">{step.description}</p>
-                </div>
+        {/* Process: a real sequence, so it is numbered */}
+        <section className="border-t border-haleo-hairline bg-white px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+          <div className="mx-auto max-w-6xl">
+            <h2 className="text-[30px] font-bold leading-tight text-haleo-ink sm:text-[34px]">{home.process_title}</h2>
+            <ol className="mt-10 grid gap-10 md:grid-cols-3">
+              {home.process_steps.map((step, i) => (
+                <li key={step.title}>
+                  <span className="arch-top inline-flex h-10 w-8 items-end justify-center bg-haleo-vault pb-1 text-sm font-semibold text-white">
+                    {i + 1}
+                  </span>
+                  <h3 className="mt-4 text-[19px] font-semibold text-haleo-ink">{step.title}</h3>
+                  <p className="reading mt-2 text-haleo-muted">{step.description}</p>
+                </li>
               ))}
-            </div>
+            </ol>
           </div>
         </section>
 
-        <section className="py-16 sm:py-20 bg-haleo-cloud">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl sm:text-3xl font-bold text-haleo-ink text-center mb-8">{home.scope_section_title}</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 text-haleo-gray">
-              {scopeBullets.map((item, i) => (
-                <div key={`sc-${i}-${item}`} className="bg-white rounded-xl p-5">{item}</div>
-              ))}
+        {/* About */}
+        <section className="px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+          <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.4fr_1fr]">
+            <div>
+              <h2 className="text-[30px] font-bold leading-tight text-haleo-ink sm:text-[34px]">{home.built_from_heading}</h2>
+              <p className="reading mt-5 max-w-2xl text-[18px]">{home.built_from_body}</p>
+              <Link to="/about" className="btn-quiet mt-5">More about me</Link>
             </div>
+            <ul className="self-start rounded-lg border border-haleo-hairline bg-white p-6">
+              {aboutBullets.map((b) => (
+                <li key={b} className="border-b border-haleo-hairline py-2.5 text-[15px] text-haleo-ink last:border-0">
+                  {b}
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
 
-        <section className="py-16 sm:py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl sm:text-3xl font-bold text-haleo-ink text-center mb-10">{home.who_for_section_title}</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-haleo-cloud rounded-2xl p-8">
-                <h3 className="text-xl font-semibold text-haleo-ink mb-4">{home.who_for_good_heading}</h3>
-                <ul className="space-y-2 text-haleo-gray">
-                  {whoForGood.map((item, i) => (
-                    <li key={`wg-${i}-${item}`}>• {item}</li>
+        {/* Fit */}
+        <section className="border-t border-haleo-hairline bg-white px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+          <div className="mx-auto max-w-6xl">
+            <h2 className="text-[30px] font-bold leading-tight text-haleo-ink sm:text-[34px]">{home.who_for_section_title}</h2>
+            <div className="mt-8 grid gap-10 md:grid-cols-2">
+              <div>
+                <h3 className="mb-3 text-[17px] font-semibold text-haleo-approved">{home.who_for_good_heading}</h3>
+                <ul className="space-y-3">
+                  {fitGood.map((p) => (
+                    <li key={p} className="font-text text-[17px] leading-snug text-haleo-ink">{p}</li>
                   ))}
                 </ul>
               </div>
-              <div className="bg-haleo-cloud rounded-2xl p-8">
-                <h3 className="text-xl font-semibold text-haleo-ink mb-4">{home.who_for_not_heading}</h3>
-                <ul className="space-y-2 text-haleo-gray">
-                  {whoForNot.map((item, i) => (
-                    <li key={`wn-${i}-${item}`}>• {item}</li>
+              <div>
+                <h3 className="mb-3 text-[17px] font-semibold text-haleo-muted">{home.who_for_not_heading}</h3>
+                <ul className="space-y-3">
+                  {fitNot.map((p) => (
+                    <li key={p} className="font-text text-[17px] leading-snug text-haleo-muted">{p}</li>
                   ))}
                 </ul>
               </div>
@@ -183,19 +232,21 @@ const Index = () => {
           </div>
         </section>
 
-        <section className="py-16 sm:py-20 bg-haleo-ink text-white">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">{home.final_cta_headline}</h2>
-            <p className="text-gray-300 mb-8 px-2">{home.final_cta_subheadline}</p>
-            <Link to={home.final_cta_link} className="gradient-bg text-white px-6 sm:px-8 py-4 rounded-full font-semibold hover:opacity-90 transition-all duration-300 inline-flex items-center justify-center gap-2 w-full sm:w-auto">
+        {/* Final call to action */}
+        <section className="bg-haleo-sage px-4 py-16 sm:px-6 lg:px-8">
+          <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 md:flex-row md:items-center">
+            <div>
+              <h2 className="text-[28px] font-bold leading-tight text-haleo-ink sm:text-[32px]">{home.final_cta_headline}</h2>
+              <p className="reading mt-2 text-haleo-muted">{home.final_cta_subheadline}</p>
+            </div>
+            <Link to={home.final_cta_link} className="btn-primary shrink-0">
               {home.final_cta_text}
-              <ArrowRight className="h-4 w-4" />
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </div>
         </section>
-
-        <Footer />
-      </div>
+      </main>
+      <Footer />
     </PageTransition>
   );
 };

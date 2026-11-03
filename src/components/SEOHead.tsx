@@ -12,11 +12,11 @@ interface SEOHeadProps {
 }
 
 const SEOHead = ({ 
-  title = "Haleo - Automation Systems for Solopreneurs",
-  description = "Build scalable automation systems that work while you don't. Custom templates, AI agents, and business workflows for growing solopreneurs.",
-  keywords = "automation systems, solopreneurs, business automation, AI agents, workflow automation, small business tools, productivity systems, custom templates",
+  title = "Haleo | Safe AI for small business",
+  description = "Haleo helps small businesses use AI without putting client information at risk: a written AI policy, the right tools, and a team that knows the rules.",
+  keywords = "AI policy for small business, safe AI adoption, AI governance consultant, AI acceptable use policy, Raleigh, Durham, Research Triangle",
   canonicalUrl,
-  ogImage = "https://onehaleo.com/lovable-uploads/8bf9a199-52de-4152-9751-1a25c3bd7e0d.png",
+  ogImage = "https://onehaleo.com/social-preview.jpg",
   robots,
 }: SEOHeadProps) => {
   const location = useLocation();

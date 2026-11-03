@@ -1,0 +1,11 @@
+title: "AI Safety Check"
+slug: "safety-check"
+price: "Free"
+timeline: "One hour, summary within two business days"
+short_description: "A one hour look at how your team uses AI today, with a one page summary of your top three risks and the quickest fixes."
+best_for: "Any team that uses AI and hasn't written down how."
+features:
+  - "A list of the AI tools your team actually uses"
+  - "Where client information goes when they use them"
+  - "Your top three risks, in plain English"
+  - "Three fixes you can make this week"

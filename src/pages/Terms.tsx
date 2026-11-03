@@ -20,31 +20,38 @@ const Terms = () => {
               <h1 className="text-3xl sm:text-4xl font-bold text-haleo-ink mb-6">Terms of Service</h1>
               <div className="space-y-6 text-haleo-gray leading-relaxed">
                 <section>
-                  <h2 className="text-xl font-semibold text-haleo-ink mb-2">Use of Site</h2>
+                  <h2 className="text-xl font-semibold text-haleo-ink mb-2">Use of this site</h2>
                   <p>
                     By accessing this website, you agree to use it for lawful purposes only and in a way that does not
                     harm Haleo, its users, or its services.
                   </p>
                 </section>
                 <section>
-                  <h2 className="text-xl font-semibold text-haleo-ink mb-2">Service Scope</h2>
+                  <h2 className="text-xl font-semibold text-haleo-ink mb-2">Scope of services</h2>
                   <p>
                     Project timelines, deliverables, and boundaries are defined per engagement. Any additional features or
                     modules beyond the agreed scope may require a separate agreement.
                   </p>
                 </section>
                 <section>
-                  <h2 className="text-xl font-semibold text-haleo-ink mb-2">Intellectual Property</h2>
+                  <h2 className="text-xl font-semibold text-haleo-ink mb-2">Intellectual property</h2>
                   <p>
                     Unless otherwise agreed in writing, content and materials on this site remain property of Haleo.
                     Client project ownership terms are defined in each client agreement.
                   </p>
                 </section>
                 <section>
-                  <h2 className="text-xl font-semibold text-haleo-ink mb-2">Limitation of Liability</h2>
+                  <h2 className="text-xl font-semibold text-haleo-ink mb-2">Not legal advice</h2>
+                  <p>
+                    Haleo provides practical, operational guidance on using AI tools. It is not legal advice and does not
+                    certify compliance with any law or regulation. For legal questions, please consult an attorney.
+                  </p>
+                </section>
+                <section>
+                  <h2 className="text-xl font-semibold text-haleo-ink mb-2">Limitation of liability</h2>
                   <p>
                     Haleo is not liable for indirect or consequential damages arising from use of the site or services.
-                    Services are provided in good faith based on the provided workflow and requirements.
+                    Services are provided in good faith based on the information you share with us.
                   </p>
                 </section>
                 <section>

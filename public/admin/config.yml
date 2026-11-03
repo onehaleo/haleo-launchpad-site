@@ -13,7 +13,7 @@ public_folder: "/images"
 
 site_url: https://onehaleo.com
 display_url: https://onehaleo.com
-logo_url: /lovable-uploads/haleo-logo-new.png
+logo_url: /brand/haleo-lockup.svg
 
 collections:
   - name: "homepage"
@@ -154,45 +154,22 @@ collections:
                       - { label: "URL", name: "url", widget: "string" }
 
   - name: "services"
-    label: "Service cards (homepage grid)"
+    label: "Services (homepage and services page)"
     label_singular: "Service"
     folder: "content/services"
     create: true
     extension: "yml"
     format: "yaml"
     slug: "{{slug}}"
+    summary: "{{title}} ({{price}})"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Slug", name: "slug", widget: "string", hint: "Use URL-safe text like lead-sales-pipeline" }
+      - { label: "Slug", name: "slug", widget: "string", hint: "URL safe text like safe-ai-starter. Cards are ordered by file name." }
+      - { label: "Price", name: "price", widget: "string", required: false }
+      - { label: "Timeline", name: "timeline", widget: "string", required: false }
       - { label: "Short Description", name: "short_description", widget: "text" }
-      - { label: "Replaces", name: "replaces", widget: "text" }
-      - { label: "Helps With", name: "helps_with", widget: "text" }
       - { label: "Best For", name: "best_for", widget: "text" }
-      - label: "Features"
+      - label: "What's included"
         name: "features"
         widget: "list"
-        field: { label: "Feature", name: "item", widget: "string" }
-
-  - name: "demos"
-    label: "Demo pages (/demos only)"
-    label_singular: "Demo page"
-    folder: "content/demos"
-    create: true
-    extension: "yml"
-    format: "yaml"
-    slug: "{{slug}}"
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Slug", name: "slug", widget: "string", hint: "URL path under /demos/ (not linked from homepage)" }
-      - { label: "Agency Type", name: "agency_type", widget: "string" }
-      - { label: "Short Description", name: "short_description", widget: "text" }
-      - { label: "Problem Summary", name: "problem_summary", widget: "text" }
-      - label: "Modules"
-        name: "modules"
-        widget: "list"
-        field: { label: "Module", name: "item", widget: "string" }
-      - { label: "Before State", name: "before_state", widget: "text" }
-      - { label: "After State", name: "after_state", widget: "text" }
-      - { label: "CTA Text", name: "cta_text", widget: "string" }
-      - { label: "CTA Link", name: "cta_link", widget: "string" }
-      - { label: "Featured Image", name: "featured_image", widget: "image", required: false }
+        field: { label: "Item", name: "item", widget: "string" }

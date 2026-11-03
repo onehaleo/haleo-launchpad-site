@@ -64,11 +64,24 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				haleo: {
-					'cloud': '#F9F9F9',
-					'ink': '#070A1C',
-					'gray': '#333333',
-					'violet': '#b850ff',
-					'core': '#521ca6'
+					// Brand colors (Haleo brand system)
+					'vault': '#0E3B39',
+					'pine': '#1F6B60',
+					'brass': '#B9852A',
+					'sage': '#DDEBE5',
+					'surface': '#F6F8F6',
+					'ink': '#13201E',
+					'muted': '#4A5C58',
+					'line': '#7E948E',
+					'hairline': '#D3DDD9',
+					'approved': '#1B6A47',
+					'review': '#8A5300',
+					'blocked': '#B42318',
+					// Old names kept so older pages still compile; mapped onto the new palette
+					'cloud': '#F6F8F6',
+					'gray': '#4A5C58',
+					'violet': '#1F6B60',
+					'core': '#0E3B39'
 				}
 			},
 			borderRadius: {
@@ -124,7 +137,10 @@ export default {
 				'slide-up': 'slide-up 0.6s ease-out'
 			},
 			fontFamily: {
-				'inter': ['Inter', 'sans-serif'],
+				'ui': ['"Libre Franklin"', '"Franklin Gothic Medium"', '"Helvetica Neue"', 'Arial', 'sans-serif'],
+				'text': ['"Source Serif 4"', 'Georgia', '"Times New Roman"', 'serif'],
+				// old name, now points at the brand UI face
+				'inter': ['"Libre Franklin"', 'Arial', 'sans-serif'],
 			}
 		}
 	},
